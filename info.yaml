@@ -16,6 +16,7 @@ project:
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:
     - "project.v"
+    - "topEntity.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
@@ -40,7 +41,7 @@ pinout:
   uo[7]: ""
 
   # Bidirectional pins
-  uio[0]: "reset"
+  uio[0]: ""
   uio[1]: ""
   uio[2]: ""
   uio[3]: ""
