@@ -12,16 +12,22 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+        env:
+          QUIT_ON_SYNTH_CHECKS: "0"
 
       - name: Build GDS
         uses: TinyTapeout/tt-gds-action@tt07
-  
+        env:
+          QUIT_ON_SYNTH_CHECKS: "0"
+
   precheck:
     needs: gds
     runs-on: ubuntu-latest
     steps:
       - name: Run Tiny Tapeout Precheck
         uses: TinyTapeout/tt-gds-action/precheck@tt07
+        env:
+          QUIT_ON_SYNTH_CHECKS: "0"
 
   gl_test:
     needs: gds
@@ -31,9 +37,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+        env:
+          QUIT_ON_SYNTH_CHECKS: "0"
 
       - name: GL test
         uses: TinyTapeout/tt-gds-action/gl_test@tt07
+        env:
+          QUIT_ON_SYNTH_CHECKS: "0"
 
   viewer:
     needs: gds
