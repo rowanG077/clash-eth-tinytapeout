@@ -19,6 +19,7 @@ jobs:
         uses: TinyTapeout/tt-gds-action@tt07
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
+          RUN_VERILATOR: "0"
 
   precheck:
     needs: gds
@@ -28,6 +29,7 @@ jobs:
         uses: TinyTapeout/tt-gds-action/precheck@tt07
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
+          RUN_VERILATOR: "0"
 
   gl_test:
     needs: gds
@@ -39,11 +41,13 @@ jobs:
           submodules: recursive
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
+          RUN_VERILATOR: "0"
 
       - name: GL test
         uses: TinyTapeout/tt-gds-action/gl_test@tt07
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
+          RUN_VERILATOR: "0"
 
   viewer:
     needs: gds
