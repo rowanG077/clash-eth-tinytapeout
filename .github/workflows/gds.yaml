@@ -17,6 +17,8 @@ jobs:
 
       - name: Build GDS
         uses: TinyTapeout/tt-gds-action@tt07
+        with:
+          openlane-tag: 2.0.0
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
           RUN_VERILATOR: "0"
@@ -27,6 +29,8 @@ jobs:
     steps:
       - name: Run Tiny Tapeout Precheck
         uses: TinyTapeout/tt-gds-action/precheck@tt07
+        with:
+          openlane-tag: 2.0.0
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
           RUN_VERILATOR: "0"
@@ -45,6 +49,8 @@ jobs:
 
       - name: GL test
         uses: TinyTapeout/tt-gds-action/gl_test@tt07
+        with:
+          openlane-tag: 2.0.0
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
           RUN_VERILATOR: "0"
@@ -57,3 +63,5 @@ jobs:
       id-token: write   # to verify the deployment originates from an appropriate source
     steps:
       - uses: TinyTapeout/tt-gds-action/viewer@tt07
+        with:
+          openlane-tag: 2.0.0

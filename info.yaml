@@ -8,7 +8,7 @@ project:
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "4x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_clash_mac"
@@ -17,6 +17,9 @@ project:
   source_files:
     - "project.v"
     - "topEntity.v"
+    - "Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_trueDualPortBlockRamWrapper.v"
+    - "Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_resetSynchronizer.v"
+    - "Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_resetSynchronizer_0.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
