@@ -12,24 +12,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-        env:
-          QUIT_ON_SYNTH_CHECKS: "0"
 
       - name: Build GDS
-        uses: rowanG077/tt-gds-action@tt07-update-yosys
-        env:
-          QUIT_ON_SYNTH_CHECKS: "0"
-          RUN_VERILATOR: "0"
+        uses: TinyTapeout/tt-gds-action@tt06-openlane2
+        with:
+          openlane-tag: 2.0.4
 
   precheck:
     needs: gds
     runs-on: ubuntu-latest
     steps:
       - name: Run Tiny Tapeout Precheck
-        uses: rowanG077/tt-gds-action/precheck@tt07-update-yosys
-        env:
-          QUIT_ON_SYNTH_CHECKS: "0"
-          RUN_VERILATOR: "0"
+        uses: TinyTapeout/tt-gds-action/precheck@tt06
 
   gl_test:
     needs: gds
@@ -39,15 +33,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-        env:
-          QUIT_ON_SYNTH_CHECKS: "0"
-          RUN_VERILATOR: "0"
 
       - name: GL test
-        uses: rowanG077/tt-gds-action/gl_test@tt07-update-yosys
-        env:
-          QUIT_ON_SYNTH_CHECKS: "0"
-          RUN_VERILATOR: "0"
+        uses: TinyTapeout/tt-gds-action/gl_test@tt07
 
   viewer:
     needs: gds
@@ -56,4 +44,4 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     steps:
-      - uses: rowanG077/tt-gds-action/viewer@tt07-update-yosys
+      - uses: TinyTapeout/tt-gds-action/viewer@tt07

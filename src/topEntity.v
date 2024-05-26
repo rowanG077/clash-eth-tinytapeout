@@ -18,492 +18,572 @@ module topEntity
     );
   wire  c$bindCsr;
   wire  c$app_arg;
-  wire [4:0] c$ds_app_arg;
-  wire [4:0] c$ds_case_alt;
-  wire [16:0] c$ds_case_alt_0;
-  wire [16:0] result_0;
-  wire [11:0] result_1;
-  reg [4:0] ds1;
-  wire  inReady;
-  wire [9:0] inp;
-  wire [11:0] result_2;
-  wire [10:0] c$ds8_app_arg;
-  wire [0:0] c$ds8_app_arg_0;
-  wire [19:0] result_3;
-  wire [19:0] c$ds8_case_alt;
-  wire  outReady;
-  wire  c$outReady_app_arg;
-  wire  aborted;
-  wire [15:0] vs;
-  wire  c$ds8_app_arg_1;
-  wire [1:0] c$ds8_app_arg_2;
-  wire [0:0] x;
-  wire [1:0] lastIdx;
-  wire [18:0] inp_0;
-  wire [17:0] ds11;
-  wire  r2sAc;
-  wire  c$ds11_app_arg;
-  reg [19:0] st;
-  wire  rstLow;
-  wire [20:0] c$case_alt;
-  wire [19:0] s2rAc;
-  wire [20:0] result_4;
-  reg [105:0] result_5;
-  wire [84:0] c$ds_app_arg_0;
-  wire [105:0] c$ds_case_alt_1;
-  wire [1:0] c$ds_app_arg_1;
-  wire [1:0] c$ds_case_alt_2;
-  wire [0:0] x1;
-  wire [84:0] c$ds_app_arg_2;
-  wire [84:0] c$ds_case_alt_3;
-  wire [84:0] c$ds_case_alt_4;
-  wire [0:0] idx;
-  wire [2:0] newLast;
-  wire [1:0] c$newLast_app_arg;
-  wire [0:0] a1;
+  wire [11:0] result_0;
+  reg [19:0] c$ds1_case_alt;
+  wire [19:0] result_1;
+  wire [19:0] result_2;
+  wire [80:0] result_3;
+  wire [80:0] result_4;
+  wire [7:0] result_5;
+  wire [63:0] c$mapOut;
+  wire [63:0] ds14;
+  wire [80:0] result_6;
+  wire  ds11;
+  reg [61:0] eta5;
+  reg [81:0] result_7;
+  wire [61:0] c$ds2_app_arg;
+  wire [81:0] c$ds2_case_alt;
+  wire [0:0] c$ds2_app_arg_0;
+  wire [0:0] c$ds2_case_alt_0;
+  wire [61:0] c$ds2_app_arg_1;
+  wire [61:0] c$ds2_case_alt_1;
+  wire [61:0] c$ds2_case_alt_2;
+  wire [1:0] newLast;
   wire  nextAborted;
-  wire [15:0] ds8;
-  wire [105:0] c$ds_case_alt_5;
-  wire [84:0] c$ds_app_arg_3;
-  wire [84:0] c$ds_case_alt_6;
+  wire [7:0] ds10;
+  wire [81:0] c$ds2_case_alt_3;
+  wire [61:0] c$ds2_app_arg_2;
+  wire  readyOut;
+  wire  r2sAc;
+  wire  c$readyOut_case_alt;
+  wire [18:0] fwdOut;
+  wire [80:0] result_8;
+  wire [80:0] c$ds10_case_alt;
   wire  nextAborted_0;
-  wire [95:0] ds9;
-  reg [95:0] c$ds9_app_arg;
-  wire [18:0] pkt;
-  reg [84:0] eta2;
-  wire  bwdIn;
-  wire [20:0] result_6;
-  wire [76:0] result_7;
-  wire [76:0] c$ds8_case_alt_0;
-  wire [18:0] c$ds8_app_arg_3;
-  wire [55:0] c$ds8_app_arg_4;
-  wire [55:0] c$ds8_case_alt_1;
-  wire [55:0] c$ds8_case_alt_2;
-  wire [1:0] x_0;
-  wire [2:0] insertCrc;
-  wire [47:0] ds14;
-  wire [47:0] c$ds14_app_arg;
-  wire [95:0] c$app_arg_0;
-  wire [47:0] \xs' ;
-  wire [7:0] x1_0;
-  wire [15:0] x1_1;
-  wire [47:0] result_8;
-  wire [0:0] c$ds8_app_arg_5;
-  wire [0:0] a1_0;
-  wire [18:0] cache;
-  wire [19:0] fwdIn;
-  wire [1:0] c$ds8_app_arg_6;
-  wire [55:0] c$ds8_app_arg_7;
+  wire [63:0] combined;
+  wire [9:0] pkt;
+  wire  rstLow;
+  wire  bwd;
+  wire [11:0] c$case_alt;
+  wire [10:0] c$app_arg_0;
+  wire [11:0] result_9;
   wire  r2sAc_0;
-  wire [31:0] result_9;
-  wire [31:0] result_10;
-  wire [31:0] c$app_arg_1;
-  wire [31:0] result_11;
-  wire [31:0] c$app_arg_2;
-  reg [31:0] crcState;
-  reg [31:0] c$crcState_case_alt;
-  wire [15:0] c$case_alt_0;
-  wire [15:0] x_1;
-  wire [31:0] c$app_arg_3;
-  wire [31:0] result_12;
-  wire [7:0] x_2;
-  wire [31:0] c$app_arg_4;
-  wire [31:0] result_13;
+  wire [18:0] wild1;
+  wire [17:0] inPkt;
+  wire [17:0] a1_0;
+  wire [10:0] s2rAc;
+  wire [20:0] result_10;
+  wire [19:0] c$ds8_app_arg;
+  wire [20:0] c$ds8_app_arg_0;
+  wire [20:0] c$ds8_case_alt;
+  wire [20:0] c$ds8_case_alt_0;
+  wire  c$ds8_case_scrut;
+  wire  r2sAc_1;
+  wire [1:0] c$ds8_app_arg_1;
+  wire  c$ds8_app_arg_2;
+  wire  c$ds8_app_arg_3;
+  wire [0:0] c$ds8_app_arg_4;
+  wire  nextFlush;
+  wire  c$nextFlush_app_arg;
+  wire [15:0] c$ds8_app_arg_5;
+  wire  rstLow_0;
+  wire [11:0] c$case_alt_0;
+  wire [10:0] s2rAc_0;
+  reg [20:0] st;
+  wire [19:0] result_11;
+  wire [20:0] result_12;
+  wire  empty;
+  wire [20:0] ds1;
+  wire [19:0] fwdIn;
+  wire  bwdIn;
+  wire [19:0] f1;
+  wire [20:0] result_13;
+  wire [19:0] s2rAc_1;
+  wire  ready;
+  wire [41:0] c$case_alt_1;
+  wire [18:0] c$case_alt_2;
+  wire [20:0] c$app_arg_1;
+  wire  c$outValid_case_alt;
+  wire [18:0] cache;
+  wire  validated;
+  wire  r2sAc_2;
+  wire  result_14;
+  wire  result_15;
+  wire [1:0] xs;
+  reg [0:0] i1;
   wire [31:0] c$crcState_app_arg;
-  wire  c$crcState_app_arg_0;
-  wire [16:0] ds11_0;
+  reg [31:0] crcState;
+  wire [15:0] c$case_alt_3;
+  wire [15:0] x;
+  wire [31:0] c$app_arg_2;
+  wire [31:0] result_16;
+  wire [16:0] ds10_0;
   wire [16:0] a1_1;
-  wire [17:0] c$x_app_arg;
-  wire [0:0] c$x_app_arg_0;
+  reg  c$app_arg_3;
+  wire  c$app_arg_4;
+  wire [17:0] c$ds3_app_arg;
+  wire [0:0] c$ds3_app_arg_0;
   wire [0:0] v;
-  reg  c$x_app_arg_1;
-  wire  c$x_case_alt;
+  reg  c$ds3_app_arg_1;
+  wire  c$ds3_case_alt;
   wire [18:0] fwdInX;
   wire [18:0] a1_2;
   wire  transferOccured;
-  wire  ready;
   wire  c$transferOccured_app_arg;
-  wire  rstLow_0;
-  wire [20:0] c$case_alt_1;
-  wire [19:0] s2rAc_0;
-  wire [55:0] c$ds8_case_alt_3;
-  wire  finished;
-  wire [47:0] ds15;
-  reg [55:0] ds6;
-  wire [20:0] result_14;
-  reg [27:0] result_15;
-  wire [1:0] c$ds_app_arg_4;
-  wire [6:0] c$ds_app_arg_5;
-  wire [6:0] c$ds_case_alt_7;
-  wire  done;
-  wire [4:0] i;
-  wire [27:0] c$ds_case_alt_8;
-  wire [6:0] c$ds_app_arg_6;
-  wire  c$ds_case_alt_9;
-  wire [27:0] c$ds_case_alt_10;
-  wire [1:0] c$ds_app_arg_7;
-  wire [1:0] c$ds_case_alt_11;
-  wire [0:0] c$ds_app_arg_8;
-  wire [0:0] a1_3;
-  wire [6:0] c$ds_app_arg_9;
-  wire  bwd;
-  wire [6:0] c$ds_case_alt_12;
-  wire  done_0;
-  wire [6:0] c$ds_case_alt_13;
-  wire [6:0] c$ds_case_alt_14;
-  wire [18:0] fwdIn_0;
-  wire [4:0] c$ds_app_arg_10;
-  wire [4:0] i_0;
-  reg [6:0] ds;
-  wire [20:0] result_16;
-  reg [154:0] result_17;
-  wire [133:0] c$ds_app_arg_11;
-  wire [154:0] c$ds_case_alt_15;
-  wire [1:0] c$ds_app_arg_12;
-  wire [1:0] c$ds_case_alt_16;
-  wire [0:0] x1_2;
-  wire [133:0] c$ds_app_arg_13;
-  wire [133:0] c$ds_case_alt_17;
-  wire [133:0] c$ds_case_alt_18;
+  wire [19:0] fwdIn_0;
+  wire  rstLow_1;
+  wire [20:0] c$case_alt_4;
+  reg [20:0] c$ds3_app_arg_2;
+  wire [132:0] result_17;
+  wire [264:0] result_18;
+  wire [264:0] result_19;
+  wire [63:0] c$ds1_case_alt_0;
+  wire [111:0] result_20;
+  wire [111:0] ds4;
+  wire [63:0] back;
+  wire [111:0] c$mapOut_0;
+  wire [111:0] ds14_0;
+  wire [264:0] result_21;
+  wire  ds11_0;
+  reg [132:0] eta5_0;
+  reg [265:0] result_22;
+  wire [132:0] c$ds2_app_arg_3;
+  wire [265:0] c$ds2_case_alt_4;
+  wire [1:0] c$ds2_app_arg_4;
+  wire [1:0] c$ds2_case_alt_5;
+  wire [0:0] x1_0;
+  wire [132:0] c$ds2_app_arg_5;
+  wire [132:0] c$ds2_case_alt_6;
+  wire [132:0] c$ds2_case_alt_7;
   wire [0:0] idx_0;
   wire [2:0] newLast_0;
-  wire [1:0] c$newLast_app_arg_0;
-  wire [0:0] a1_4;
+  wire [0:0] a1_3;
   wire  nextAborted_1;
-  wire [15:0] ds8_0;
-  wire [154:0] c$ds_case_alt_19;
-  wire [133:0] c$ds_app_arg_14;
-  wire [133:0] c$ds_case_alt_20;
+  wire [15:0] ds10_1;
+  wire [265:0] c$ds2_case_alt_8;
+  wire [132:0] c$ds2_app_arg_6;
+  wire  readyOut_0;
+  wire  r2sAc_3;
+  wire  c$readyOut_case_alt_0;
+  wire [131:0] fwdOut_0;
+  wire [264:0] result_23;
+  wire [264:0] c$ds10_case_alt_0;
   wire  nextAborted_2;
-  wire [143:0] ds9_0;
-  reg [143:0] c$ds9_app_arg_0;
-  wire [47:0] g1;
-  wire [47:0] g2;
-  wire [15:0] g3;
-  wire [47:0] c$app_arg_5;
-  wire [47:0] c$app_arg_6;
-  wire [111:0] result_18;
-  wire [130:0] pkt_0;
-  reg [133:0] eta2_0;
+  wire [111:0] combined_0;
+  wire [18:0] pkt_0;
+  wire  rstLow_2;
+  wire  bwd_0;
+  wire [20:0] c$case_alt_5;
+  wire [19:0] s2rAc_2;
+  wire [132:0] result_24;
+  wire [132:0] c$ds17_case_alt;
+  wire  result_25;
+  wire  c$case_alt_6;
+  wire [5:0] c$app_arg_5;
+  wire  c$case_alt_7;
+  wire [5:0] c$app_arg_6;
+  wire [130:0] inPkt_0;
+  wire [131:0] wild1_0;
+  reg [38:0] c$ds_app_arg;
+  wire [132:0] c$case_alt_8;
   wire  bwdIn_0;
-  wire [264:0] result_19;
-  wire [264:0] ds_0;
-  wire [264:0] result_20;
-  wire [263:0] c$ds_app_arg_15;
-  wire  c$ds_app_arg_16;
-  wire signed [63:0] c$ds_app_arg_17;
-  wire [0:0] i_1;
+  wire [170:0] c$case_alt_9;
+  reg [15:0] c$app_arg_7;
+  wire [15:0] a;
+  wire [16:0] summed;
+  wire [15:0] result_26;
+  wire [15:0] c$app_arg_8;
+  reg [15:0] dataOut0;
+  wire [38:0] c$app_arg_9;
+  wire [1:0] c$case_alt_10;
+  reg [1:0] c$case_alt_11;
+  wire [1:0] c$case_alt_12;
+  reg [1:0] c$case_alt_13;
+  wire [1:0] c$case_alt_14;
+  wire [3:0] c$case_alt_15;
+  reg [3:0] c$case_alt_16;
+  wire [3:0] c$case_alt_17;
+  wire [3:0] c$nextFsm_case_alt;
+  reg [3:0] c$nextFsm_case_alt_0;
+  wire [3:0] result_27;
+  wire signed [63:0] \a# ;
+  wire [15:0] c$dataOut0_case_alt;
+  wire [15:0] c$dataOut0_case_alt_0;
+  wire [47:0] dShift2;
+  reg  result_28;
+  wire  errNow;
+  wire  c$foldOut;
+  wire [1:0] c$zipWithOut;
+  wire [15:0] dShift1;
+  wire [130:0] ipv;
+  reg [17:0] c$zipWithOut_app_arg;
+  wire [17:0] c$mapOut_1;
+  wire [15:0] c$mapOut_app_arg;
+  wire  stateCntZero;
+  wire [264:0] result_29;
+  wire [264:0] ds;
+  wire [264:0] result_30;
+  wire [263:0] c$ds_app_arg_0;
+  wire  c$ds_app_arg_1;
+  wire signed [63:0] c$ds_app_arg_2;
+  wire [0:0] i;
   wire [1:0] c$ds_case_scrut;
   wire [5:0] ws;
   wire [3:0] c$ws_app_arg;
   wire [5:0] c$ws_app_arg_0;
-  wire [130:0] x_3;
-  wire [133:0] result_21;
+  wire [130:0] x_0;
+  wire [133:0] result_31;
   wire [1:0] c$ds1_app_arg;
   wire  c$ds1_app_arg_0;
-  wire  c$ds1_case_alt;
-  wire [0:0] result_22;
-  wire [0:0] c$ds1_case_alt_0;
+  wire  c$ds1_case_alt_1;
+  wire [0:0] result_32;
+  wire [0:0] c$ds1_case_alt_2;
   wire  first;
-  wire [0:0] c$ds1_case_alt_1;
+  wire [0:0] c$ds1_case_alt_3;
   wire [131:0] fwd;
   wire signed [63:0] c$fwd_app_arg;
-  wire [0:0] c$ds1_case_alt_2;
+  wire [0:0] c$ds1_case_alt_4;
   wire [1:0] z;
-  wire [0:0] result_23;
-  wire [0:0] i_2;
+  wire [0:0] result_33;
+  wire [0:0] i_0;
   reg [1:0] ds2;
   reg [6:0] c$ds1_app_arg_1;
   reg [15:0] c$ds1_app_arg_2;
-  wire [132:0] result_24;
-  wire [146:0] c$case_alt_2;
+  wire [132:0] result_34;
+  wire [146:0] c$case_alt_18;
   wire [6:0] nextCnt;
-  wire [131:0] c$case_alt_3;
-  wire [1:0] c$app_arg_7;
+  wire [131:0] c$case_alt_19;
+  wire [1:0] c$app_arg_10;
   wire  lastWord;
-  wire  c$case_alt_4;
+  wire  c$case_alt_20;
   wire [7:0] z_0;
-  wire [6:0] result_25;
+  wire [6:0] result_35;
   wire  c$nextCnt_case_alt;
   wire [130:0] fwdIn_1;
   wire [131:0] fwdIn_2;
   wire  bwdIn_1;
-  wire [132:0] result_26;
+  wire [132:0] result_36;
   wire [131:0] eth_Fwd;
   wire  \final:stmt_Bwd ;
   wire  eth_Bwd;
   wire [131:0] \final:stmt_Fwd ;
-  wire [132:0] result_27;
-  wire [264:0] result_28;
-  wire [264:0] result_29;
-  wire [63:0] c$ds1_case_alt_3;
-  wire [111:0] result_30;
-  wire [111:0] ds4;
-  wire [63:0] back;
-  wire [111:0] c$mapOut;
-  wire [111:0] ds14_0;
-  wire [264:0] result_31;
-  wire  ds11_1;
-  reg [132:0] eta5;
-  reg [265:0] result_32;
-  wire [132:0] c$ds2_app_arg;
-  wire [265:0] c$ds2_case_alt;
-  wire [1:0] c$ds2_app_arg_0;
-  wire [1:0] c$ds2_case_alt_0;
-  wire [0:0] x1_3;
-  wire [132:0] c$ds2_app_arg_1;
-  wire [132:0] c$ds2_case_alt_1;
-  wire [132:0] c$ds2_case_alt_2;
+  wire [20:0] result_37;
+  reg [154:0] result_38;
+  wire [133:0] c$ds_app_arg_3;
+  wire [154:0] c$ds_case_alt;
+  wire [1:0] c$ds_app_arg_4;
+  wire [1:0] c$ds_case_alt_0;
+  wire [0:0] x1_1;
+  wire [133:0] c$ds_app_arg_5;
+  wire [133:0] c$ds_case_alt_1;
+  wire [133:0] c$ds_case_alt_2;
   wire [0:0] idx_1;
   wire [2:0] newLast_1;
-  wire [0:0] a1_5;
+  wire [1:0] c$newLast_app_arg;
+  wire [0:0] a1_4;
   wire  nextAborted_3;
-  wire [15:0] ds10;
-  wire [265:0] c$ds2_case_alt_3;
-  wire [132:0] c$ds2_app_arg_2;
-  wire  readyOut;
-  wire  r2sAc_1;
-  wire  c$readyOut_case_alt;
-  wire [131:0] fwdOut;
-  wire [264:0] result_33;
-  wire [264:0] c$ds10_case_alt;
+  wire [15:0] ds8;
+  wire [154:0] c$ds_case_alt_3;
+  wire [133:0] c$ds_app_arg_6;
+  wire [133:0] c$ds_case_alt_4;
   wire  nextAborted_4;
-  wire [111:0] combined;
-  wire [18:0] pkt_1;
-  wire  rstLow_1;
-  wire  bwd_0;
-  wire [20:0] c$case_alt_5;
-  wire [19:0] s2rAc_1;
-  wire [20:0] result_34;
-  wire [19:0] c$ds8_app_arg_8;
-  wire [20:0] c$ds8_app_arg_9;
-  wire [20:0] c$ds8_case_alt_4;
-  wire [20:0] c$ds8_case_alt_5;
-  wire  c$ds8_case_scrut;
-  wire  r2sAc_2;
-  wire [1:0] c$ds8_app_arg_10;
-  wire  c$ds8_app_arg_11;
-  wire  c$ds8_app_arg_12;
-  wire [0:0] c$ds8_app_arg_13;
-  wire  nextFlush;
-  wire  c$nextFlush_app_arg;
-  wire [15:0] c$ds8_app_arg_14;
-  wire  rstLow_2;
-  wire [11:0] c$case_alt_6;
-  wire [10:0] s2rAc_2;
-  reg [20:0] st_0;
-  wire [6:0] result_35;
-  reg [3:0] c$app_arg_8;
-  wire [3:0] c$app_arg_9;
-  wire [7:0] ds2_0;
-  reg  c$app_arg_10;
-  wire  c$app_arg_11;
-  reg  c$app_arg_12;
-  reg  nibbleSelect;
-  wire  inputVld;
-  wire [7:0] c$ds2_app_arg_3;
-  wire [9:0] a1_6;
-  reg [3:0] c$ds_app_arg_18;
-  reg  c$ds_app_arg_19;
-  wire [0:0] result_36;
-  reg  c$ds3_app_arg;
-  wire [10:0] result_37;
-  wire [10:0] c$case_alt_7;
+  wire [143:0] ds9;
+  reg [143:0] c$ds9_app_arg;
+  wire [47:0] g1;
+  wire [47:0] g2;
+  wire [15:0] g3;
+  wire [47:0] c$app_arg_11;
+  wire [47:0] c$app_arg_12;
+  wire [111:0] result_39;
+  wire [130:0] pkt_1;
+  reg [133:0] eta2;
+  wire  bwdIn_2;
+  wire [20:0] result_40;
+  reg [27:0] result_41;
+  wire [1:0] c$ds_app_arg_7;
+  wire [6:0] c$ds_app_arg_8;
+  wire [6:0] c$ds_case_alt_5;
+  wire  done;
+  wire [4:0] i_1;
+  wire [27:0] c$ds_case_alt_6;
+  wire [6:0] c$ds_app_arg_9;
+  wire  c$ds_case_alt_7;
+  wire [27:0] c$ds_case_alt_8;
+  wire [1:0] c$ds_app_arg_10;
+  wire [1:0] c$ds_case_alt_9;
+  wire [0:0] c$ds_app_arg_11;
+  wire [0:0] a1_5;
+  wire [6:0] c$ds_app_arg_12;
+  wire  bwd_1;
+  wire [6:0] c$ds_case_alt_10;
+  wire  done_0;
+  wire [6:0] c$ds_case_alt_11;
+  wire [6:0] c$ds_case_alt_12;
+  wire [18:0] fwdIn_3;
+  wire [4:0] c$ds_app_arg_13;
+  wire [4:0] i_2;
+  reg [6:0] ds_0;
+  wire [20:0] result_42;
+  wire [76:0] result_43;
+  wire [76:0] c$ds8_case_alt_1;
+  wire [18:0] c$ds8_app_arg_6;
+  wire [55:0] c$ds8_app_arg_7;
+  wire [55:0] c$ds8_case_alt_2;
+  wire [55:0] c$ds8_case_alt_3;
+  wire [1:0] x_1;
+  wire [2:0] insertCrc;
+  wire [47:0] ds14_1;
+  wire [47:0] c$ds14_app_arg;
+  wire [95:0] c$app_arg_13;
+  wire [47:0] \xs' ;
+  wire [7:0] x1_2;
+  wire [15:0] x1_3;
+  wire [47:0] result_44;
+  wire [0:0] c$ds8_app_arg_8;
+  wire [0:0] a1_6;
+  wire [18:0] cache_0;
+  wire [19:0] fwdIn_4;
+  wire [1:0] c$ds8_app_arg_9;
+  wire [55:0] c$ds8_app_arg_10;
+  wire  r2sAc_4;
+  wire [31:0] result_45;
+  wire [31:0] result_46;
+  wire [31:0] c$app_arg_14;
+  wire [31:0] result_47;
+  wire [31:0] c$app_arg_15;
+  reg [31:0] crcState_0;
+  reg [31:0] c$crcState_case_alt;
+  wire [15:0] c$case_alt_21;
+  wire [15:0] x_2;
+  wire [31:0] c$app_arg_16;
+  wire [31:0] result_48;
+  wire [7:0] x_3;
+  wire [31:0] c$app_arg_17;
+  wire [31:0] result_49;
+  wire [31:0] c$crcState_app_arg_0;
+  wire  c$crcState_app_arg_1;
+  wire [16:0] ds11_1;
+  wire [16:0] a1_7;
+  wire [17:0] c$x_app_arg;
+  wire [0:0] c$x_app_arg_0;
+  wire [0:0] v_0;
+  reg  c$x_app_arg_1;
+  wire  c$x_case_alt;
+  wire [18:0] fwdInX_0;
+  wire [18:0] a1_8;
+  wire  transferOccured_0;
+  wire  ready_0;
+  wire  c$transferOccured_app_arg_0;
+  wire  rstLow_3;
+  wire [20:0] c$case_alt_22;
+  wire [19:0] s2rAc_3;
+  wire [55:0] c$ds8_case_alt_4;
+  wire  finished;
+  wire [47:0] ds15;
+  reg [55:0] ds6;
+  wire [20:0] result_50;
+  reg [105:0] result_51;
+  wire [84:0] c$ds_app_arg_14;
+  wire [105:0] c$ds_case_alt_13;
+  wire [1:0] c$ds_app_arg_15;
+  wire [1:0] c$ds_case_alt_14;
+  wire [0:0] x1_4;
+  wire [84:0] c$ds_app_arg_16;
+  wire [84:0] c$ds_case_alt_15;
+  wire [84:0] c$ds_case_alt_16;
+  wire [0:0] idx_2;
+  wire [2:0] newLast_2;
+  wire [1:0] c$newLast_app_arg_0;
+  wire [0:0] a1_9;
+  wire  nextAborted_5;
+  wire [15:0] ds8_0;
+  wire [105:0] c$ds_case_alt_17;
+  wire [84:0] c$ds_app_arg_17;
+  wire [84:0] c$ds_case_alt_18;
+  wire  nextAborted_6;
+  wire [95:0] ds9_0;
+  reg [95:0] c$ds9_app_arg_0;
+  wire [18:0] pkt_2;
+  reg [84:0] eta2_0;
+  wire  bwdIn_3;
+  wire [11:0] result_52;
+  wire [10:0] c$ds8_app_arg_11;
+  wire [0:0] c$ds8_app_arg_12;
+  wire [19:0] result_53;
+  wire [19:0] c$ds8_case_alt_5;
+  wire  outReady;
+  wire  c$outReady_app_arg;
+  wire  aborted;
+  wire [15:0] vs;
+  wire  c$ds8_app_arg_13;
+  wire [1:0] c$ds8_app_arg_14;
+  wire [0:0] x_4;
+  wire [1:0] lastIdx;
+  wire [18:0] inp;
+  wire [17:0] ds11_2;
+  wire  r2sAc_5;
+  wire  c$ds11_app_arg;
+  reg [19:0] st_0;
+  wire  rstLow_4;
+  wire [20:0] c$case_alt_23;
+  wire [19:0] s2rAc_4;
+  wire [4:0] c$ds_app_arg_18;
+  wire [4:0] c$ds_case_alt_19;
+  wire [16:0] c$ds_case_alt_20;
+  wire [16:0] result_54;
+  wire [11:0] result_55;
+  reg [4:0] ds1_0;
+  wire [9:0] inp_0;
+  wire  r2sAc_6;
+  wire [131:0] c$ds23_app_arg;
+  wire [130:0] a1_10;
+  reg [3:0] c$ds_app_arg_19;
+  reg  c$ds_app_arg_20;
+  wire [0:0] result_56;
+  reg  c$ds3_app_arg_3;
+  wire [10:0] result_57;
+  wire [10:0] c$case_alt_24;
   reg  dv0;
   reg [3:0] nibble0;
   reg  ds3;
-  wire  c$ds_app_arg_20;
-  wire [11:0] ds2_1;
-  wire [19:0] result_38;
-  wire [80:0] result_39;
-  wire [80:0] result_40;
-  wire [7:0] result_41;
-  wire [63:0] c$mapOut_0;
-  wire [63:0] ds14_1;
-  wire [80:0] result_42;
-  wire  ds11_2;
-  reg [61:0] eta5_0;
-  reg [81:0] result_43;
-  wire [61:0] c$ds2_app_arg_4;
-  wire [81:0] c$ds2_case_alt_4;
-  wire [0:0] c$ds2_app_arg_5;
-  wire [0:0] c$ds2_case_alt_5;
-  wire [61:0] c$ds2_app_arg_6;
-  wire [61:0] c$ds2_case_alt_6;
-  wire [61:0] c$ds2_case_alt_7;
-  wire [1:0] newLast_2;
-  wire  nextAborted_5;
-  wire [7:0] ds10_0;
-  wire [81:0] c$ds2_case_alt_8;
-  wire [61:0] c$ds2_app_arg_7;
-  wire  readyOut_0;
-  wire  r2sAc_3;
-  wire  c$readyOut_case_alt_0;
-  wire [18:0] fwdOut_0;
-  wire [80:0] result_44;
-  wire [80:0] c$ds10_case_alt_0;
-  wire  nextAborted_6;
-  wire [63:0] combined_0;
-  wire [9:0] pkt_2;
-  wire  rstLow_3;
-  wire  bwd_1;
-  wire [11:0] c$case_alt_8;
-  wire [10:0] s2rAc_3;
-  wire [11:0] result_45;
-  wire [17:0] x_4;
-  reg [10:0] c$case_alt_9;
-  wire [10:0] result_46;
-  wire [10:0] s2rAc_4;
-  wire  r2sAc_4;
-  wire [5:0] result_47;
-  wire [19:0] result_48;
-  wire [20:0] result_49;
-  wire  empty;
-  wire  eta7;
-  wire [20:0] result_50;
-  wire [37:0] c$case_scrut;
-  reg [18:0] c$app_arg_13;
-  wire [18:0] val;
-  reg [3:0] c$app_arg_14;
-  wire [3:0] addr;
-  wire [3:0] addr_0;
-  reg  c$app_arg_15;
-  reg  c$app_arg_16;
-  reg [18:0] c$app_arg_17;
-  wire [18:0] val_0;
+  wire [6:0] result_58;
   reg [3:0] c$app_arg_18;
-  wire [3:0] addr_1;
-  wire [3:0] addr_2;
-  reg  c$app_arg_19;
+  wire [3:0] c$app_arg_19;
+  wire [7:0] ds2_0;
   reg  c$app_arg_20;
-  wire [24:0] t;
-  wire [24:0] result_51;
-  wire  b;
-  wire [18:0] ds1_0;
-  wire [18:0] a1_8;
-  wire [4:0] ptr;
-  wire [4:0] \ptr' ;
-  wire [4:0] \bin' ;
-  wire [4:0] bin;
-  wire [0:0] \c$bin'_app_arg ;
-  wire  inc;
-  wire [0:0] \c$bin'_case_alt ;
-  wire  flag;
-  reg [10:0] eta9;
-  wire [4:0] c$ds2_app_arg_8;
-  wire [4:0] s_ptr;
-  wire [5:0] eta10;
-  wire  c$eta10_app_arg;
-  reg [4:0] c$app_arg_21;
-  reg [4:0] result_52;
-  wire [4:0] ptr_0;
-  wire [4:0] \ptr'_0 ;
-  wire [4:0] \bin'_0 ;
-  wire [4:0] bin_0;
-  wire [0:0] \c$bin'_app_arg_0 ;
-  wire [0:0] \c$bin'_case_alt_0 ;
-  wire  flag_0;
-  reg [10:0] ds3_0;
-  reg [4:0] c$app_arg_22;
-  reg [4:0] result_53;
-  wire [19:0] fwdIn_3;
-  wire  bwdIn_2;
-  wire [19:0] f1;
+  wire  c$app_arg_21;
+  reg  c$app_arg_22;
+  reg  nibbleSelect;
+  wire  inputVld;
+  wire [7:0] c$ds2_app_arg_7;
+  wire [9:0] a1_11;
+  wire [5:0] result_59;
   wire [5:0] rxChannel;
   wire  c$bindCsr_fun_arg;
-  wire [10:0] c$ds_case_alt_selection_3;
-  wire [15:0] c$vec;
-  wire [19:0] result_selection_2;
-  wire [23:0] ds11_sel_alt_t_2;
-  wire [19:0] c$ds_case_alt_selection_6;
-  wire [1:0] c$ds_case_alt_selection_9;
-  wire [1:0] c$ds_case_alt_selection_13;
-  wire [1:0] newLast_selection_1;
-  wire [19:0] c$ds_case_alt_selection_16;
-  wire [15:0] c$ds_case_alt_sel_alt_t_10;
-  wire [1:0] c$ds9_app_arg_selection_1;
-  wire [63:0] c$ds9_app_arg_sel_alt_res;
+  wire [7:0] c$ds1_case_alt_selection_1;
+  wire [63:0] c$vec;
   wire [63:0] c$vec_0;
-  wire [19:0] c$ds8_case_alt_selection_2;
+  wire [10:0] c$ds2_case_alt_selection_1;
+  wire [10:0] c$ds2_case_alt_selection_9;
+  wire [63:0] c$ds10_case_alt_sel_alt_f_0;
+  wire [18:0] c$app_arg_selection_1;
+  wire [10:0] c$ds8_app_arg_selection_3;
+  wire [1:0] c$ds8_app_arg_selection_10;
+  wire [0:0] c$i_16;
+  wire [7:0] c$vec_1;
+  wire [15:0] c$vec_2;
+  wire  ds1_fun_arg;
+  wire [19:0] c$case_alt_selection_3;
+  wire [1:0] c$case_alt_selection_6;
+  wire [1:0] c$outValid_case_alt_selection_1;
+  wire [63:0] c$vec1;
+  wire [63:0] c$vec2;
+  wire [15:0] x_projection;
+  wire [1535:0] c$vec_3;
+  wire [1:0] c$ds3_app_arg_selection_2;
+  wire [1:0] c$ds3_case_alt_selection_1;
+  wire [1:0] result_selection_11;
+  wire [111:0] c$vec_4;
+  wire [1:0] result_selection_14;
+  wire [19:0] c$ds2_case_alt_selection_12;
+  wire [1:0] c$ds2_case_alt_selection_15;
+  wire [1:0] c$ds2_case_alt_selection_19;
+  wire [1:0] newLast_selection_3;
+  wire [19:0] c$ds2_case_alt_selection_22;
+  wire [1:0] c$ds10_case_alt_selection_3;
+  wire [111:0] c$ds10_case_alt_sel_alt_f_4;
+  wire [47:0] c$vec1_0;
+  wire [47:0] c$vec2_0;
+  wire [47:0] c$vec1_1;
+  wire [47:0] c$vec2_1;
+  wire [1:0] c$vec_5;
+  wire [0:0] c$vec_6;
+  wire [131:0] c$case_alt_selection_res;
+  wire [263:0] c$vec_7;
+  wire [131:0] c$vec_8;
+  wire [3:0] c$app_arg_selection_6;
+  wire [16:0] c$bv;
+  wire [0:0] c$bv_0;
+  wire [3:0] dataOut0_selection_1;
+  wire [1:0] c$vec_9;
+  wire [0:0] c$vec_10;
+  wire [1:0] c$case_alt_selection_12;
+  wire [3:0] c$case_alt_selection_15;
+  wire [1:0] c$case_alt_selection_20;
+  wire [3:0] c$case_alt_selection_23;
+  wire [1:0] c$nextFsm_case_alt_selection_1;
+  wire [3:0] c$nextFsm_case_alt_selection_4;
+  wire signed [63:0] c$tte_rhs;
+  wire [3:0] c$dtt_rhs_1;
+  wire [3:0] result_selection_20;
+  wire [263:0] c$vec_11;
+  wire [131:0] c$vec_12;
+  wire [131:0] ipv_projection;
+  wire [3:0] c$zipWithOut_app_arg_selection_1;
+  wire [31:0] c$mapOut_app_arg_sel_alt_t_res;
+  wire [31:0] c$mapOut_app_arg_sel_alt_t_res_res;
+  wire [31:0] c$vec_13;
+  wire [31:0] c$vec_14;
+  wire [31:0] c$mapOut_app_arg_sel_alt_f_res;
+  wire [31:0] c$mapOut_app_arg_sel_alt_f_res_res;
+  wire [31:0] c$vec_15;
+  wire [31:0] c$vec_16;
+  wire [263:0] c$vec_17;
+  wire [1:0] c$vecFlat;
+  wire [1:0] c$vec1_2;
+  wire [3:0] c$vec2_2;
+  wire [1:0] c$vec_18;
+  wire [1:0] c$ds1_case_alt_selection_5;
+  wire [1:0] c$ds1_case_alt_selection_10;
+  wire [263:0] c$vecFlat_0;
+  wire [1:0] c$bv_1;
+  wire [6:0] c$i_116;
+  wire [1:0] c$case_alt_selection_29;
+  wire [1:0] c$case_alt_selection_32;
+  wire [7:0] c$bv_2;
+  wire [1:0] c$nextCnt_case_alt_selection_1;
+  wire [263:0] c$vec_19;
+  wire [1:0] c$vec_20;
+  wire [1:0] c$ds_case_alt_selection_2;
+  wire [1:0] c$ds_case_alt_selection_6;
+  wire [1:0] newLast_selection_6;
+  wire [15:0] c$ds_case_alt_sel_alt_t_7;
+  wire [2:0] c$ds9_app_arg_selection_1;
+  wire [19:0] c$ds_case_alt_selection_12;
+  wire [1:0] c$ds_case_alt_selection_15;
+  wire [19:0] c$ds_case_alt_selection_18;
+  wire [1:0] c$ds_case_alt_selection_21;
+  wire [1:0] c$ds_case_alt_selection_25;
+  wire [1:0] c$ds_case_alt_selection_28;
+  wire [19:0] c$ds8_case_alt_selection_3;
   wire [1:0] insertCrc_selection_1;
   wire [1:0] c$ds14_app_arg_selection_1;
-  wire [95:0] c$vec_1;
-  wire [15:0] x1_projection_1;
-  wire [15:0] x1_projection_2;
-  wire [1:0] c$ds8_app_arg_selection_7;
-  wire [1:0] c$bv;
-  wire [31:0] c$vec_2;
-  wire [31:0] c$vec_3;
+  wire [95:0] c$vec_21;
+  wire [15:0] x1_projection_5;
+  wire [15:0] x1_projection_6;
+  wire [1:0] c$ds8_app_arg_selection_16;
+  wire [1:0] c$bv_3;
+  wire [31:0] c$vec_22;
+  wire [31:0] c$vec_23;
   wire signed [63:0] c$crcState_case_alt_selection_1;
-  wire [0:0] c$i_49;
+  wire [0:0] c$i_183;
   wire signed [63:0] c$crcState_case_alt_selection_0;
-  wire [15:0] x_projection_1;
-  wire [1535:0] c$vec_4;
-  wire [15:0] x_projection_2;
-  wire [1279:0] c$vec_5;
+  wire [15:0] x_projection_5;
+  wire [1535:0] c$vec_24;
+  wire [15:0] x_projection_6;
+  wire [1279:0] c$vec_25;
   wire [1:0] c$x_app_arg_selection_2;
   wire [1:0] c$x_case_alt_selection_1;
-  wire [19:0] fwdInX_selection_1;
-  wire [19:0] c$transferOccured_app_arg_selection_1;
-  wire [19:0] c$ds_case_alt_selection_21;
-  wire [1:0] c$ds_case_alt_selection_24;
-  wire [19:0] c$ds_case_alt_selection_27;
-  wire [1:0] c$ds_case_alt_selection_30;
+  wire [19:0] fwdInX_selection_2;
+  wire [19:0] c$transferOccured_app_arg_selection_2;
+  wire [19:0] c$ds_case_alt_selection_31;
   wire [1:0] c$ds_case_alt_selection_34;
-  wire [1:0] c$ds_case_alt_selection_37;
-  wire [131:0] c$ds_case_alt_selection_40;
-  wire [1:0] c$ds_case_alt_selection_43;
-  wire [1:0] c$ds_case_alt_selection_47;
-  wire [1:0] newLast_selection_4;
-  wire [131:0] c$ds_case_alt_selection_50;
-  wire [15:0] c$ds_case_alt_sel_alt_t_31;
-  wire [2:0] c$ds9_app_arg_selection_4;
-  wire [263:0] c$vec_6;
-  wire [1:0] c$vec_7;
-  wire [1:0] c$vecFlat;
-  wire [1:0] c$vec1;
-  wire [3:0] c$vec2;
-  wire [1:0] c$vec_8;
-  wire [1:0] c$ds1_case_alt_selection_2;
-  wire [1:0] c$ds1_case_alt_selection_7;
-  wire [263:0] c$vec_9;
-  wire [263:0] c$vecFlat_0;
-  wire [1:0] c$bv_0;
-  wire [6:0] c$i_183;
-  wire [1:0] c$case_alt_selection_5;
-  wire [1:0] c$case_alt_selection_8;
-  wire [7:0] c$bv_1;
-  wire [1:0] c$nextCnt_case_alt_selection_1;
-  wire [263:0] c$vec_10;
-  wire [131:0] c$vec_11;
-  wire [1:0] c$vec_12;
-  wire [0:0] c$vec_13;
-  wire [1:0] result_selection_14;
-  wire [111:0] c$vec_14;
-  wire [1:0] result_selection_17;
-  wire [19:0] c$ds2_case_alt_selection_1;
-  wire [1:0] c$ds2_case_alt_selection_4;
-  wire [1:0] c$ds2_case_alt_selection_8;
-  wire [1:0] newLast_selection_7;
-  wire [19:0] c$ds2_case_alt_selection_11;
-  wire [1:0] c$ds10_case_alt_selection_1;
-  wire [111:0] c$ds10_case_alt_sel_alt_f_0;
-  wire [10:0] c$ds8_app_arg_selection_14;
-  wire [1:0] c$ds8_app_arg_selection_21;
-  wire [0:0] c$i_208;
-  wire [7:0] c$vec_15;
-  wire [15:0] c$vec_16;
-  wire [10:0] c$app_arg_selection_3;
+  wire [1:0] c$ds_case_alt_selection_38;
+  wire [1:0] newLast_selection_9;
+  wire [19:0] c$ds_case_alt_selection_41;
+  wire [15:0] c$ds_case_alt_sel_alt_t_28;
+  wire [1:0] c$ds9_app_arg_selection_4;
+  wire [63:0] c$ds9_app_arg_sel_alt_res;
+  wire [63:0] c$vec_26;
+  wire [15:0] c$vec_27;
+  wire [19:0] result_selection_32;
+  wire [23:0] ds11_sel_alt_t_1;
+  wire [10:0] c$ds_case_alt_selection_47;
+  wire [131:0] c$ds23_app_arg_selection_1;
+  wire [10:0] c$app_arg_selection_12;
   wire [10:0] inputVld_selection_1;
-  wire [10:0] c$ds2_app_arg_selection_5;
-  wire [7:0] c$vec_17;
-  wire [63:0] c$vec_18;
-  wire [63:0] c$vec_19;
-  wire [10:0] c$ds2_case_alt_selection_14;
-  wire [10:0] c$ds2_case_alt_selection_22;
-  wire [63:0] c$ds10_case_alt_sel_alt_f_4;
-  wire [7:0] c$case_alt_selection_14;
-  wire [18:0] result_selection_31;
+  wire [10:0] c$ds2_app_arg_selection_9;
+  wire [7:0] c$vec_28;
   wire [5:0] result;
 
   assign rxChannel = {rxDv,   rxErr,   rxData};
@@ -520,175 +600,38 @@ module topEntity
     , .eta (ethRxClk)
     , .eta1 (rstN) );
 
-  assign c$ds_app_arg = (ds1[3:0] == 4'd11) ? {1'b1,4'bxxxx} : {1'b0,ds1[3:0] + 4'd1};
+  assign result_0 = {result_9[11:11],
+                     result_55[10:0]};
 
-  assign c$ds_case_alt = inp[1:1] ? {1'b0,4'd0} : {1'b1,4'bxxxx};
-
-  assign c$ds_case_alt_selection_3 = result_2[10:0];
-
-  assign c$ds_case_alt_0 = c$ds_case_alt_selection_3[10:10] ? {c$ds_case_alt,
-                                                               {inReady,
-                                                                result_2[10:0]}} : {{1'b1,4'bxxxx},
-                                                                                    {inReady,   {1'b0,10'bxxxxxxxxxx}}};
-
-  assign result_0 = ds1[4:4] ? c$ds_case_alt_0 : {c$ds_app_arg,
-                                                  {1'b0,   {1'b0,10'bxxxxxxxxxx}}};
-
-  assign result_1 = result_0[11:0];
-
-  // register begin
-  always @(posedge ethTxClk ) begin : ds1_register
-    if ( ! c$bindCsr) begin
-      ds1 <= {1'b1,4'bxxxx};
-    end else begin
-      ds1 <= result_0[16:12];
-    end
-  end
-  // register end
-
-  assign inReady = result_35[6:6];
-
-  assign inp = result_2[9:0];
-
-  assign result_2 = {c$case_alt[20:20],
-                     c$ds8_app_arg};
-
-  assign c$vec = st[19:4];
-
-  assign c$ds8_app_arg = c$ds11_app_arg ? {1'b1,{c$vec[16-1 -: 8],
-                                                 c$ds8_app_arg_0,
-                                                 st[0:0]}} : {1'b0,10'bxxxxxxxxxx};
-
-  assign c$ds8_app_arg_0 = (c$outReady_app_arg & st[1:1]) ? 1'd1 : 1'd0;
-
-  assign result_selection_2 = c$case_alt[19:0];
-
-  assign result_3 = result_selection_2[19:19] ? c$ds8_case_alt : {ds11[15:0],
-                                                                  ds11[17:16],   st[1:1],   st[0:0]};
-
-  assign c$ds8_case_alt = outReady ? {vs,
-                                      c$ds8_app_arg_2,   c$ds8_app_arg_1,
-                                      aborted} : {ds11[15:0],   ds11[17:16],
-                                                  st[1:1],   st[0:0]};
-
-  assign outReady = (st[3:2] == 2'd0) | (c$outReady_app_arg & r2sAc);
-
-  assign c$outReady_app_arg = st[3:2] == 2'd1;
-
-  assign aborted = inp_0[0:0];
-
-  assign vs = inp_0[18:3];
-
-  assign c$ds8_app_arg_1 = lastIdx[1:1] ? 1'b1 : 1'b0;
-
-  assign c$ds8_app_arg_2 = lastIdx[1:1] ? (({{(2-1) {1'b0}},x}) + 2'd1) : 2'd2;
-
-  assign x = lastIdx[0:0];
-
-  assign lastIdx = inp_0[2:1];
-
-  assign inp_0 = c$case_alt[18:0];
-
-  assign ds11_sel_alt_t_2 = ({st[19:4],8'b00000000});
-
-  assign ds11 = (c$ds11_app_arg & r2sAc) ? {st[3:2] - 2'd1,
-                                            ds11_sel_alt_t_2[15:0]} : {st[3:2],
-                                                                       st[19:4]};
-
-  assign r2sAc = result_1[11:11];
-
-  assign c$ds11_app_arg = st[3:2] > 2'd0;
-
-  // register begin
-  always @(posedge ethTxClk ) begin : st_register
-    if ( ! c$bindCsr) begin
-      st <= {{16 {1'bx}},   2'd0,   1'b0,   1'b0};
-    end else begin
-      st <= result_3;
-    end
-  end
-  // register end
-
-  assign rstLow = ~ (c$bindCsr);
-
-  assign c$case_alt = rstLow ? {1'b0,
-                                {1'b0,19'bxxxxxxxxxxxxxxxxxxx}} : {outReady,
-                                                                   s2rAc};
-
-  assign s2rAc = result_4[19:0];
-
-  assign result_4 = result_5[20:0];
+  assign c$ds1_case_alt_selection_1 = inPkt[8:1];
 
   always @(*) begin
-    case(eta2[84:83])
-      2'b00 : result_5 = c$ds_case_alt_5;
-      2'b01 : result_5 = c$ds_case_alt_1;
-      default : result_5 = {c$ds_app_arg_0,   {1'b0,
-                                               {1'b1,eta2[82:64]}}};
+    case(c$ds1_case_alt_selection_1)
+      8'b11010101 : c$ds1_case_alt = {r2sAc_0,
+                                      wild1};
+      default : c$ds1_case_alt = {1'b1,
+                                  {1'b0,18'bxxxxxxxxxxxxxxxxxx}};
     endcase
   end
 
-  assign c$ds_app_arg_0 = bwdIn ? {2'b00,2'd0,{10 {8'b00000000}},1'b0} : eta2;
+  assign result_1 = wild1[18:18] ? c$ds1_case_alt : {r2sAc_0,
+                                                     {1'b0,18'bxxxxxxxxxxxxxxxxxx}};
 
-  assign c$ds_case_alt_selection_6 = result_6[19:0];
+  assign result_2 = {c$case_alt[11:11],
+                     result_7[18:0]};
 
-  assign c$ds_case_alt_1 = c$ds_case_alt_selection_6[19:19] ? {c$ds_app_arg_2,
-                                                               {bwdIn,   {1'b1,{ds8,   c$ds_app_arg_1,
-                                                                                nextAborted}}}} : {eta2,   {bwdIn,
-                                                                                                            {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
+  assign result_3 = ds11 ? result_4 : ({81 {1'bx}});
 
-  assign c$ds_app_arg_1 = newLast[2:2] ? c$ds_case_alt_2 : {1'b0,1'bx};
+  assign result_4 = pkt[1:1] ? {{2'b00,1'b0,{7 {8'b00000000}},3'd7},
+                                {1'b1,{{1 {8'b00000000}},   1'd1,   result_5,
+                                       nextAborted_0}}} : {{2'b01,nextAborted_0,result_5,51'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
+                                                           {1'b0,18'bxxxxxxxxxxxxxxxxxx}};
 
-  assign c$ds_case_alt_selection_9 = newLast[1:0];
+  assign c$vec = ((((c$mapOut))));
 
-  assign c$ds_case_alt_2 = c$ds_case_alt_selection_9[1:1] ? {1'b0,1'bx} : {1'b1,x1};
+  assign result_5 = c$vec[8-1:0];
 
-  assign x1 = newLast[0:0];
-
-  assign c$ds_app_arg_2 = bwdIn ? c$ds_case_alt_3 : eta2;
-
-  assign c$ds_case_alt_3 = newLast[2:2] ? c$ds_case_alt_4 : {2'b01,nextAborted,82'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
-
-  assign c$ds_case_alt_selection_13 = newLast[1:0];
-
-  assign c$ds_case_alt_4 = c$ds_case_alt_selection_13[1:1] ? {2'b10,{{2 {8'b00000000}},
-                                                                     {1'b1,idx},
-                                                                     nextAborted},64'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,2'd0,{10 {8'b00000000}},1'b0};
-
-  assign idx = newLast[0:0];
-
-  assign newLast_selection_1 = pkt[2:1];
-
-  assign newLast = newLast_selection_1[1:1] ? {1'b1,c$newLast_app_arg} : {1'b0,2'bxx};
-
-  assign c$newLast_app_arg = {1'b0,a1 + 1'd0};
-
-  assign a1 = pkt[1:1];
-
-  assign nextAborted = eta2[82:82] | pkt[0:0];
-
-  assign ds8 = pkt[18:3];
-
-  assign c$ds_case_alt_selection_16 = result_6[19:0];
-
-  assign c$ds_case_alt_5 = c$ds_case_alt_selection_16[19:19] ? {c$ds_app_arg_3,
-                                                                {1'b0,   {1'b1,{ds9[95:80],   {1'b0,1'bx},
-                                                                                nextAborted_0}}}} : {eta2,   {bwdIn,
-                                                                                                              {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
-
-  assign c$ds_app_arg_3 = bwdIn ? c$ds_case_alt_6 : eta2;
-
-  assign c$ds_case_alt_sel_alt_t_10 = pkt[18:3];
-
-  assign c$ds_case_alt_6 = (eta2[82:81] == 2'd3) ? {2'b01,nextAborted_0,82'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,eta2[82:81] + 2'd1,ds9[79:0],nextAborted_0};
-
-  assign nextAborted_0 = eta2[0:0] | pkt[0:0];
-
-  assign ds9 = c$ds9_app_arg;
-
-  assign c$ds9_app_arg_selection_1 = eta2[82:81];
-
-  assign c$vec_0 = ({({7 {8'b01010101}}),8'b11010101});
+  assign c$vec_0 = ds14;
 
   // map begin
   genvar i_3;
@@ -700,205 +643,327 @@ module topEntity
     assign map_out = map_in;
 
 
-    assign c$ds9_app_arg_sel_alt_res[i_3*8+:8] = map_out;
+    assign c$mapOut[i_3*8+:8] = map_out;
   end
   endgenerate
   // map end
 
-  always @(*) begin
-    case(c$ds9_app_arg_selection_1)
-      2'd0 : c$ds9_app_arg = {({((((c$ds9_app_arg_sel_alt_res)))),pkt[18:3]}),({2 {(8'd0)}})};
-      default : c$ds9_app_arg = {eta2[80:1],({2 {(8'd0)}})};
-    endcase
-  end
+  assign ds14 = combined;
 
-  assign pkt = result_6[18:0];
+  assign result_6 = pkt[1:1] ? {{2'b00,1'b0,{7 {8'b00000000}},3'd7},
+                                {1'b0,18'bxxxxxxxxxxxxxxxxxx}} : result_3;
+
+  assign ds11 = eta5[2:0] == 3'd0;
 
   // register begin
-  always @(posedge ethTxClk ) begin : eta2_register
-    if ( ! c$bindCsr) begin
-      eta2 <= {2'b00,2'd0,{8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
-               8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
-               8'b00000000,   8'b00000000},1'b0};
+  always @(posedge ethRxClk ) begin : eta5_register
+    if ( ! c$app_arg) begin
+      eta5 <= {2'b00,1'b0,{{8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},
+               {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}}},3'd7};
     end else begin
-      eta2 <= result_5[105:21];
+      eta5 <= result_7[81:20];
     end
   end
   // register end
 
-  assign bwdIn = result_2[11:11];
+  always @(*) begin
+    case(eta5[61:60])
+      2'b00 : result_7 = c$ds2_case_alt_3;
+      2'b01 : result_7 = c$ds2_case_alt;
+      default : result_7 = {c$ds2_app_arg,   {1'b0,
+                                              {1'b1,eta5[59:42]}}};
+    endcase
+  end
 
-  assign result_6 = {c$case_alt_1[20:20],
-                     result_7[20:1]};
+  assign c$ds2_app_arg = r2sAc ? {2'b00,1'b0,{7 {8'b00000000}},3'd7} : eta5;
 
-  assign result_7 = ds6[55:55] ? {c$ds8_app_arg_7,
-                                  {{1'b1,{ds15[47:32],   c$ds8_app_arg_6,
-                                          ds6[54:54]}},   1'b0}} : c$ds8_case_alt_0;
+  assign c$ds2_case_alt_selection_1 = c$case_alt[10:0];
 
-  assign c$ds8_case_alt_selection_2 = ds6[54:35];
+  assign c$ds2_case_alt = c$ds2_case_alt_selection_1[10:10] ? {c$ds2_app_arg_1,
+                                                               {r2sAc,   {1'b1,{ds10,   c$ds2_app_arg_0,
+                                                                                eta5[58:51],   nextAborted}}}} : {eta5,
+                                                                                                                  {r2sAc,
+                                                                                                                   {1'b0,18'bxxxxxxxxxxxxxxxxxx}}};
 
-  assign c$ds8_case_alt_0 = c$ds8_case_alt_selection_2[19:19] ? {c$ds8_app_arg_4,
-                                                                 {{1'b1,c$ds8_app_arg_3},
-                                                                  r2sAc_0}} : {{1'b0,fwdIn,35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
-                                                                               {{1'b0,19'bxxxxxxxxxxxxxxxxxxx},
-                                                                                1'b1}};
+  assign c$ds2_app_arg_0 = newLast[1:1] ? c$ds2_case_alt_0 : 1'd0;
 
-  assign c$ds8_app_arg_3 = insertCrc[2:2] ? {ds14[47:32],
-                                             x_0,   cache[0:0]} : cache;
+  assign c$ds2_case_alt_0 = newLast[0:0] ? 1'd0 : 1'd1;
 
-  assign c$ds8_app_arg_4 = r2sAc_0 ? c$ds8_case_alt_1 : ds6;
+  assign c$ds2_app_arg_1 = r2sAc ? c$ds2_case_alt_1 : eta5;
 
-  assign c$ds8_case_alt_1 = insertCrc[2:2] ? c$ds8_case_alt_2 : {1'b0,fwdIn,35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+  assign c$ds2_case_alt_1 = newLast[1:1] ? c$ds2_case_alt_2 : {2'b01,nextAborted,eta5[58:51],51'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
 
-  assign c$ds8_case_alt_2 = x_0[1:1] ? {1'b0,fwdIn,35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {1'b1,cache[0:0],fwdIn,(({1'b0,(c$ds8_app_arg_5)}) - 2'b10),ds14[31:0]};
+  assign c$ds2_case_alt_2 = newLast[0:0] ? {2'b10,{{1 {8'b00000000}},
+                                                   1'd1,   eta5[58:51],
+                                                   nextAborted},42'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,1'b0,{7 {8'b00000000}},3'd7};
 
-  assign x_0 = insertCrc[1:0];
+  assign newLast = pkt[1:1] ? {1'b1,1'd0} : {1'b0,1'bx};
 
-  assign insertCrc_selection_1 = cache[2:1];
+  assign nextAborted = eta5[59:59] | pkt[0:0];
 
-  assign insertCrc = insertCrc_selection_1[1:1] ? {1'b1,{1'b0,1'bx}} : {1'b0,2'bxx};
+  assign ds10 = pkt[9:2];
 
-  assign ds14 = c$ds14_app_arg;
+  assign c$ds2_case_alt_selection_9 = c$case_alt[10:0];
 
-  assign c$ds14_app_arg_selection_1 = cache[2:1];
+  assign c$ds2_case_alt_3 = c$ds2_case_alt_selection_9[10:10] ? {c$ds2_app_arg_2,
+                                                                 {readyOut,   fwdOut}} : {eta5,   {r2sAc,
+                                                                                                   {1'b0,18'bxxxxxxxxxxxxxxxxxx}}};
 
-  assign c$ds14_app_arg = c$ds14_app_arg_selection_1[1:1] ? result_8 : ({48 {1'bx}});
+  assign c$ds2_app_arg_2 = readyOut ? result_8[80:19] : eta5;
 
-  assign c$vec_1 = {{x1_1,result_9},   \xs' };
+  assign readyOut = c$readyOut_case_alt | r2sAc;
 
-  // reverse begin
+  assign r2sAc = result_1[19:19];
+
+  assign c$readyOut_case_alt = fwdOut[18:18] ? 1'b0 : 1'b1;
+
+  assign fwdOut = result_8[18:0];
+
+  assign result_8 = ds11 ? result_6 : c$ds10_case_alt;
+
+  assign c$ds10_case_alt_sel_alt_f_0 = combined;
+
+  assign c$ds10_case_alt = pkt[1:1] ? result_6 : {{2'b00,nextAborted_0,c$ds10_case_alt_sel_alt_f_0[55:0],eta5[2:0] - 3'd1},
+                                                  {1'b0,18'bxxxxxxxxxxxxxxxxxx}};
+
+  assign nextAborted_0 = eta5[59:59] | pkt[0:0];
+
+  assign combined = {eta5[58:3],pkt[9:2]};
+
+  assign pkt = c$case_alt[9:0];
+
+  assign rstLow = ~ (c$app_arg);
+
+  assign bwd = result_7[19:19];
+
+  assign c$case_alt = rstLow ? {1'b0,
+                                {1'b0,10'bxxxxxxxxxx}} : {bwd,   s2rAc};
+
+  assign c$app_arg_selection_1 = result_1[18:0];
+
+  assign c$app_arg_0 = c$app_arg_selection_1[18:18] ? {1'b1,{a1_0[17:10],
+                                                             a1_0[9:9],
+                                                             a1_0[0:0]}} : {1'b0,10'bxxxxxxxxxx};
+
+  assign result_9 = {result_2[19:19],
+                     c$app_arg_0};
+
+  assign r2sAc_0 = result_10[20:20];
+
+  assign wild1 = result_2[18:0];
+
+  assign inPkt = wild1[17:0];
+
+  assign a1_0 = result_1[17:0];
+
+  assign s2rAc = c$case_alt_24;
+
+  assign result_10 = {c$case_alt_0[11:11],
+                      c$ds8_app_arg};
+
+  assign c$ds8_app_arg = st[3:3] ? {1'b1,{st[20:5],
+                                          st[1:0],
+                                          st[2:2]}} : {1'b0,19'bxxxxxxxxxxxxxxxxxxx};
+
+  assign c$ds8_app_arg_selection_3 = c$case_alt_0[10:0];
+
+  assign c$ds8_app_arg_0 = c$ds8_app_arg_selection_3[10:10] ? c$ds8_case_alt_0 : c$ds8_case_alt;
+
+  assign c$ds8_case_alt = c$ds8_case_scrut ? {st[20:5],
+                                              st[4:4],   1'b0,   c$ds8_app_arg_2,
+                                              {1'b0,1'bx}} : st;
+
+  assign c$ds8_case_alt_0 = c$ds8_case_scrut ? {c$ds8_app_arg_5,
+                                                c$ds8_app_arg_4,   nextFlush,
+                                                c$ds8_app_arg_2 | c$case_alt_0[0:0],
+                                                c$ds8_app_arg_1} : st;
+
+  assign c$ds8_case_scrut = (~ st[3:3]) | r2sAc_1;
+
+  assign r2sAc_1 = result_12[20:20];
+
+  assign c$ds8_app_arg_1 = c$case_alt_0[1:1] ? {1'b1,st[4:4]} : {1'b0,1'bx};
+
+  assign c$ds8_app_arg_2 = c$ds8_app_arg_3 & st[2:2];
+
+  assign c$ds8_app_arg_selection_10 = st[1:0];
+
+  assign c$ds8_app_arg_3 = c$ds8_app_arg_selection_10[1:1] ? 1'b0 : 1'b1;
+
+  assign c$ds8_app_arg_4 = nextFlush ? 1'd0 : (st[4:4] + 1'd1);
+
+  assign nextFlush = c$nextFlush_app_arg | (st[4:4] == 1'd1);
+
+  assign c$nextFlush_app_arg = c$case_alt_0[1:1] ? 1'b1 : 1'b0;
+
+  assign c$i_16 = st[4:4];
+
+  assign c$vec_1 = c$case_alt_0[9:2];
+
+  assign c$vec_2 = st[20:5];
+
+  // vector replace begin
   genvar i_4;
   generate
-  for (i_4 = 0; i_4 < 2; i_4 = i_4 + 1) begin : reverse
-    assign c$app_arg_0[(2 - 1 - i_4)*48+:48] = c$vec_1[i_4*48+:48];
+  for (i_4=0;i_4<2;i_4=i_4+1) begin : vector_replace
+    assign c$ds8_app_arg_5[(1-i_4)*8+:8] = ($unsigned({{(64-1) {1'b0}},c$i_16})) == i_4 ? (c$vec_1[8-1 -: 8]) : c$vec_2[(1-i_4)*8+:8];
   end
   endgenerate
-  // reverse end
+  // vector replace end
 
-  assign \xs'  = {x1_0,({result_9,({1 {8'b00000000}})})};
+  assign rstLow_0 = ~ (c$app_arg);
 
-  assign x1_projection_1 = cache[18:3];
+  assign c$case_alt_0 = rstLow_0 ? {1'b0,
+                                    {1'b0,10'bxxxxxxxxxx}} : {c$ds8_case_scrut,
+                                                              s2rAc_0};
 
-  assign x1_0 = x1_projection_1[15:8];
+  assign s2rAc_0 = result_9[10:0];
 
-  assign x1_projection_2 = cache[18:3];
+  // register begin
+  always @(posedge ethRxClk ) begin : st_register
+    if ( ! c$app_arg) begin
+      st <= {{8'b00000000,   8'b00000000},   1'd0,   1'b0,   1'b0,   {1'b0,1'bx}};
+    end else begin
+      st <= c$ds8_app_arg_0;
+    end
+  end
+  // register end
 
-  assign x1_1 = x1_projection_2;
+  assign result_11 = empty ? {1'b0,19'bxxxxxxxxxxxxxxxxxxx} : f1;
+
+  assign result_12 = {~ ds1[0:0],   result_11};
+
+  assign empty = ds1[1:1];
+
+  assign ds1_fun_arg = (~ empty) & bwdIn;
+
+  Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_asyncFIFOSynchronizer Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_asyncFIFOSynchronizer_ds1
+    ( .result (ds1)
+    , .eta1 (ethRxClk)
+    , .eta2 (ethTxClk)
+    , .eta3 (c$app_arg)
+    , .eta4 (c$bindCsr)
+    , .eta7 (ds1_fun_arg)
+    , .eta8 (fwdIn) );
+
+  assign fwdIn = result_10[19:0];
+
+  assign bwdIn = result_13[20:20];
+
+  assign f1 = {1'b1,ds1[20:2]};
+
+  assign result_13 = {c$case_alt_4[20:20],
+                      c$case_alt_1[20:1]};
+
+  assign s2rAc_1 = result_12[19:0];
+
+  assign ready = c$case_alt_1[0:0];
+
+  assign c$case_alt_selection_3 = c$ds3_app_arg_2[20:1];
+
+  assign c$case_alt_1 = c$case_alt_selection_3[19:19] ? {c$app_arg_1,
+                                                         {{1'b1,c$case_alt_2},   r2sAc_2}} : {{fwdIn_0,
+                                                                                               validated},
+                                                                                              {{1'b0,19'bxxxxxxxxxxxxxxxxxxx},
+                                                                                               1'b1}};
+
+  assign c$case_alt_selection_6 = cache[2:1];
+
+  assign c$case_alt_2 = c$case_alt_selection_6[1:1] ? {cache[18:3],
+                                                       cache[2:1],
+                                                       cache[0:0] | (~ c$outValid_case_alt)} : cache;
+
+  assign c$app_arg_1 = r2sAc_2 ? {fwdIn_0,
+                                  1'b0} : {c$ds3_app_arg_2[20:1],
+                                           c$outValid_case_alt};
+
+  assign c$outValid_case_alt_selection_1 = cache[2:1];
+
+  assign c$outValid_case_alt = c$outValid_case_alt_selection_1[1:1] ? (result_14 | validated) : result_14;
+
+  assign cache = c$ds3_app_arg_2[19:1];
+
+  assign validated = c$ds3_app_arg_2[0:0];
+
+  assign r2sAc_2 = result_17[132:132];
+
+  assign result_14 = c$app_arg_3 & result_15;
 
   // index begin
-  wire [47:0] vecArray [0:2-1];
+  wire  vecArray [0:2-1];
   genvar i_5;
   generate
   for (i_5=0; i_5 < 2; i_5=i_5+1) begin : mk_array
-    assign vecArray[(2-1)-i_5] = c$app_arg_0[i_5*48+:48];
+    assign vecArray[(2-1)-i_5] = xs[i_5*1+:1];
   end
   endgenerate
-  assign result_8 = vecArray[($unsigned({{(64-1) {1'b0}},a1_0}))];
+  assign result_15 = vecArray[($unsigned({{(64-1) {1'b0}},i1}))];
   // index end
 
-  assign c$ds8_app_arg_selection_7 = cache[2:1];
+  assign c$vec1 = {32'b01000111000100001011101110011100,
+                   32'b11000111000001001101110101111011};
 
-  assign c$ds8_app_arg_5 = c$ds8_app_arg_selection_7[1:1] ? (a1_0) : ({1 {1'bx}});
+  assign c$vec2 = ({2 {crcState}});
 
-  assign a1_0 = cache[1:1];
-
-  assign cache = ds6[53:35];
-
-  assign fwdIn = c$case_alt_1[19:0];
-
-  assign c$bv = ds6[33:32];
-
-  assign c$ds8_app_arg_6 = finished ? {1'b1,c$bv[0+:1]} : {1'b0,1'bx};
-
-  assign c$ds8_app_arg_7 = r2sAc_0 ? c$ds8_case_alt_3 : ds6;
-
-  assign r2sAc_0 = result_4[20:20];
-
-  assign c$vec_2 = ((result_10));
-
-  // reverse begin
+  // zipWith start
   genvar i_6;
   generate
-  for (i_6 = 0; i_6 < 4; i_6 = i_6 + 1) begin : reverse_0
-    assign result_9[(4 - 1 - i_6)*8+:8] = c$vec_2[i_6*8+:8];
+  for (i_6 = 0; i_6 < 2; i_6 = i_6 + 1) begin : zipWith
+    wire [31:0] zipWith_in1;
+    assign zipWith_in1 = c$vec1[i_6*32+:32];
+    wire [31:0] zipWith_in2;
+    assign zipWith_in2 = c$vec2[i_6*32+:32];
+    wire  c$n;
+    assign c$n = zipWith_in1 == zipWith_in2;
+
+
+    assign xs[i_6*1+:1] = c$n;
   end
   endgenerate
-  // reverse end
+  // zipWith end
 
-  assign result_10 = 32'b11111111111111111111111111111111 ^ result_11;
-
-  // map begin
-  genvar i_7;
-  generate
-  for (i_7=0; i_7 < 32; i_7 = i_7 + 1) begin : map_0
-    wire  map_in_0;
-    assign map_in_0 = c$app_arg_2[i_7*1+:1];
-    wire [0:0] map_out_0;
-    assign map_out_0 = (map_in_0);
-
-
-    assign c$app_arg_1[i_7*1+:1] = map_out_0;
+  // register begin
+  always @(posedge ethTxClk ) begin : i1_register
+    if ( ! c$bindCsr) begin
+      i1 <= ({1 {1'bx}});
+    end else begin
+      i1 <= ds10_0[16:16];
+    end
   end
-  endgenerate
-  // map end
+  // register end
 
-  assign result_11 = (c$app_arg_1);
-
-  assign c$vec_3 = ((crcState));
-
-  // reverse begin
-  genvar i_8;
-  generate
-  for (i_8 = 0; i_8 < 32; i_8 = i_8 + 1) begin : reverse_1
-    assign c$app_arg_2[(32 - 1 - i_8)*1+:1] = c$vec_3[i_8*1+:1];
-  end
-  endgenerate
-  // reverse end
+  assign c$crcState_app_arg = c$ds3_app_arg_1 ? 32'b11111111111111111111111111111111 : crcState;
 
   // register begin
   always @(posedge ethTxClk ) begin : crcState_register
     if ( ! c$bindCsr) begin
       crcState <= 32'b11111111111111111111111111111111;
-    end else if (c$crcState_app_arg_0) begin
-      crcState <= c$crcState_case_alt;
+    end else if (c$app_arg_4) begin
+      crcState <= result_16;
     end
   end
   // register end
 
-  assign c$crcState_case_alt_selection_1 = c$crcState_case_alt_selection_0;
-
-  assign c$i_49 = ds11_0[16:16];
-
-  assign c$crcState_case_alt_selection_0 = $unsigned({{(64-1) {1'b0}},c$i_49});
-
-  always @(*) begin
-    case(c$crcState_case_alt_selection_1)
-      64'sd0 : c$crcState_case_alt = result_13;
-      64'sd1 : c$crcState_case_alt = result_12;
-      default : c$crcState_case_alt = {32 {1'bx}};
-    endcase
-  end
-
   // map begin
-  genvar i_9;
+  genvar i_7;
   generate
-  for (i_9=0; i_9 < 2; i_9 = i_9 + 1) begin : map_1
-    wire [7:0] map_in_1;
-    assign map_in_1 = x_1[i_9*8+:8];
-    wire [7:0] map_out_1;
-    assign map_out_1 = map_in_1;
+  for (i_7=0; i_7 < 2; i_7 = i_7 + 1) begin : map_0
+    wire [7:0] map_in_0;
+    assign map_in_0 = x[i_7*8+:8];
+    wire [7:0] map_out_0;
+    assign map_out_0 = map_in_0;
 
 
-    assign c$case_alt_0[i_9*8+:8] = map_out_1;
+    assign c$case_alt_3[i_7*8+:8] = map_out_0;
   end
   endgenerate
   // map end
 
-  assign x_projection_1 = ds11_0[15:0];
+  assign x_projection = ds10_0[15:0];
 
-  assign x_1 = x_projection_1;
+  assign x = x_projection;
 
-  assign c$vec_4 = {48'b100010110010000010000000000000001101000100000100,
+  assign c$vec_3 = {48'b100010110010000010000000000000001101000100000100,
                     48'b010001011001000001000000000000001010001000001001,
                     48'b001000101100100000100000000000000100010000010011,
                     48'b000100010110010000010000000000001000100000100110,
@@ -932,522 +997,871 @@ module topEntity
                     48'b000101100100000100000000000000000110100010000010};
 
   // map begin
-  genvar i_10;
+  genvar i_8;
   generate
-  for (i_10=0; i_10 < 32; i_10 = i_10 + 1) begin : map_2
-    wire [47:0] map_in_2;
-    assign map_in_2 = c$vec_4[i_10*48+:48];
-    wire  map_out_2;
-    assign map_out_2 = ^ (((({c$crcState_app_arg,((c$case_alt_0))}) & map_in_2)));
+  for (i_8=0; i_8 < 32; i_8 = i_8 + 1) begin : map_1
+    wire [47:0] map_in_1;
+    assign map_in_1 = c$vec_3[i_8*48+:48];
+    wire  map_out_1;
+    assign map_out_1 = ^ (((({c$crcState_app_arg,((c$case_alt_3))}) & map_in_1)));
 
 
-    assign c$app_arg_3[i_10*1+:1] = map_out_2;
+    assign c$app_arg_2[i_8*1+:1] = map_out_1;
   end
   endgenerate
   // map end
 
-  assign result_12 = ((c$app_arg_3));
+  assign result_16 = ((c$app_arg_2));
 
-  assign x_projection_2 = ds11_0[15:0];
+  assign ds10_0 = c$ds3_app_arg[17:17] ? a1_1 : ({17 {1'bx}});
 
-  assign x_2 = x_projection_2[15:8];
+  assign a1_1 = c$ds3_app_arg[16:0];
 
-  assign c$vec_5 = {40'b0010000010000000000000000000000000000100,
-                    40'b1001000001000000000000000000000000001001,
-                    40'b1100100000100000000000000000000000010011,
-                    40'b0110010000010000000000000000000000100110,
-                    40'b1011001000001000000000000000000001001101,
-                    40'b0101100100000100000000000000000010011010,
-                    40'b0000110000000010000000000000000000110000,
-                    40'b1000011000000001000000000000000001100001,
-                    40'b0100001100000000100000000000000011000010,
-                    40'b0000000100000000010000000000000010000000,
-                    40'b0010000000000000001000000000000000000100,
-                    40'b0001000000000000000100000000000000001000,
-                    40'b1000100000000000000010000000000000010001,
-                    40'b1100010000000000000001000000000000100011,
-                    40'b0110001000000000000000100000000001000110,
-                    40'b0011000100000000000000010000000010001100,
-                    40'b1011100000000000000000001000000000011101,
-                    40'b1101110000000000000000000100000000111011,
-                    40'b1110111000000000000000000010000001110111,
-                    40'b0111011100000000000000000001000011101110,
-                    40'b0001101100000000000000000000100011011000,
-                    40'b0010110100000000000000000000010010110100,
-                    40'b0011011000000000000000000000001001101100,
-                    40'b0001101100000000000000000000000111011000,
-                    40'b1010110100000000000000000000000010110101,
-                    40'b1111011000000000000000000000000001101111,
-                    40'b1111101100000000000000000000000011011111,
-                    40'b0101110100000000000000000000000010111010,
-                    40'b1000111000000000000000000000000001110001,
-                    40'b1100011100000000000000000000000011100011,
-                    40'b1100001100000000000000000000000011000011,
-                    40'b0100000100000000000000000000000010000010};
-
-  // map begin
-  genvar i_11;
-  generate
-  for (i_11=0; i_11 < 32; i_11 = i_11 + 1) begin : map_3
-    wire [39:0] map_in_3;
-    assign map_in_3 = c$vec_5[i_11*40+:40];
-    wire  map_out_3;
-    assign map_out_3 = ^ (((({c$crcState_app_arg,((x_2[7:0]))}) & map_in_3)));
-
-
-    assign c$app_arg_4[i_11*1+:1] = map_out_3;
+  // register begin
+  always @(posedge ethTxClk ) begin : c$app_arg_3_register
+    if ( ! c$bindCsr) begin
+      c$app_arg_3 <= 1'b0;
+    end else begin
+      c$app_arg_3 <= c$app_arg_4;
+    end
   end
-  endgenerate
-  // map end
+  // register end
 
-  assign result_13 = ((c$app_arg_4));
+  assign c$app_arg_4 = c$ds3_app_arg[17:17] ? 1'b1 : 1'b0;
 
-  assign c$crcState_app_arg = c$x_app_arg_1 ? 32'b11111111111111111111111111111111 : crcState;
+  assign c$ds3_app_arg = transferOccured ? {1'b1,{c$ds3_app_arg_0,
+                                                  fwdInX[18:3]}} : {1'b0,17'bxxxxxxxxxxxxxxxxx};
 
-  assign c$crcState_app_arg_0 = c$x_app_arg[17:17] ? 1'b1 : 1'b0;
+  assign c$ds3_app_arg_selection_2 = fwdInX[2:1];
 
-  assign ds11_0 = c$x_app_arg[17:17] ? a1_1 : ({17 {1'bx}});
-
-  assign a1_1 = c$x_app_arg[16:0];
-
-  assign c$x_app_arg = transferOccured ? {1'b1,{c$x_app_arg_0,
-                                                fwdInX[18:3]}} : {1'b0,17'bxxxxxxxxxxxxxxxxx};
-
-  assign c$x_app_arg_selection_2 = fwdInX[2:1];
-
-  assign c$x_app_arg_0 = c$x_app_arg_selection_2[1:1] ? v : 1'd1;
+  assign c$ds3_app_arg_0 = c$ds3_app_arg_selection_2[1:1] ? v : 1'd1;
 
   assign v = fwdInX[1:1];
 
   // register begin
-  always @(posedge ethTxClk ) begin : c$x_app_arg_1_register
+  always @(posedge ethTxClk ) begin : c$ds3_app_arg_1_register
     if ( ! c$bindCsr) begin
-      c$x_app_arg_1 <= 1'b1;
+      c$ds3_app_arg_1 <= 1'b1;
     end else if (transferOccured) begin
-      c$x_app_arg_1 <= c$x_case_alt;
+      c$ds3_app_arg_1 <= c$ds3_case_alt;
     end
   end
   // register end
 
-  assign c$x_case_alt_selection_1 = fwdInX[2:1];
+  assign c$ds3_case_alt_selection_1 = fwdInX[2:1];
 
-  assign c$x_case_alt = c$x_case_alt_selection_1[1:1] ? 1'b1 : 1'b0;
+  assign c$ds3_case_alt = c$ds3_case_alt_selection_1[1:1] ? 1'b1 : 1'b0;
 
-  assign fwdInX_selection_1 = c$case_alt_1[19:0];
+  assign fwdInX = fwdIn_0[19:19] ? a1_2 : ({19 {1'bx}});
 
-  assign fwdInX = fwdInX_selection_1[19:19] ? a1_2 : ({19 {1'bx}});
-
-  assign a1_2 = c$case_alt_1[18:0];
+  assign a1_2 = fwdIn_0[18:0];
 
   assign transferOccured = ready & c$transferOccured_app_arg;
 
-  assign ready = result_7[0:0];
+  assign c$transferOccured_app_arg = fwdIn_0[19:19] ? 1'b1 : 1'b0;
 
-  assign c$transferOccured_app_arg_selection_1 = c$case_alt_1[19:0];
+  assign fwdIn_0 = c$case_alt_4[19:0];
 
-  assign c$transferOccured_app_arg = c$transferOccured_app_arg_selection_1[19:19] ? 1'b1 : 1'b0;
+  assign rstLow_1 = ~ (c$bindCsr);
 
-  assign rstLow_0 = ~ (c$bindCsr);
-
-  assign c$case_alt_1 = rstLow_0 ? {1'b0,
+  assign c$case_alt_4 = rstLow_1 ? {1'b0,
                                     {1'b0,19'bxxxxxxxxxxxxxxxxxxx}} : {ready,
-                                                                       s2rAc_0};
-
-  assign s2rAc_0 = result_14[19:0];
-
-  assign c$ds8_case_alt_3 = finished ? {1'b0,ds6[53:34],35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {1'b1,ds6[54:54],ds6[53:34],ds6[33:32] - 2'd2,ds15[31:0]};
-
-  assign finished = ds6[33:32] <= 2'd1;
-
-  assign ds15 = ({ds6[31:0],({2 {8'b00000000}})});
+                                                                       s2rAc_1};
 
   // register begin
-  always @(posedge ethTxClk ) begin : ds6_register
+  always @(posedge ethTxClk ) begin : c$ds3_app_arg_2_register
     if ( ! c$bindCsr) begin
-      ds6 <= {1'b0,{1'b0,19'bxxxxxxxxxxxxxxxxxxx},35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+      c$ds3_app_arg_2 <= {{1'b0,19'bxxxxxxxxxxxxxxxxxxx},   1'b0};
     end else begin
-      ds6 <= result_7[76:21];
+      c$ds3_app_arg_2 <= c$case_alt_1[41:21];
     end
   end
   // register end
 
-  assign result_14 = result_15[20:0];
+  assign result_17 = {c$case_alt_5[20:20],
+                      result_22[131:0]};
 
-  always @(*) begin
-    case(ds[6:5])
-      2'b00 : result_15 = c$ds_case_alt_10;
-      2'b01 : result_15 = c$ds_case_alt_8;
-      default : result_15 = {c$ds_app_arg_5,   {1'b0,
-                                                {1'b1,{{2 {8'b00000000}},   c$ds_app_arg_4,
-                                                       1'b0}}}};
-    endcase
-  end
+  assign result_18 = ds11_0 ? result_19 : ({265 {1'bx}});
 
-  assign c$ds_app_arg_4 = done ? {1'b1,1'd1} : {1'b0,1'bx};
+  assign result_selection_11 = pkt_0[2:1];
 
-  assign c$ds_app_arg_5 = bwd ? c$ds_case_alt_7 : ds;
+  assign result_19 = result_selection_11[1:1] ? {{2'b00,1'b0,{12 {8'b00000000}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
+                                                 {1'b1,{{2 {8'b00000000}},
+                                                        {1'b1,pkt_0[1:1] - 1'd0},   result_20,
+                                                        nextAborted_2}}} : {{2'b01,nextAborted_2,result_20,18'bxxxxxxxxxxxxxxxxxx},
+                                                                            {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
 
-  assign c$ds_case_alt_7 = done ? {2'b00,5'd0} : {2'b10,i + 5'd1};
+  assign c$ds1_case_alt_0 = back;
 
-  assign done = i == 5'd29;
+  assign result_20 = {(ds4[111:64]),
+                      (c$ds1_case_alt_0[63:16]),
+                      c$ds1_case_alt_0[15:0]};
 
-  assign i = ds[4:0];
+  assign ds4 = ((c$mapOut_0));
 
-  assign c$ds_case_alt_selection_21 = result_16[19:0];
+  assign back = ds4[63:0];
 
-  assign c$ds_case_alt_8 = c$ds_case_alt_selection_21[19:19] ? {c$ds_app_arg_6,
-                                                                {bwd,   result_16[19:0]}} : {{2'b01,5'bxxxxx},
-                                                                                             {bwd,
-                                                                                              {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
-
-  assign c$ds_app_arg_6 = (bwd & c$ds_case_alt_9) ? {2'b00,5'd0} : {2'b01,5'bxxxxx};
-
-  assign c$ds_case_alt_selection_24 = fwdIn_0[2:1];
-
-  assign c$ds_case_alt_9 = c$ds_case_alt_selection_24[1:1] ? 1'b1 : 1'b0;
-
-  assign c$ds_case_alt_selection_27 = result_16[19:0];
-
-  assign c$ds_case_alt_10 = c$ds_case_alt_selection_27[19:19] ? {c$ds_app_arg_9,
-                                                                 {bwd,   {1'b1,{fwdIn_0[18:3],
-                                                                                c$ds_app_arg_7,
-                                                                                fwdIn_0[0:0]}}}} : {ds,   {bwd,
-                                                                                                           {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
-
-  assign c$ds_app_arg_7 = done_0 ? c$ds_case_alt_11 : {1'b0,1'bx};
-
-  assign c$ds_case_alt_selection_30 = fwdIn_0[2:1];
-
-  assign c$ds_case_alt_11 = c$ds_case_alt_selection_30[1:1] ? {1'b1,c$ds_app_arg_8} : {1'b0,1'bx};
-
-  assign c$ds_app_arg_8 = (1'd1 <= a1_3) ? a1_3 : 1'd1;
-
-  assign a1_3 = fwdIn_0[1:1];
-
-  assign c$ds_app_arg_9 = bwd ? c$ds_case_alt_12 : ds;
-
-  assign bwd = result_6[20:20];
-
-  assign c$ds_case_alt_12 = done_0 ? c$ds_case_alt_13 : c$ds_case_alt_14;
-
-  assign done_0 = i_0 == 5'd29;
-
-  assign c$ds_case_alt_selection_34 = fwdIn_0[2:1];
-
-  assign c$ds_case_alt_13 = c$ds_case_alt_selection_34[1:1] ? {2'b00,5'd0} : {2'b01,5'bxxxxx};
-
-  assign c$ds_case_alt_selection_37 = fwdIn_0[2:1];
-
-  assign c$ds_case_alt_14 = c$ds_case_alt_selection_37[1:1] ? {2'b10,c$ds_app_arg_10} : {2'b00,c$ds_app_arg_10};
-
-  assign fwdIn_0 = result_16[18:0];
-
-  assign c$ds_app_arg_10 = i_0 + 5'd1;
-
-  assign i_0 = ds[4:0];
-
-  // register begin
-  always @(posedge ethTxClk ) begin : ds_register
-    if ( ! c$bindCsr) begin
-      ds <= {2'b00,5'd0};
-    end else begin
-      ds <= result_15[27:21];
-    end
-  end
-  // register end
-
-  assign result_16 = result_17[20:0];
-
-  always @(*) begin
-    case(eta2_0[133:132])
-      2'b00 : result_17 = c$ds_case_alt_19;
-      2'b01 : result_17 = c$ds_case_alt_15;
-      default : result_17 = {c$ds_app_arg_11,
-                             {1'b0,   {1'b1,eta2_0[131:113]}}};
-    endcase
-  end
-
-  assign c$ds_app_arg_11 = bwdIn_0 ? {2'b00,3'd0,{16 {8'b00000000}},1'b0} : eta2_0;
-
-  assign c$ds_case_alt_selection_40 = result_26[131:0];
-
-  assign c$ds_case_alt_15 = c$ds_case_alt_selection_40[131:131] ? {c$ds_app_arg_13,
-                                                                   {bwdIn_0,   {1'b1,{ds8_0,   c$ds_app_arg_12,
-                                                                                      nextAborted_1}}}} : {eta2_0,
-                                                                                                           {bwdIn_0,
-                                                                                                            {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
-
-  assign c$ds_app_arg_12 = newLast_0[2:2] ? c$ds_case_alt_16 : {1'b0,1'bx};
-
-  assign c$ds_case_alt_selection_43 = newLast_0[1:0];
-
-  assign c$ds_case_alt_16 = c$ds_case_alt_selection_43[1:1] ? {1'b0,1'bx} : {1'b1,x1_2};
-
-  assign x1_2 = newLast_0[0:0];
-
-  assign c$ds_app_arg_13 = bwdIn_0 ? c$ds_case_alt_17 : eta2_0;
-
-  assign c$ds_case_alt_17 = newLast_0[2:2] ? c$ds_case_alt_18 : {2'b01,nextAborted_1,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
-
-  assign c$ds_case_alt_selection_47 = newLast_0[1:0];
-
-  assign c$ds_case_alt_18 = c$ds_case_alt_selection_47[1:1] ? {2'b10,{{2 {8'b00000000}},
-                                                                      {1'b1,idx_0},
-                                                                      nextAborted_1},113'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,3'd0,{16 {8'b00000000}},1'b0};
-
-  assign idx_0 = newLast_0[0:0];
-
-  assign newLast_selection_4 = pkt_0[114:113];
-
-  assign newLast_0 = newLast_selection_4[1:1] ? {1'b1,c$newLast_app_arg_0} : {1'b0,2'bxx};
-
-  assign c$newLast_app_arg_0 = {1'b0,a1_4 + 1'd0};
-
-  assign a1_4 = pkt_0[113:113];
-
-  assign nextAborted_1 = eta2_0[131:131] | pkt_0[0:0];
-
-  assign ds8_0 = pkt_0[130:115];
-
-  assign c$ds_case_alt_selection_50 = result_26[131:0];
-
-  assign c$ds_case_alt_19 = c$ds_case_alt_selection_50[131:131] ? {c$ds_app_arg_14,
-                                                                   {1'b0,   {1'b1,{ds9_0[143:128],   {1'b0,1'bx},
-                                                                                   nextAborted_2}}}} : {eta2_0,
-                                                                                                        {bwdIn_0,
-                                                                                                         {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
-
-  assign c$ds_app_arg_14 = bwdIn_0 ? c$ds_case_alt_20 : eta2_0;
-
-  assign c$ds_case_alt_sel_alt_t_31 = pkt_0[130:115];
-
-  assign c$ds_case_alt_20 = (eta2_0[131:129] == 3'd6) ? {2'b01,nextAborted_2,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,eta2_0[131:129] + 3'd1,ds9_0[127:0],nextAborted_2};
-
-  assign nextAborted_2 = eta2_0[0:0] | pkt_0[0:0];
-
-  assign ds9_0 = c$ds9_app_arg_0;
-
-  assign c$ds9_app_arg_selection_4 = eta2_0[131:129];
-
-  always @(*) begin
-    case(c$ds9_app_arg_selection_4)
-      3'd0 : c$ds9_app_arg_0 = {({((result_18)),pkt_0[130:115]}),({2 {(8'd0)}})};
-      default : c$ds9_app_arg_0 = {eta2_0[128:1],({2 {(8'd0)}})};
-    endcase
-  end
-
-  assign g1 = pkt_0[112:65];
-
-  assign g2 = pkt_0[64:17];
-
-  assign g3 = pkt_0[16:1];
+  assign c$vec_4 = ds14_0;
 
   // map begin
-  genvar i_13;
+  genvar i_9;
   generate
-  for (i_13=0; i_13 < 6; i_13 = i_13 + 1) begin : map_4
-    wire [7:0] map_in_4;
-    assign map_in_4 = g2[i_13*8+:8];
-    wire [7:0] map_out_4;
-    assign map_out_4 = map_in_4;
+  for (i_9=0; i_9 < 14; i_9 = i_9 + 1) begin : map_2
+    wire [7:0] map_in_2;
+    assign map_in_2 = c$vec_4[i_9*8+:8];
+    wire [7:0] map_out_2;
+    assign map_out_2 = map_in_2;
 
 
-    assign c$app_arg_5[i_13*8+:8] = map_out_4;
+    assign c$mapOut_0[i_9*8+:8] = map_out_2;
   end
   endgenerate
   // map end
+
+  assign ds14_0 = combined_0;
+
+  assign result_selection_14 = pkt_0[2:1];
+
+  assign result_21 = result_selection_14[1:1] ? {{2'b00,1'b0,{12 {8'b00000000}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
+                                                 {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}} : result_18;
+
+  assign ds11_0 = eta5_0[33:31] == 3'd0;
+
+  // register begin
+  always @(posedge ethTxClk ) begin : eta5_0_register
+    if ( ! c$bindCsr) begin
+      eta5_0 <= {2'b00,1'b0,{{8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},
+               {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},
+               {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},
+               {8 {1'bx}}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+    end else begin
+      eta5_0 <= result_22[265:133];
+    end
+  end
+  // register end
+
+  always @(*) begin
+    case(eta5_0[132:131])
+      2'b00 : result_22 = c$ds2_case_alt_8;
+      2'b01 : result_22 = c$ds2_case_alt_4;
+      default : result_22 = {c$ds2_app_arg_3,
+                             {1'b0,   {1'b1,eta5_0[130:0]}}};
+    endcase
+  end
+
+  assign c$ds2_app_arg_3 = r2sAc_3 ? {2'b00,1'b0,{12 {8'b00000000}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : eta5_0;
+
+  assign c$ds2_case_alt_selection_12 = c$case_alt_5[19:0];
+
+  assign c$ds2_case_alt_4 = c$ds2_case_alt_selection_12[19:19] ? {c$ds2_app_arg_5,
+                                                                  {r2sAc_3,   {1'b1,{ds10_1,   c$ds2_app_arg_4,
+                                                                                     eta5_0[129:18],
+                                                                                     nextAborted_1}}}} : {eta5_0,
+                                                                                                          {r2sAc_3,
+                                                                                                           {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}};
+
+  assign c$ds2_app_arg_4 = newLast_0[2:2] ? c$ds2_case_alt_5 : {1'b0,1'bx};
+
+  assign c$ds2_case_alt_selection_15 = newLast_0[1:0];
+
+  assign c$ds2_case_alt_5 = c$ds2_case_alt_selection_15[1:1] ? {1'b0,1'bx} : {1'b1,x1_0};
+
+  assign x1_0 = newLast_0[0:0];
+
+  assign c$ds2_app_arg_5 = r2sAc_3 ? c$ds2_case_alt_6 : eta5_0;
+
+  assign c$ds2_case_alt_6 = newLast_0[2:2] ? c$ds2_case_alt_7 : {2'b01,nextAborted_1,eta5_0[129:18],18'bxxxxxxxxxxxxxxxxxx};
+
+  assign c$ds2_case_alt_selection_19 = newLast_0[1:0];
+
+  assign c$ds2_case_alt_7 = c$ds2_case_alt_selection_19[1:1] ? {2'b10,{{2 {8'b00000000}},
+                                                                       {1'b1,idx_0},   eta5_0[129:18],
+                                                                       nextAborted_1}} : {2'b00,1'b0,{12 {8'b00000000}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+
+  assign idx_0 = newLast_0[0:0];
+
+  assign newLast_selection_3 = pkt_0[2:1];
+
+  assign newLast_0 = newLast_selection_3[1:1] ? {1'b1,{1'b0,a1_3 + 1'd0}} : {1'b0,2'bxx};
+
+  assign a1_3 = pkt_0[1:1];
+
+  assign nextAborted_1 = eta5_0[130:130] | pkt_0[0:0];
+
+  assign ds10_1 = pkt_0[18:3];
+
+  assign c$ds2_case_alt_selection_22 = c$case_alt_5[19:0];
+
+  assign c$ds2_case_alt_8 = c$ds2_case_alt_selection_22[19:19] ? {c$ds2_app_arg_6,
+                                                                  {readyOut_0,   fwdOut_0}} : {eta5_0,
+                                                                                               {r2sAc_3,
+                                                                                                {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}};
+
+  assign c$ds2_app_arg_6 = readyOut_0 ? result_23[264:132] : eta5_0;
+
+  assign readyOut_0 = c$readyOut_case_alt_0 | r2sAc_3;
+
+  assign r2sAc_3 = result_24[132:132];
+
+  assign c$readyOut_case_alt_0 = fwdOut_0[131:131] ? 1'b0 : 1'b1;
+
+  assign fwdOut_0 = result_23[131:0];
+
+  assign result_23 = ds11_0 ? result_21 : c$ds10_case_alt_0;
+
+  assign c$ds10_case_alt_selection_3 = pkt_0[2:1];
+
+  assign c$ds10_case_alt_sel_alt_f_4 = combined_0;
+
+  assign c$ds10_case_alt_0 = c$ds10_case_alt_selection_3[1:1] ? result_21 : {{2'b00,nextAborted_2,c$ds10_case_alt_sel_alt_f_4[95:0],eta5_0[33:31] - 3'd1,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
+                                                                             {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
+
+  assign nextAborted_2 = eta5_0[130:130] | pkt_0[0:0];
+
+  assign combined_0 = {eta5_0[129:34],pkt_0[18:3]};
+
+  assign pkt_0 = c$case_alt_5[18:0];
+
+  assign rstLow_2 = ~ (c$bindCsr);
+
+  assign bwd_0 = result_22[132:132];
+
+  assign c$case_alt_5 = rstLow_2 ? {1'b0,
+                                    {1'b0,19'bxxxxxxxxxxxxxxxxxxx}} : {bwd_0,
+                                                                       s2rAc_2};
+
+  assign s2rAc_2 = result_13[19:0];
+
+  assign result_24 = wild1_0[131:131] ? c$ds17_case_alt : {result_36[132:132],
+                                                           {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
+
+  assign c$ds17_case_alt = result_25 ? {result_36[132:132],
+                                        wild1_0} : {1'b1,
+                                                    {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
+
+  assign result_25 = c$case_alt_7 | c$case_alt_6;
+
+  wire [5:0] vec;
+  wire  acc_3_0;
+  wire  acc_1;
+  wire  acc_2;
+  wire  acc_3;
+  wire  acc_4;
+  wire  acc_5;
+  wire  acc_6;
+  wire  acc_1_0;
+  wire  acc_1_1;
+  wire  acc_2_0;
+  wire  acc_1_2;
+  assign c$case_alt_6 = acc_3_0;
+
+  assign vec = c$app_arg_5;
+
+  assign acc_1 = vec[5:5];
+
+  assign acc_2 = vec[4:4];
+
+  assign acc_3 = vec[3:3];
+
+  assign acc_4 = vec[2:2];
+
+  assign acc_5 = vec[1:1];
+
+  assign acc_6 = vec[0:0];
+
+  assign acc_1_0 = acc_1 & acc_2;
+
+
+
+  assign acc_1_1 = acc_3 & acc_4;
+
+
+
+  assign acc_1_2 = acc_5 & acc_6;
+
+
+
+  assign acc_2_0 = acc_1_0 & acc_1_1;
+
+
+
+  assign acc_3_0 = acc_2_0 & acc_1_2;
+
+
+
+
+
+  assign c$vec1_0 = inPkt_0[112:65];
+
+  assign c$vec2_0 = ({6 {8'b11111111}});
+
+  // zipWith start
+  genvar i_10;
+  generate
+  for (i_10 = 0; i_10 < 6; i_10 = i_10 + 1) begin : zipWith_0
+    wire [7:0] zipWith_in1_0;
+    assign zipWith_in1_0 = c$vec1_0[i_10*8+:8];
+    wire [7:0] zipWith_in2_0;
+    assign zipWith_in2_0 = c$vec2_0[i_10*8+:8];
+    wire  c$n_0;
+    assign c$n_0 = zipWith_in1_0 == zipWith_in2_0;
+
+
+    assign c$app_arg_5[i_10*1+:1] = c$n_0;
+  end
+  endgenerate
+  // zipWith end
+
+  wire [5:0] vec_0;
+  wire  acc_3_0_4;
+  wire  acc_0_4;
+  wire  acc_0_5;
+  wire  acc_0_6;
+  wire  acc_0_7;
+  wire  acc_0_8;
+  wire  acc_0_9;
+  wire  acc_1_0_0;
+  wire  acc_1_1_1;
+  wire  acc_2_0_3;
+  wire  acc_1_2_2;
+  assign c$case_alt_7 = acc_3_0_4;
+
+  assign vec_0 = c$app_arg_6;
+
+  assign acc_0_4 = vec_0[5:5];
+
+  assign acc_0_5 = vec_0[4:4];
+
+  assign acc_0_6 = vec_0[3:3];
+
+  assign acc_0_7 = vec_0[2:2];
+
+  assign acc_0_8 = vec_0[1:1];
+
+  assign acc_0_9 = vec_0[0:0];
+
+  assign acc_1_0_0 = acc_0_4 & acc_0_5;
+
+
+
+  assign acc_1_1_1 = acc_0_6 & acc_0_7;
+
+
+
+  assign acc_1_2_2 = acc_0_8 & acc_0_9;
+
+
+
+  assign acc_2_0_3 = acc_1_0_0 & acc_1_1_1;
+
+
+
+  assign acc_3_0_4 = acc_2_0_3 & acc_1_2_2;
+
+
+
+
+
+  assign c$vec1_1 = inPkt_0[112:65];
+
+  assign c$vec2_1 = {8'b01011110,   8'b10100100,
+                     8'b01001110,   8'b11110100,   8'b00100001,
+                     8'b00000110};
+
+  // zipWith start
+  genvar i_11;
+  generate
+  for (i_11 = 0; i_11 < 6; i_11 = i_11 + 1) begin : zipWith_1
+    wire [7:0] zipWith_in1_1;
+    assign zipWith_in1_1 = c$vec1_1[i_11*8+:8];
+    wire [7:0] zipWith_in2_1;
+    assign zipWith_in2_1 = c$vec2_1[i_11*8+:8];
+    wire  c$n_1;
+    assign c$n_1 = zipWith_in1_1 == zipWith_in2_1;
+
+
+    assign c$app_arg_6[i_11*1+:1] = c$n_1;
+  end
+  endgenerate
+  // zipWith end
+
+  assign inPkt_0 = wild1_0[130:0];
+
+  assign wild1_0 = result_17[131:0];
+
+  // register begin
+  always @(posedge ethTxClk ) begin : c$ds_app_arg_register
+    if ( ! c$bindCsr) begin
+      c$ds_app_arg <= {4'd0,   {{{8 {1'bx}},   {8 {1'bx}}},   {{8 {1'bx}},   {8 {1'bx}}}},   2'd0,
+   1'b0};
+    end else begin
+      c$ds_app_arg <= c$case_alt_9[170:132];
+    end
+  end
+  // register end
+
+  assign c$case_alt_8 = {bwdIn_0,
+                         c$case_alt_9[131:0]};
+
+  assign c$vec_5 = result_31[133:132];
+
+  assign c$vec_6 = (c$vec_5[1-1 : 0]);
+
+  assign bwdIn_0 = c$vec_6[1-1 -: 1];
+
+  assign c$vec_7 = result_29[263:0];
+
+  assign c$vec_8 = (c$vec_7[132-1 : 0]);
+
+  assign c$case_alt_selection_res = c$vec_8[132-1 -: 132];
+
+  assign c$case_alt_9 = c$case_alt_selection_res[131:131] ? {c$app_arg_9,
+                                                             {1'b1,{c$app_arg_7,   ipv[114:113],
+                                                                    ipv[112:1],   result_28}}} : {c$ds_app_arg,
+                                                                                                  {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
+
+  assign c$app_arg_selection_6 = c$ds_app_arg[38:35];
+
+  always @(*) begin
+    case(c$app_arg_selection_6)
+      4'b0100 : c$app_arg_7 = c$mapOut_app_arg;
+      4'b0110 : c$app_arg_7 = {8'b00000000,
+                               8'b00000000};
+      4'b0111 : c$app_arg_7 = ((((~ result_26))));
+      default : c$app_arg_7 = dataOut0;
+    endcase
+  end
+
+  assign a = ~ (((c$app_arg_8)));
+
+  assign summed = a + 16'd63487;
+
+  assign c$bv = ((summed));
+
+  assign c$bv_0 = (((( c$bv[17-1] ))));
+
+  assign result_26 = (summed[0+:16]) + ({{(16-1) {1'b0}},(((( c$bv[17-1] ))))});
+
+  // map begin
+  genvar i_12;
+  generate
+  for (i_12=0; i_12 < 2; i_12 = i_12 + 1) begin : map_3
+    wire [7:0] map_in_3;
+    assign map_in_3 = dataOut0[i_12*8+:8];
+    wire [7:0] map_out_3;
+    assign map_out_3 = map_in_3;
+
+
+    assign c$app_arg_8[i_12*8+:8] = map_out_3;
+  end
+  endgenerate
+  // map end
+
+  assign dataOut0_selection_1 = c$ds_app_arg[38:35];
+
+  always @(*) begin
+    case(dataOut0_selection_1)
+      4'b0101 : dataOut0 = c$dataOut0_case_alt;
+      default : dataOut0 = c$dataOut0_case_alt_0;
+    endcase
+  end
+
+  assign c$vec_9 = result_31[133:132];
+
+  assign c$vec_10 = (c$vec_9[1-1 : 0]);
+
+  assign c$app_arg_9 = (~ (c$vec_10[1-1 -: 1])) ? c$ds_app_arg : {c$case_alt_15,
+                                                                  dShift2[48-1 : 16],   c$case_alt_10,
+                                                                  result_28};
+
+  assign c$case_alt_selection_12 = ipv[114:113];
+
+  assign c$case_alt_10 = c$case_alt_selection_12[1:1] ? c$case_alt_13 : c$case_alt_11;
+
+  assign c$case_alt_selection_15 = c$ds_app_arg[38:35];
+
+  always @(*) begin
+    case(c$case_alt_selection_15)
+      4'b1000 : c$case_alt_11 = c$case_alt_14;
+      default : c$case_alt_11 = c$case_alt_12;
+    endcase
+  end
+
+  assign c$case_alt_12 = stateCntZero ? c$case_alt_13 : c$case_alt_14;
+
+  always @(*) begin
+    case(c$nextFsm_case_alt)
+      4'b0001 : c$case_alt_13 = 2'd2;
+      4'b0100 : c$case_alt_13 = 2'd1;
+      4'b0101 : c$case_alt_13 = 2'd1;
+      4'b1000 : c$case_alt_13 = {2 {1'bx}};
+      default : c$case_alt_13 = 2'd0;
+    endcase
+  end
+
+  assign c$case_alt_14 = c$ds_app_arg[2:1] - 2'd1;
+
+  assign c$case_alt_selection_20 = ipv[114:113];
+
+  assign c$case_alt_15 = c$case_alt_selection_20[1:1] ? c$nextFsm_case_alt : c$case_alt_16;
+
+  assign c$case_alt_selection_23 = c$ds_app_arg[38:35];
+
+  always @(*) begin
+    case(c$case_alt_selection_23)
+      4'b1000 : c$case_alt_16 = 4'd8;
+      default : c$case_alt_16 = c$case_alt_17;
+    endcase
+  end
+
+  assign c$case_alt_17 = stateCntZero ? c$nextFsm_case_alt : c$ds_app_arg[38:35];
+
+  assign c$nextFsm_case_alt_selection_1 = ipv[114:113];
+
+  assign c$nextFsm_case_alt = c$nextFsm_case_alt_selection_1[1:1] ? 4'd0 : c$nextFsm_case_alt_0;
+
+  assign c$nextFsm_case_alt_selection_4 = c$ds_app_arg[38:35];
+
+  always @(*) begin
+    case(c$nextFsm_case_alt_selection_4)
+      4'b1000 : c$nextFsm_case_alt_0 = {4 {1'bx}};
+      default : c$nextFsm_case_alt_0 = result_27;
+    endcase
+  end
+
+  assign c$tte_rhs = \a#  + 64'sd1;
+
+  assign result_27 = $unsigned(c$tte_rhs);
+
+  assign c$dtt_rhs_1 = c$ds_app_arg[38:35];
+
+  assign \a#  = $unsigned(c$dtt_rhs_1);
+
+  assign c$dataOut0_case_alt = dShift2[15:0];
+
+  assign c$dataOut0_case_alt_0 = dShift2[47:32];
+
+  assign dShift2 = {dShift1,
+                    c$ds_app_arg[34:3]};
+
+  assign result_selection_20 = c$ds_app_arg[38:35];
+
+  always @(*) begin
+    case(result_selection_20)
+      4'b0000 : result_28 = errNow;
+      default : result_28 = c$ds_app_arg[0:0] | errNow;
+    endcase
+  end
+
+  assign errNow = ipv[0:0] | c$foldOut;
+
+  wire [1:0] vec_1;
+  wire  acc_1_0_5;
+  wire  acc_0_11;
+  wire  acc_0_12;
+  assign c$foldOut = acc_1_0_5;
+
+  assign vec_1 = (c$zipWithOut);
+
+  assign acc_0_11 = vec_1[1:1];
+
+  assign acc_0_12 = vec_1[0:0];
+
+  assign acc_1_0_5 = acc_0_11 | acc_0_12;
+
+
+
+
+
+  // zipWith start
+  genvar i_13;
+  generate
+  for (i_13 = 0; i_13 < 2; i_13 = i_13 + 1) begin : zipWith_2
+    wire [8:0] zipWith_in1_2;
+    assign zipWith_in1_2 = c$zipWithOut_app_arg[i_13*9+:9];
+    wire [7:0] zipWith_in2_2;
+    assign zipWith_in2_2 = dShift1[i_13*8+:8];
+    wire  c$n_2;
+    wire [7:0] check;
+    wire  result_60;
+    assign c$n_2 = result_60;
+
+    assign check = zipWith_in1_2[7:0];
+
+    assign result_60 = zipWith_in1_2[8:8] ? (check != zipWith_in2_2) : 1'b0;
+
+
+    assign c$zipWithOut[i_13*1+:1] = c$n_2;
+  end
+  endgenerate
+  // zipWith end
+
+  assign dShift1 = ipv[130:115];
+
+  assign c$vec_11 = result_29[263:0];
+
+  assign c$vec_12 = (c$vec_11[132-1 : 0]);
+
+  assign ipv_projection = c$vec_12[132-1 -: 132];
+
+  assign ipv = ipv_projection[130:0];
+
+  assign c$zipWithOut_app_arg_selection_1 = c$ds_app_arg[38:35];
+
+  always @(*) begin
+    case(c$zipWithOut_app_arg_selection_1)
+      4'b0000 : c$zipWithOut_app_arg = {{1'b1,8'b01000101},
+                                        {1'b0,8'bxxxxxxxx}};
+      4'b0010 : c$zipWithOut_app_arg = {{1'b0,8'bxxxxxxxx},
+                                        {1'b1,8'b00000001}};
+      4'b0101 : c$zipWithOut_app_arg = c$mapOut_1;
+      4'b0110 : c$zipWithOut_app_arg = {{1'b1,8'b00001000},
+                                        {1'b1,8'b00000000}};
+      default : c$zipWithOut_app_arg = {2 {{1'b0,8'bxxxxxxxx}}};
+    endcase
+  end
 
   // map begin
   genvar i_14;
   generate
-  for (i_14=0; i_14 < 6; i_14 = i_14 + 1) begin : map_5
-    wire [7:0] map_in_5;
-    assign map_in_5 = g1[i_14*8+:8];
-    wire [7:0] map_out_5;
-    assign map_out_5 = map_in_5;
+  for (i_14=0; i_14 < 2; i_14 = i_14 + 1) begin : map_4
+    wire [7:0] map_in_4;
+    assign map_in_4 = c$mapOut_app_arg[i_14*8+:8];
+    wire [8:0] map_out_4;
+    assign map_out_4 = {1'b1,map_in_4};
 
 
-    assign c$app_arg_6[i_14*8+:8] = map_out_5;
+    assign c$mapOut_1[i_14*9+:9] = map_out_4;
   end
   endgenerate
   // map end
 
-  assign result_18 = ((({((((c$app_arg_6)))),(({((((c$app_arg_5)))),(g3)}))})));
+  assign c$vec_13 = {8'b00001010,   8'b00000000,
+                     8'b00000000,   8'b00000010};
 
-  assign pkt_0 = result_26[130:0];
-
-  // register begin
-  always @(posedge ethTxClk ) begin : eta2_0_register
-    if ( ! c$bindCsr) begin
-      eta2_0 <= {2'b00,3'd0,{8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
-               8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
-               8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
-               8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000},1'b0};
-    end else begin
-      eta2_0 <= result_17[154:21];
-    end
-  end
-  // register end
-
-  assign bwdIn_0 = result_14[20:20];
-
-  assign result_19 = {ds_0[264:264],
-                      ds_0[263:0]};
-
-  assign ds_0 = eth_Fwd[131:131] ? result_20 : {1'b0,
-                                                {2 {{1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}}};
-
-  assign result_20 = c$ds_case_scrut[1:1] ? {c$ds_app_arg_16,
-                                             c$ds_app_arg_15} : {1'b1,
-                                                                 {2 {{1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}}};
-
-  assign c$vec_6 = {{1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
-                    {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
-
-  // vector replace begin
+  // map begin
   genvar i_15;
   generate
-  for (i_15=0;i_15<2;i_15=i_15+1) begin : vector_replace
-    assign c$ds_app_arg_15[(1-i_15)*132+:132] = c$ds_app_arg_17 == i_15 ? eth_Fwd : c$vec_6[(1-i_15)*132+:132];
+  for (i_15=0; i_15 < 4; i_15 = i_15 + 1) begin : map_5
+    wire [7:0] map_in_5;
+    assign map_in_5 = c$vec_13[i_15*8+:8];
+    wire [7:0] map_out_5;
+    assign map_out_5 = map_in_5;
+
+
+    assign c$mapOut_app_arg_sel_alt_t_res_res[i_15*8+:8] = map_out_5;
+  end
+  endgenerate
+  // map end
+
+  assign c$vec_14 = (((c$mapOut_app_arg_sel_alt_t_res_res)));
+
+  // map begin
+  genvar i_16;
+  generate
+  for (i_16=0; i_16 < 2; i_16 = i_16 + 1) begin : map_6
+    wire [15:0] map_in_6;
+    assign map_in_6 = c$vec_14[i_16*16+:16];
+    wire [15:0] map_out_6;
+    assign map_out_6 = (map_in_6);
+
+
+    assign c$mapOut_app_arg_sel_alt_t_res[i_16*16+:16] = map_out_6;
+  end
+  endgenerate
+  // map end
+
+  assign c$vec_15 = {8'b00001010,   8'b00000000,
+                     8'b00000000,   8'b00000010};
+
+  // map begin
+  genvar i_17;
+  generate
+  for (i_17=0; i_17 < 4; i_17 = i_17 + 1) begin : map_7
+    wire [7:0] map_in_7;
+    assign map_in_7 = c$vec_15[i_17*8+:8];
+    wire [7:0] map_out_7;
+    assign map_out_7 = map_in_7;
+
+
+    assign c$mapOut_app_arg_sel_alt_f_res_res[i_17*8+:8] = map_out_7;
+  end
+  endgenerate
+  // map end
+
+  assign c$vec_16 = (((c$mapOut_app_arg_sel_alt_f_res_res)));
+
+  // map begin
+  genvar i_18;
+  generate
+  for (i_18=0; i_18 < 2; i_18 = i_18 + 1) begin : map_8
+    wire [15:0] map_in_8;
+    assign map_in_8 = c$vec_16[i_18*16+:16];
+    wire [15:0] map_out_8;
+    assign map_out_8 = (map_in_8);
+
+
+    assign c$mapOut_app_arg_sel_alt_f_res[i_18*16+:16] = map_out_8;
+  end
+  endgenerate
+  // map end
+
+  assign c$mapOut_app_arg = stateCntZero ? (c$mapOut_app_arg_sel_alt_t_res[16-1:0]) : (c$mapOut_app_arg_sel_alt_f_res[32-1 -: 16]);
+
+  assign stateCntZero = c$ds_app_arg[2:1] == 2'd0;
+
+  assign result_29 = {ds[264:264],   ds[263:0]};
+
+  assign ds = eth_Fwd[131:131] ? result_30 : {1'b0,
+                                              {2 {{1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}}};
+
+  assign result_30 = c$ds_case_scrut[1:1] ? {c$ds_app_arg_1,
+                                             c$ds_app_arg_0} : {1'b1,
+                                                                {2 {{1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}}};
+
+  assign c$vec_17 = {{1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
+                     {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
+
+  // vector replace begin
+  genvar i_19;
+  generate
+  for (i_19=0;i_19<2;i_19=i_19+1) begin : vector_replace_0
+    assign c$ds_app_arg_0[(1-i_19)*132+:132] = c$ds_app_arg_2 == i_19 ? eth_Fwd : c$vec_17[(1-i_19)*132+:132];
   end
   endgenerate
   // vector replace end
 
-  assign c$vec_7 = result_21[133:132];
-
-  assign c$vecFlat = {c$vec_7[2-1 -: 1],
-                      result_24[132:132]};
+  assign c$vecFlat = {result_34[132:132],
+                      c$case_alt_8[132:132]};
 
   // index begin
   wire  vecArray_0 [0:2-1];
-  genvar i_16;
+  genvar i_20;
   generate
-  for (i_16=0; i_16 < 2; i_16=i_16+1) begin : mk_array_0
-    assign vecArray_0[(2-1)-i_16] = c$vecFlat[i_16*1+:1];
+  for (i_20=0; i_20 < 2; i_20=i_20+1) begin : mk_array_0
+    assign vecArray_0[(2-1)-i_20] = c$vecFlat[i_20*1+:1];
   end
   endgenerate
-  assign c$ds_app_arg_16 = vecArray_0[c$ds_app_arg_17];
+  assign c$ds_app_arg_1 = vecArray_0[c$ds_app_arg_2];
   // index end
 
-  assign c$ds_app_arg_17 = $unsigned({{(64-1) {1'b0}},i_1});
+  assign c$ds_app_arg_2 = $unsigned({{(64-1) {1'b0}},i});
 
-  assign i_1 = c$ds_case_scrut[0:0];
+  assign i = c$ds_case_scrut[0:0];
 
   assign c$ds_case_scrut = ws[6-1 -: 2];
 
   assign ws = {c$ws_app_arg,{1'b0,1'bx}};
 
   // imap begin
-  genvar i_17;
+  genvar i_22;
   generate
-  for (i_17=0; i_17 < 2; i_17 = i_17 + 1) begin : imap
+  for (i_22=0; i_22 < 2; i_22 = i_22 + 1) begin : imap
     wire [1-1:0] map_index;
-    wire [2:0] map_in_6;
-    assign map_in_6 = c$ws_app_arg_0[i_17*3+:3];
-    wire [1:0] map_out_6;
+    wire [2:0] map_in_9;
+    assign map_in_9 = c$ws_app_arg_0[i_22*3+:3];
+    wire [1:0] map_out_9;
 
-    assign map_index = 1'd1 - i_17[0+:1];
+    assign map_index = 1'd1 - i_22[0+:1];
     wire  x_6;
-    wire [1:0] c$case_alt_13;
-    assign map_out_6 = c$case_alt_13;
+    wire [1:0] c$case_alt_28;
+    assign map_out_9 = c$case_alt_28;
 
-    assign x_6 = map_in_6[2:2];
+    assign x_6 = map_in_9[2:2];
 
-    assign c$case_alt_13 = x_6 ? {1'b1,map_index} : map_in_6[1:0];
+    assign c$case_alt_28 = x_6 ? {1'b1,map_index} : map_in_9[1:0];
 
 
-    assign c$ws_app_arg[i_17*2+:2] = map_out_6;
+    assign c$ws_app_arg[i_22*2+:2] = map_out_9;
   end
   endgenerate
   // imap end
 
-  assign c$vec1 = {16'b0010000000000001 == x_3[16:1],
-                   16'b0010000000000010 == x_3[16:1]};
+  assign c$vec1_2 = {16'b0010000000000010 == x_0[16:1],
+                     16'b0000100000000000 == x_0[16:1]};
 
-  assign c$vec2 = (ws[4-1 : 0]);
+  assign c$vec2_2 = (ws[4-1 : 0]);
 
   // zipWith start
-  genvar i_18;
+  genvar i_23;
   generate
-  for (i_18 = 0; i_18 < 2; i_18 = i_18 + 1) begin : zipWith
-    wire  zipWith_in1;
-    assign zipWith_in1 = c$vec1[i_18*1+:1];
-    wire [1:0] zipWith_in2;
-    assign zipWith_in2 = c$vec2[i_18*2+:2];
-    wire [2:0] c$n;
-    assign c$n = {zipWith_in1,   zipWith_in2};
+  for (i_23 = 0; i_23 < 2; i_23 = i_23 + 1) begin : zipWith_3
+    wire  zipWith_in1_3;
+    assign zipWith_in1_3 = c$vec1_2[i_23*1+:1];
+    wire [1:0] zipWith_in2_3;
+    assign zipWith_in2_3 = c$vec2_2[i_23*2+:2];
+    wire [2:0] c$n_3;
+    assign c$n_3 = {zipWith_in1_3,   zipWith_in2_3};
 
 
-    assign c$ws_app_arg_0[i_18*3+:3] = c$n;
+    assign c$ws_app_arg_0[i_23*3+:3] = c$n_3;
   end
   endgenerate
   // zipWith end
 
-  assign x_3 = eth_Fwd[130:0];
+  assign x_0 = eth_Fwd[130:0];
 
-  assign result_21 = {c$ds1_app_arg,   fwd};
+  assign result_31 = {c$ds1_app_arg,   fwd};
 
-  assign c$vec_8 = {1'b0,   1'b0};
+  assign c$vec_18 = {1'b0,   1'b0};
 
   // vector replace begin
-  genvar i_19;
+  genvar i_24;
   generate
-  for (i_19=0;i_19<2;i_19=i_19+1) begin : vector_replace_0
-    assign c$ds1_app_arg[(1-i_19)*1+:1] = c$fwd_app_arg == i_19 ? \final:stmt_Bwd  : c$vec_8[(1-i_19)*1+:1];
+  for (i_24=0;i_24<2;i_24=i_24+1) begin : vector_replace_1
+    assign c$ds1_app_arg[(1-i_24)*1+:1] = c$fwd_app_arg == i_24 ? \final:stmt_Bwd  : c$vec_18[(1-i_24)*1+:1];
   end
   endgenerate
   // vector replace end
 
-  assign c$ds1_app_arg_0 = fwd[131:131] ? c$ds1_case_alt : first;
+  assign c$ds1_app_arg_0 = fwd[131:131] ? c$ds1_case_alt_1 : first;
 
-  assign c$ds1_case_alt_selection_2 = fwd[114:113];
+  assign c$ds1_case_alt_selection_5 = fwd[114:113];
 
-  assign c$ds1_case_alt = c$ds1_case_alt_selection_2[1:1] ? \final:stmt_Bwd  : 1'b0;
+  assign c$ds1_case_alt_1 = c$ds1_case_alt_selection_5[1:1] ? \final:stmt_Bwd  : 1'b0;
 
-  assign result_22 = fwd[131:131] ? c$ds1_case_alt_1 : c$ds1_case_alt_0;
+  assign result_32 = fwd[131:131] ? c$ds1_case_alt_3 : c$ds1_case_alt_2;
 
-  assign c$ds1_case_alt_0 = first ? result_23 : i_2;
+  assign c$ds1_case_alt_2 = first ? result_33 : i_0;
 
   assign first = ds2[0:0];
 
-  assign c$ds1_case_alt_selection_7 = fwd[114:113];
+  assign c$ds1_case_alt_selection_10 = fwd[114:113];
 
-  assign c$ds1_case_alt_1 = c$ds1_case_alt_selection_7[1:1] ? c$ds1_case_alt_2 : i_2;
+  assign c$ds1_case_alt_3 = c$ds1_case_alt_selection_10[1:1] ? c$ds1_case_alt_4 : i_0;
 
-  assign c$vec_9 = result_19[263:0];
-
-  assign c$vecFlat_0 = {c$vec_9[264-1 -: 132],
-                        result_24[131:0]};
+  assign c$vecFlat_0 = {result_34[131:0],
+                        c$case_alt_8[131:0]};
 
   // index begin
   wire [131:0] vecArray_1 [0:2-1];
-  genvar i_20;
+  genvar i_25;
   generate
-  for (i_20=0; i_20 < 2; i_20=i_20+1) begin : mk_array_1
-    assign vecArray_1[(2-1)-i_20] = c$vecFlat_0[i_20*132+:132];
+  for (i_25=0; i_25 < 2; i_25=i_25+1) begin : mk_array_1
+    assign vecArray_1[(2-1)-i_25] = c$vecFlat_0[i_25*132+:132];
   end
   endgenerate
   assign fwd = vecArray_1[c$fwd_app_arg];
   // index end
 
-  assign c$fwd_app_arg = $unsigned({{(64-1) {1'b0}},i_2});
+  assign c$fwd_app_arg = $unsigned({{(64-1) {1'b0}},i_0});
 
-  assign c$ds1_case_alt_2 = \final:stmt_Bwd  ? result_23 : i_2;
+  assign c$ds1_case_alt_4 = \final:stmt_Bwd  ? result_33 : i_0;
 
-  assign z = i_2 + 1'd1;
+  assign z = i_0 + 1'd1;
 
-  assign c$bv_0 = (z - 2'd2);
+  assign c$bv_1 = (z - 2'd2);
 
-  assign result_23 = (z >= 2'd2) ? (c$bv_0[0+:1]) : (z[0+:1]);
+  assign result_33 = (z >= 2'd2) ? (c$bv_1[0+:1]) : (z[0+:1]);
 
-  assign i_2 = ds2[1:1];
+  assign i_0 = ds2[1:1];
 
   // register begin
   always @(posedge ethTxClk ) begin : ds2_register
     if ( ! c$bindCsr) begin
       ds2 <= {1'd1,   1'b1};
     end else begin
-      ds2 <= {result_22,   c$ds1_app_arg_0};
+      ds2 <= {result_32,   c$ds1_app_arg_0};
     end
   end
   // register end
@@ -1457,18 +1871,18 @@ module topEntity
     if ( ! c$bindCsr) begin
       c$ds1_app_arg_1 <= 7'd0;
     end else begin
-      c$ds1_app_arg_1 <= c$case_alt_2[146:140];
+      c$ds1_app_arg_1 <= c$case_alt_18[146:140];
     end
   end
   // register end
 
-  assign c$i_183 = c$case_alt_2[139:133];
+  assign c$i_116 = c$case_alt_18[139:133];
 
   // romBlob begin
-  reg [15:0] ROM [0:114-1];
+  reg [15:0] ROM [0:121-1];
 
-  reg [1823:0] rom_init;
-  integer i_21;
+  reg [1935:0] rom_init;
+  integer i_26;
   initial begin
     rom_init = {16'b0011110100111101,   16'b0011111000100000,   16'b0101010001101001,
    16'b0110111001111001,   16'b0101010001100001,   16'b0111000001100101,
@@ -1502,53 +1916,56 @@ module topEntity
    16'b0100110101110101,   16'b0110100101110011,   16'b0000101000001001,
    16'b0101001001101111,   16'b0111011101100001,   16'b0110111000100000,
    16'b0100011101101111,   16'b0110010101101101,   16'b0110000101101110,
-   16'b0111001100001010,   16'b0000101000100000,   16'b0011110100111101,
-   16'b0011111000100000,   16'b0101001101110000,   16'b0110111101101110,
-   16'b0111001101101111,   16'b0111001001100101,   16'b0110010000100000,
-   16'b0110001001111001,   16'b0010000001010001,   16'b0110001001100001,
-   16'b0111100101001100,   16'b0110111101100111,   16'b0110100101100011,
-   16'b0010000000111100,   16'b0011110100111101,   16'b0000101000000000};
-    for (i_21=0; i_21 < 114; i_21 = i_21 + 1) begin
-      ROM[114-1-i_21] = rom_init[i_21*16+:16];
+   16'b0111001100001010,   16'b0000100101010000,   16'b0110010101110100,
+   16'b0110010101110010,   16'b0010000001001100,   16'b0110010101100010,
+   16'b0110001001101001,   16'b0110111001100111,   16'b0000101000001010,
+   16'b0010000000111101,   16'b0011110100111110,   16'b0010000001010011,
+   16'b0111000001101111,   16'b0110111001110011,   16'b0110111101110010,
+   16'b0110010101100100,   16'b0010000001100010,   16'b0111100100100000,
+   16'b0101000101100010,   16'b0110000101111001,   16'b0100110001101111,
+   16'b0110011101101001,   16'b0110001100100000,   16'b0011110000111101,
+   16'b0011110100000000};
+    for (i_26=0; i_26 < 121; i_26 = i_26 + 1) begin
+      ROM[121-1-i_26] = rom_init[i_26*16+:16];
     end
   end
 
   always @(posedge ethTxClk) begin : topEntity_rom
-    c$ds1_app_arg_2 <= ROM[($unsigned({{(64-7) {1'b0}},c$i_183}))];
+    c$ds1_app_arg_2 <= ROM[($unsigned({{(64-7) {1'b0}},c$i_116}))];
   end
   // romBlob end
 
-  assign result_24 = {c$case_alt_2[132:132],
-                      c$case_alt_2[131:0]};
+  assign result_34 = {c$case_alt_18[132:132],
+                      c$case_alt_18[131:0]};
 
-  assign c$case_alt_2 = fwdIn_2[131:131] ? {nextCnt,
-                                            {nextCnt,
-                                             c$case_alt_4 | (lastWord & bwdIn_1),
-                                             c$case_alt_3}} : {c$ds1_app_arg_1,
-                                                               {c$ds1_app_arg_1,   bwdIn_1,
-                                                                {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}};
+  assign c$case_alt_18 = fwdIn_2[131:131] ? {nextCnt,
+                                             {nextCnt,
+                                              c$case_alt_20 | (lastWord & bwdIn_1),
+                                              c$case_alt_19}} : {c$ds1_app_arg_1,
+                                                                 {c$ds1_app_arg_1,   bwdIn_1,
+                                                                  {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}};
 
-  assign nextCnt = (c$nextCnt_case_alt & bwdIn_1) ? result_25 : c$ds1_app_arg_1;
+  assign nextCnt = (c$nextCnt_case_alt & bwdIn_1) ? result_35 : c$ds1_app_arg_1;
 
-  assign c$case_alt_selection_5 = fwdIn_1[114:113];
+  assign c$case_alt_selection_29 = fwdIn_1[114:113];
 
-  assign c$case_alt_3 = c$case_alt_selection_5[1:1] ? {1'b1,{(c$ds1_app_arg_2),
-                                                             c$app_arg_7,   fwdIn_1[112:1],
-                                                             fwdIn_1[0:0]}} : {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+  assign c$case_alt_19 = c$case_alt_selection_29[1:1] ? {1'b1,{(c$ds1_app_arg_2),
+                                                               c$app_arg_10,   fwdIn_1[112:1],
+                                                               fwdIn_1[0:0]}} : {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
 
-  assign c$app_arg_7 = lastWord ? {1'b1,1'd1} : {1'b0,1'bx};
+  assign c$app_arg_10 = lastWord ? {1'b1,1'd1} : {1'b0,1'bx};
 
-  assign lastWord = c$ds1_app_arg_1 == 7'd113;
+  assign lastWord = c$ds1_app_arg_1 == 7'd120;
 
-  assign c$case_alt_selection_8 = fwdIn_1[114:113];
+  assign c$case_alt_selection_32 = fwdIn_1[114:113];
 
-  assign c$case_alt_4 = c$case_alt_selection_8[1:1] ? 1'b0 : 1'b1;
+  assign c$case_alt_20 = c$case_alt_selection_32[1:1] ? 1'b0 : 1'b1;
 
   assign z_0 = c$ds1_app_arg_1 + 7'd1;
 
-  assign c$bv_1 = (z_0 - 8'd114);
+  assign c$bv_2 = (z_0 - 8'd121);
 
-  assign result_25 = (z_0 >= 8'd114) ? (c$bv_1[0+:7]) : (z_0[0+:7]);
+  assign result_35 = (z_0 >= 8'd121) ? (c$bv_2[0+:7]) : (z_0[0+:7]);
 
   assign c$nextCnt_case_alt_selection_1 = fwdIn_1[114:113];
 
@@ -1556,336 +1973,838 @@ module topEntity
 
   assign fwdIn_1 = fwdIn_2[130:0];
 
-  assign c$vec_10 = result_19[263:0];
+  assign c$vec_19 = result_29[263:0];
 
-  assign c$vec_11 = (c$vec_10[132-1 : 0]);
+  assign fwdIn_2 = c$vec_19[264-1 -: 132];
 
-  assign fwdIn_2 = c$vec_11[132-1 -: 132];
+  assign c$vec_20 = result_31[133:132];
 
-  assign c$vec_12 = result_21[133:132];
+  assign bwdIn_1 = c$vec_20[2-1 -: 1];
 
-  assign c$vec_13 = (c$vec_12[1-1 : 0]);
-
-  assign bwdIn_1 = c$vec_13[1-1 -: 1];
-
-  assign result_26 = {eth_Bwd,
+  assign result_36 = {eth_Bwd,
                       \final:stmt_Fwd };
 
-  assign eth_Fwd = result_27[131:0];
+  assign eth_Fwd = result_24[131:0];
 
-  assign \final:stmt_Bwd  = result_16[20:20];
+  assign \final:stmt_Bwd  = result_37[20:20];
 
-  assign eth_Bwd = result_19[264:264];
+  assign eth_Bwd = result_29[264:264];
 
-  assign \final:stmt_Fwd  = result_21[131:0];
+  assign \final:stmt_Fwd  = result_31[131:0];
 
-  assign result_27 = {c$case_alt_5[20:20],
-                      result_32[131:0]};
+  assign result_37 = result_38[20:0];
 
-  assign result_28 = ds11_1 ? result_29 : ({265 {1'bx}});
+  always @(*) begin
+    case(eta2[133:132])
+      2'b00 : result_38 = c$ds_case_alt_3;
+      2'b01 : result_38 = c$ds_case_alt;
+      default : result_38 = {c$ds_app_arg_3,   {1'b0,
+                                                {1'b1,eta2[131:113]}}};
+    endcase
+  end
 
-  assign result_selection_14 = pkt_1[2:1];
+  assign c$ds_app_arg_3 = bwdIn_2 ? {2'b00,3'd0,{16 {8'b00000000}},1'b0} : eta2;
 
-  assign result_29 = result_selection_14[1:1] ? {{2'b00,1'b0,{12 {8'b00000000}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
-                                                 {1'b1,{{2 {8'b00000000}},
-                                                        {1'b1,pkt_1[1:1] - 1'd0},   result_30,
-                                                        nextAborted_4}}} : {{2'b01,nextAborted_4,result_30,18'bxxxxxxxxxxxxxxxxxx},
-                                                                            {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
+  assign c$ds_case_alt = c$ds23_app_arg[131:131] ? {c$ds_app_arg_5,
+                                                    {bwdIn_2,   {1'b1,{ds8,   c$ds_app_arg_4,
+                                                                       nextAborted_3}}}} : {eta2,   {bwdIn_2,
+                                                                                                     {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
 
-  assign c$ds1_case_alt_3 = back;
+  assign c$ds_app_arg_4 = newLast_1[2:2] ? c$ds_case_alt_0 : {1'b0,1'bx};
 
-  assign result_30 = {(ds4[111:64]),
-                      (c$ds1_case_alt_3[63:16]),
-                      c$ds1_case_alt_3[15:0]};
+  assign c$ds_case_alt_selection_2 = newLast_1[1:0];
 
-  assign ds4 = ((c$mapOut));
+  assign c$ds_case_alt_0 = c$ds_case_alt_selection_2[1:1] ? {1'b0,1'bx} : {1'b1,x1_1};
 
-  assign back = ds4[63:0];
+  assign x1_1 = newLast_1[0:0];
 
-  assign c$vec_14 = ds14_0;
+  assign c$ds_app_arg_5 = bwdIn_2 ? c$ds_case_alt_1 : eta2;
+
+  assign c$ds_case_alt_1 = newLast_1[2:2] ? c$ds_case_alt_2 : {2'b01,nextAborted_3,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+
+  assign c$ds_case_alt_selection_6 = newLast_1[1:0];
+
+  assign c$ds_case_alt_2 = c$ds_case_alt_selection_6[1:1] ? {2'b10,{{2 {8'b00000000}},
+                                                                    {1'b1,idx_1},
+                                                                    nextAborted_3},113'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,3'd0,{16 {8'b00000000}},1'b0};
+
+  assign idx_1 = newLast_1[0:0];
+
+  assign newLast_selection_6 = pkt_1[114:113];
+
+  assign newLast_1 = newLast_selection_6[1:1] ? {1'b1,c$newLast_app_arg} : {1'b0,2'bxx};
+
+  assign c$newLast_app_arg = {1'b0,a1_4 + 1'd0};
+
+  assign a1_4 = pkt_1[113:113];
+
+  assign nextAborted_3 = eta2[131:131] | pkt_1[0:0];
+
+  assign ds8 = pkt_1[130:115];
+
+  assign c$ds_case_alt_3 = c$ds23_app_arg[131:131] ? {c$ds_app_arg_6,
+                                                      {1'b0,   {1'b1,{ds9[143:128],   {1'b0,1'bx},
+                                                                      nextAborted_4}}}} : {eta2,   {bwdIn_2,
+                                                                                                    {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
+
+  assign c$ds_app_arg_6 = bwdIn_2 ? c$ds_case_alt_4 : eta2;
+
+  assign c$ds_case_alt_sel_alt_t_7 = pkt_1[130:115];
+
+  assign c$ds_case_alt_4 = (eta2[131:129] == 3'd6) ? {2'b01,nextAborted_4,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,eta2[131:129] + 3'd1,ds9[127:0],nextAborted_4};
+
+  assign nextAborted_4 = eta2[0:0] | pkt_1[0:0];
+
+  assign ds9 = c$ds9_app_arg;
+
+  assign c$ds9_app_arg_selection_1 = eta2[131:129];
+
+  always @(*) begin
+    case(c$ds9_app_arg_selection_1)
+      3'd0 : c$ds9_app_arg = {({((result_39)),pkt_1[130:115]}),({2 {(8'd0)}})};
+      default : c$ds9_app_arg = {eta2[128:1],({2 {(8'd0)}})};
+    endcase
+  end
+
+  assign g1 = pkt_1[112:65];
+
+  assign g2 = pkt_1[64:17];
+
+  assign g3 = pkt_1[16:1];
 
   // map begin
-  genvar i_22;
+  genvar i_27;
   generate
-  for (i_22=0; i_22 < 14; i_22 = i_22 + 1) begin : map_6
-    wire [7:0] map_in_7;
-    assign map_in_7 = c$vec_14[i_22*8+:8];
-    wire [7:0] map_out_7;
-    assign map_out_7 = map_in_7;
+  for (i_27=0; i_27 < 6; i_27 = i_27 + 1) begin : map_9
+    wire [7:0] map_in_10;
+    assign map_in_10 = g2[i_27*8+:8];
+    wire [7:0] map_out_10;
+    assign map_out_10 = map_in_10;
 
 
-    assign c$mapOut[i_22*8+:8] = map_out_7;
+    assign c$app_arg_11[i_27*8+:8] = map_out_10;
   end
   endgenerate
   // map end
 
-  assign ds14_0 = combined;
+  // map begin
+  genvar i_28;
+  generate
+  for (i_28=0; i_28 < 6; i_28 = i_28 + 1) begin : map_10
+    wire [7:0] map_in_11;
+    assign map_in_11 = g1[i_28*8+:8];
+    wire [7:0] map_out_11;
+    assign map_out_11 = map_in_11;
 
-  assign result_selection_17 = pkt_1[2:1];
 
-  assign result_31 = result_selection_17[1:1] ? {{2'b00,1'b0,{12 {8'b00000000}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
-                                                 {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}} : result_28;
+    assign c$app_arg_12[i_28*8+:8] = map_out_11;
+  end
+  endgenerate
+  // map end
 
-  assign ds11_1 = eta5[33:31] == 3'd0;
+  assign result_39 = ((({((((c$app_arg_12)))),(({((((c$app_arg_11)))),(g3)}))})));
+
+  assign pkt_1 = c$ds23_app_arg[130:0];
 
   // register begin
-  always @(posedge ethTxClk ) begin : eta5_register
+  always @(posedge ethTxClk ) begin : eta2_register
     if ( ! c$bindCsr) begin
-      eta5 <= {2'b00,1'b0,{{8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},
-               {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},
-               {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},
-               {8 {1'bx}}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+      eta2 <= {2'b00,3'd0,{8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
+               8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
+               8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
+               8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000},1'b0};
     end else begin
-      eta5 <= result_32[265:133];
+      eta2 <= result_38[154:21];
     end
   end
   // register end
 
+  assign bwdIn_2 = result_40[20:20];
+
+  assign result_40 = result_41[20:0];
+
   always @(*) begin
-    case(eta5[132:131])
-      2'b00 : result_32 = c$ds2_case_alt_3;
-      2'b01 : result_32 = c$ds2_case_alt;
-      default : result_32 = {c$ds2_app_arg,   {1'b0,
-                                               {1'b1,eta5[130:0]}}};
+    case(ds_0[6:5])
+      2'b00 : result_41 = c$ds_case_alt_8;
+      2'b01 : result_41 = c$ds_case_alt_6;
+      default : result_41 = {c$ds_app_arg_8,   {1'b0,
+                                                {1'b1,{{2 {8'b00000000}},   c$ds_app_arg_7,
+                                                       1'b0}}}};
     endcase
   end
 
-  assign c$ds2_app_arg = r2sAc_1 ? {2'b00,1'b0,{12 {8'b00000000}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : eta5;
+  assign c$ds_app_arg_7 = done ? {1'b1,1'd1} : {1'b0,1'bx};
 
-  assign c$ds2_case_alt_selection_1 = c$case_alt_5[19:0];
+  assign c$ds_app_arg_8 = bwd_1 ? c$ds_case_alt_5 : ds_0;
 
-  assign c$ds2_case_alt = c$ds2_case_alt_selection_1[19:19] ? {c$ds2_app_arg_1,
-                                                               {r2sAc_1,   {1'b1,{ds10,   c$ds2_app_arg_0,
-                                                                                  eta5[129:18],
-                                                                                  nextAborted_3}}}} : {eta5,
-                                                                                                       {r2sAc_1,
-                                                                                                        {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}};
+  assign c$ds_case_alt_5 = done ? {2'b00,5'd0} : {2'b10,i_1 + 5'd1};
 
-  assign c$ds2_app_arg_0 = newLast_1[2:2] ? c$ds2_case_alt_0 : {1'b0,1'bx};
+  assign done = i_1 == 5'd29;
 
-  assign c$ds2_case_alt_selection_4 = newLast_1[1:0];
+  assign i_1 = ds_0[4:0];
 
-  assign c$ds2_case_alt_0 = c$ds2_case_alt_selection_4[1:1] ? {1'b0,1'bx} : {1'b1,x1_3};
+  assign c$ds_case_alt_selection_12 = result_37[19:0];
 
-  assign x1_3 = newLast_1[0:0];
+  assign c$ds_case_alt_6 = c$ds_case_alt_selection_12[19:19] ? {c$ds_app_arg_9,
+                                                                {bwd_1,
+                                                                 result_37[19:0]}} : {{2'b01,5'bxxxxx},
+                                                                                      {bwd_1,
+                                                                                       {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
 
-  assign c$ds2_app_arg_1 = r2sAc_1 ? c$ds2_case_alt_1 : eta5;
+  assign c$ds_app_arg_9 = (bwd_1 & c$ds_case_alt_7) ? {2'b00,5'd0} : {2'b01,5'bxxxxx};
 
-  assign c$ds2_case_alt_1 = newLast_1[2:2] ? c$ds2_case_alt_2 : {2'b01,nextAborted_3,eta5[129:18],18'bxxxxxxxxxxxxxxxxxx};
+  assign c$ds_case_alt_selection_15 = fwdIn_3[2:1];
 
-  assign c$ds2_case_alt_selection_8 = newLast_1[1:0];
+  assign c$ds_case_alt_7 = c$ds_case_alt_selection_15[1:1] ? 1'b1 : 1'b0;
 
-  assign c$ds2_case_alt_2 = c$ds2_case_alt_selection_8[1:1] ? {2'b10,{{2 {8'b00000000}},
-                                                                      {1'b1,idx_1},   eta5[129:18],
-                                                                      nextAborted_3}} : {2'b00,1'b0,{12 {8'b00000000}},3'd6,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+  assign c$ds_case_alt_selection_18 = result_37[19:0];
 
-  assign idx_1 = newLast_1[0:0];
+  assign c$ds_case_alt_8 = c$ds_case_alt_selection_18[19:19] ? {c$ds_app_arg_12,
+                                                                {bwd_1,   {1'b1,{fwdIn_3[18:3],
+                                                                                 c$ds_app_arg_10,
+                                                                                 fwdIn_3[0:0]}}}} : {ds_0,   {bwd_1,
+                                                                                                              {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
 
-  assign newLast_selection_7 = pkt_1[2:1];
+  assign c$ds_app_arg_10 = done_0 ? c$ds_case_alt_9 : {1'b0,1'bx};
 
-  assign newLast_1 = newLast_selection_7[1:1] ? {1'b1,{1'b0,a1_5 + 1'd0}} : {1'b0,2'bxx};
+  assign c$ds_case_alt_selection_21 = fwdIn_3[2:1];
 
-  assign a1_5 = pkt_1[1:1];
+  assign c$ds_case_alt_9 = c$ds_case_alt_selection_21[1:1] ? {1'b1,c$ds_app_arg_11} : {1'b0,1'bx};
 
-  assign nextAborted_3 = eta5[130:130] | pkt_1[0:0];
+  assign c$ds_app_arg_11 = (1'd1 <= a1_5) ? a1_5 : 1'd1;
 
-  assign ds10 = pkt_1[18:3];
+  assign a1_5 = fwdIn_3[1:1];
 
-  assign c$ds2_case_alt_selection_11 = c$case_alt_5[19:0];
+  assign c$ds_app_arg_12 = bwd_1 ? c$ds_case_alt_10 : ds_0;
 
-  assign c$ds2_case_alt_3 = c$ds2_case_alt_selection_11[19:19] ? {c$ds2_app_arg_2,
-                                                                  {readyOut,   fwdOut}} : {eta5,   {r2sAc_1,
-                                                                                                    {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}}};
+  assign bwd_1 = result_42[20:20];
 
-  assign c$ds2_app_arg_2 = readyOut ? result_33[264:132] : eta5;
+  assign c$ds_case_alt_10 = done_0 ? c$ds_case_alt_11 : c$ds_case_alt_12;
 
-  assign readyOut = c$readyOut_case_alt | r2sAc_1;
+  assign done_0 = i_2 == 5'd29;
 
-  assign r2sAc_1 = result_26[132:132];
+  assign c$ds_case_alt_selection_25 = fwdIn_3[2:1];
 
-  assign c$readyOut_case_alt = fwdOut[131:131] ? 1'b0 : 1'b1;
+  assign c$ds_case_alt_11 = c$ds_case_alt_selection_25[1:1] ? {2'b00,5'd0} : {2'b01,5'bxxxxx};
 
-  assign fwdOut = result_33[131:0];
+  assign c$ds_case_alt_selection_28 = fwdIn_3[2:1];
 
-  assign result_33 = ds11_1 ? result_31 : c$ds10_case_alt;
+  assign c$ds_case_alt_12 = c$ds_case_alt_selection_28[1:1] ? {2'b10,c$ds_app_arg_13} : {2'b00,c$ds_app_arg_13};
 
-  assign c$ds10_case_alt_selection_1 = pkt_1[2:1];
+  assign fwdIn_3 = result_37[18:0];
 
-  assign c$ds10_case_alt_sel_alt_f_0 = combined;
+  assign c$ds_app_arg_13 = i_2 + 5'd1;
 
-  assign c$ds10_case_alt = c$ds10_case_alt_selection_1[1:1] ? result_31 : {{2'b00,nextAborted_4,c$ds10_case_alt_sel_alt_f_0[95:0],eta5[33:31] - 3'd1,31'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
-                                                                           {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}};
+  assign i_2 = ds_0[4:0];
 
-  assign nextAborted_4 = eta5[130:130] | pkt_1[0:0];
+  // register begin
+  always @(posedge ethTxClk ) begin : ds_0_register
+    if ( ! c$bindCsr) begin
+      ds_0 <= {2'b00,5'd0};
+    end else begin
+      ds_0 <= result_41[27:21];
+    end
+  end
+  // register end
 
-  assign combined = {eta5[129:34],pkt_1[18:3]};
+  assign result_42 = {c$case_alt_22[20:20],
+                      result_43[20:1]};
 
-  assign pkt_1 = c$case_alt_5[18:0];
+  assign result_43 = ds6[55:55] ? {c$ds8_app_arg_10,
+                                   {{1'b1,{ds15[47:32],   c$ds8_app_arg_9,
+                                           ds6[54:54]}},   1'b0}} : c$ds8_case_alt_1;
 
-  assign rstLow_1 = ~ (c$bindCsr);
+  assign c$ds8_case_alt_selection_3 = ds6[54:35];
 
-  assign bwd_0 = result_32[132:132];
+  assign c$ds8_case_alt_1 = c$ds8_case_alt_selection_3[19:19] ? {c$ds8_app_arg_7,
+                                                                 {{1'b1,c$ds8_app_arg_6},
+                                                                  r2sAc_4}} : {{1'b0,fwdIn_4,35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
+                                                                               {{1'b0,19'bxxxxxxxxxxxxxxxxxxx},
+                                                                                1'b1}};
 
-  assign c$case_alt_5 = rstLow_1 ? {1'b0,
-                                    {1'b0,19'bxxxxxxxxxxxxxxxxxxx}} : {bwd_0,
-                                                                       s2rAc_1};
+  assign c$ds8_app_arg_6 = insertCrc[2:2] ? {ds14_1[47:32],
+                                             x_1,   cache_0[0:0]} : cache_0;
 
-  assign s2rAc_1 = result_49[19:0];
+  assign c$ds8_app_arg_7 = r2sAc_4 ? c$ds8_case_alt_2 : ds6;
 
-  assign result_34 = {c$case_alt_6[11:11],
-                      c$ds8_app_arg_8};
+  assign c$ds8_case_alt_2 = insertCrc[2:2] ? c$ds8_case_alt_3 : {1'b0,fwdIn_4,35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
 
-  assign c$ds8_app_arg_8 = st_0[3:3] ? {1'b1,{st_0[20:5],
-                                              st_0[1:0],
-                                              st_0[2:2]}} : {1'b0,19'bxxxxxxxxxxxxxxxxxxx};
+  assign c$ds8_case_alt_3 = x_1[1:1] ? {1'b0,fwdIn_4,35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {1'b1,cache_0[0:0],fwdIn_4,(({1'b0,(c$ds8_app_arg_8)}) - 2'b10),ds14_1[31:0]};
 
-  assign c$ds8_app_arg_selection_14 = c$case_alt_6[10:0];
+  assign x_1 = insertCrc[1:0];
 
-  assign c$ds8_app_arg_9 = c$ds8_app_arg_selection_14[10:10] ? c$ds8_case_alt_5 : c$ds8_case_alt_4;
+  assign insertCrc_selection_1 = cache_0[2:1];
 
-  assign c$ds8_case_alt_4 = c$ds8_case_scrut ? {st_0[20:5],
-                                                st_0[4:4],   1'b0,   c$ds8_app_arg_11,
-                                                {1'b0,1'bx}} : st_0;
+  assign insertCrc = insertCrc_selection_1[1:1] ? {1'b1,{1'b0,1'bx}} : {1'b0,2'bxx};
 
-  assign c$ds8_case_alt_5 = c$ds8_case_scrut ? {c$ds8_app_arg_14,
-                                                c$ds8_app_arg_13,   nextFlush,
-                                                c$ds8_app_arg_11 | c$case_alt_6[0:0],
-                                                c$ds8_app_arg_10} : st_0;
+  assign ds14_1 = c$ds14_app_arg;
 
-  assign c$ds8_case_scrut = (~ st_0[3:3]) | r2sAc_2;
+  assign c$ds14_app_arg_selection_1 = cache_0[2:1];
 
-  assign r2sAc_2 = result_49[20:20];
+  assign c$ds14_app_arg = c$ds14_app_arg_selection_1[1:1] ? result_44 : ({48 {1'bx}});
 
-  assign c$ds8_app_arg_10 = c$case_alt_6[1:1] ? {1'b1,st_0[4:4]} : {1'b0,1'bx};
+  assign c$vec_21 = {{x1_3,result_45},   \xs' };
 
-  assign c$ds8_app_arg_11 = c$ds8_app_arg_12 & st_0[2:2];
-
-  assign c$ds8_app_arg_selection_21 = st_0[1:0];
-
-  assign c$ds8_app_arg_12 = c$ds8_app_arg_selection_21[1:1] ? 1'b0 : 1'b1;
-
-  assign c$ds8_app_arg_13 = nextFlush ? 1'd0 : (st_0[4:4] + 1'd1);
-
-  assign nextFlush = c$nextFlush_app_arg | (st_0[4:4] == 1'd1);
-
-  assign c$nextFlush_app_arg = c$case_alt_6[1:1] ? 1'b1 : 1'b0;
-
-  assign c$i_208 = st_0[4:4];
-
-  assign c$vec_15 = c$case_alt_6[9:2];
-
-  assign c$vec_16 = st_0[20:5];
-
-  // vector replace begin
-  genvar i_23;
+  // reverse begin
+  genvar i_29;
   generate
-  for (i_23=0;i_23<2;i_23=i_23+1) begin : vector_replace_1
-    assign c$ds8_app_arg_14[(1-i_23)*8+:8] = ($unsigned({{(64-1) {1'b0}},c$i_208})) == i_23 ? (c$vec_15[8-1 -: 8]) : c$vec_16[(1-i_23)*8+:8];
+  for (i_29 = 0; i_29 < 2; i_29 = i_29 + 1) begin : reverse
+    assign c$app_arg_13[(2 - 1 - i_29)*48+:48] = c$vec_21[i_29*48+:48];
   end
   endgenerate
-  // vector replace end
+  // reverse end
 
-  assign rstLow_2 = ~ (c$app_arg);
+  assign \xs'  = {x1_2,({result_45,({1 {8'b00000000}})})};
 
-  assign c$case_alt_6 = rstLow_2 ? {1'b0,
-                                    {1'b0,10'bxxxxxxxxxx}} : {c$ds8_case_scrut,
-                                                              s2rAc_2};
+  assign x1_projection_5 = cache_0[18:3];
 
-  assign s2rAc_2 = result_45[10:0];
+  assign x1_2 = x1_projection_5[15:8];
+
+  assign x1_projection_6 = cache_0[18:3];
+
+  assign x1_3 = x1_projection_6;
+
+  // index begin
+  wire [47:0] vecArray_2 [0:2-1];
+  genvar i_30;
+  generate
+  for (i_30=0; i_30 < 2; i_30=i_30+1) begin : mk_array_2
+    assign vecArray_2[(2-1)-i_30] = c$app_arg_13[i_30*48+:48];
+  end
+  endgenerate
+  assign result_44 = vecArray_2[($unsigned({{(64-1) {1'b0}},a1_6}))];
+  // index end
+
+  assign c$ds8_app_arg_selection_16 = cache_0[2:1];
+
+  assign c$ds8_app_arg_8 = c$ds8_app_arg_selection_16[1:1] ? (a1_6) : ({1 {1'bx}});
+
+  assign a1_6 = cache_0[1:1];
+
+  assign cache_0 = ds6[53:35];
+
+  assign fwdIn_4 = c$case_alt_22[19:0];
+
+  assign c$bv_3 = ds6[33:32];
+
+  assign c$ds8_app_arg_9 = finished ? {1'b1,c$bv_3[0+:1]} : {1'b0,1'bx};
+
+  assign c$ds8_app_arg_10 = r2sAc_4 ? c$ds8_case_alt_4 : ds6;
+
+  assign r2sAc_4 = result_50[20:20];
+
+  assign c$vec_22 = ((result_46));
+
+  // reverse begin
+  genvar i_31;
+  generate
+  for (i_31 = 0; i_31 < 4; i_31 = i_31 + 1) begin : reverse_0
+    assign result_45[(4 - 1 - i_31)*8+:8] = c$vec_22[i_31*8+:8];
+  end
+  endgenerate
+  // reverse end
+
+  assign result_46 = 32'b11111111111111111111111111111111 ^ result_47;
+
+  // map begin
+  genvar i_32;
+  generate
+  for (i_32=0; i_32 < 32; i_32 = i_32 + 1) begin : map_11
+    wire  map_in_12;
+    assign map_in_12 = c$app_arg_15[i_32*1+:1];
+    wire [0:0] map_out_12;
+    assign map_out_12 = (map_in_12);
+
+
+    assign c$app_arg_14[i_32*1+:1] = map_out_12;
+  end
+  endgenerate
+  // map end
+
+  assign result_47 = (c$app_arg_14);
+
+  assign c$vec_23 = ((crcState_0));
+
+  // reverse begin
+  genvar i_33;
+  generate
+  for (i_33 = 0; i_33 < 32; i_33 = i_33 + 1) begin : reverse_1
+    assign c$app_arg_15[(32 - 1 - i_33)*1+:1] = c$vec_23[i_33*1+:1];
+  end
+  endgenerate
+  // reverse end
 
   // register begin
-  always @(posedge ethRxClk ) begin : st_0_register
-    if ( ! c$app_arg) begin
-      st_0 <= {{8'b00000000,   8'b00000000},   1'd0,   1'b0,   1'b0,   {1'b0,1'bx}};
-    end else begin
-      st_0 <= c$ds8_app_arg_9;
-    end
-  end
-  // register end
-
-  assign result_35 = {inputVld & nibbleSelect,
-                      {c$app_arg_12,   c$app_arg_10,   c$app_arg_8}};
-
-  // delay begin
-  always @(posedge ethTxClk) begin : c$app_arg_8_delay
-    c$app_arg_8 <= c$app_arg_9;
-  end
-  // delay end
-
-  assign c$app_arg_9 = nibbleSelect ? ds2_0[3:0] : ds2_0[7:4];
-
-  assign ds2_0 = (c$ds2_app_arg_3);
-
-  // delay begin
-  always @(posedge ethTxClk) begin : c$app_arg_10_delay
-    c$app_arg_10 <= c$app_arg_11;
-  end
-  // delay end
-
-  assign c$app_arg_selection_3 = result_1[10:0];
-
-  assign c$app_arg_11 = c$app_arg_selection_3[10:10] ? a1_6[0:0] : 1'b0;
-
-  // delay begin
-  always @(posedge ethTxClk) begin : c$app_arg_12_delay
-    c$app_arg_12 <= inputVld;
-  end
-  // delay end
-
-  // register begin
-  always @(posedge ethTxClk ) begin : nibbleSelect_register
+  always @(posedge ethTxClk ) begin : crcState_0_register
     if ( ! c$bindCsr) begin
-      nibbleSelect <= 1'b0;
-    end else if (inputVld) begin
-      nibbleSelect <= (~ nibbleSelect);
+      crcState_0 <= 32'b11111111111111111111111111111111;
+    end else if (c$crcState_app_arg_1) begin
+      crcState_0 <= c$crcState_case_alt;
     end
   end
   // register end
 
-  assign inputVld_selection_1 = result_1[10:0];
+  assign c$crcState_case_alt_selection_1 = c$crcState_case_alt_selection_0;
 
-  assign inputVld = inputVld_selection_1[10:10] ? 1'b1 : 1'b0;
+  assign c$i_183 = ds11_1[16:16];
 
-  assign c$ds2_app_arg_selection_5 = result_1[10:0];
+  assign c$crcState_case_alt_selection_0 = $unsigned({{(64-1) {1'b0}},c$i_183});
 
-  assign c$vec_17 = a1_6[9:2];
+  always @(*) begin
+    case(c$crcState_case_alt_selection_1)
+      64'sd0 : c$crcState_case_alt = result_49;
+      64'sd1 : c$crcState_case_alt = result_48;
+      default : c$crcState_case_alt = {32 {1'bx}};
+    endcase
+  end
 
-  assign c$ds2_app_arg_3 = c$ds2_app_arg_selection_5[10:10] ? (c$vec_17[8-1 -: 8]) : ({8 {1'bx}});
+  // map begin
+  genvar i_34;
+  generate
+  for (i_34=0; i_34 < 2; i_34 = i_34 + 1) begin : map_12
+    wire [7:0] map_in_13;
+    assign map_in_13 = x_2[i_34*8+:8];
+    wire [7:0] map_out_13;
+    assign map_out_13 = map_in_13;
 
-  assign a1_6 = result_1[9:0];
+
+    assign c$case_alt_21[i_34*8+:8] = map_out_13;
+  end
+  endgenerate
+  // map end
+
+  assign x_projection_5 = ds11_1[15:0];
+
+  assign x_2 = x_projection_5;
+
+  assign c$vec_24 = {48'b100010110010000010000000000000001101000100000100,
+                     48'b010001011001000001000000000000001010001000001001,
+                     48'b001000101100100000100000000000000100010000010011,
+                     48'b000100010110010000010000000000001000100000100110,
+                     48'b000010001011001000001000000000000001000001001101,
+                     48'b000001000101100100000100000000000010000010011010,
+                     48'b100010010000110000000010000000001001000100110000,
+                     48'b010001001000011000000001000000000010001001100001,
+                     48'b101000100100001100000000100000000100010111000010,
+                     48'b010110100000000100000000010000000101101010000000,
+                     48'b001001100010000000000000001000000110010000000100,
+                     48'b000100110001000000000000000100001100100000001000,
+                     48'b100010011000100000000000000010001001000100010001,
+                     48'b110001001100010000000000000001000010001100100011,
+                     48'b011000100110001000000000000000100100011001000110,
+                     48'b001100010011000100000000000000011000110010001100,
+                     48'b100100111011100000000000000000001100100100011101,
+                     48'b110010011101110000000000000000001001001100111011,
+                     48'b011001001110111000000000000000000010011001110111,
+                     48'b101100100111011100000000000000000100110111101110,
+                     48'b110100100001101100000000000000000100101111011000,
+                     48'b011000100010110100000000000000000100011010110100,
+                     48'b001110100011011000000000000000000101110001101100,
+                     48'b000111010001101100000000000000001011100011011000,
+                     48'b100001011010110100000000000000001010000110110101,
+                     48'b010010011111011000000000000000001001001001101111,
+                     48'b001001001111101100000000000000000010010011011111,
+                     48'b100110010101110100000000000000001001100110111010,
+                     48'b110001111000111000000000000000001110001101110001,
+                     48'b011000111100011100000000000000001100011011100011,
+                     48'b001110101100001100000000000000000101110011000011,
+                     48'b000101100100000100000000000000000110100010000010};
+
+  // map begin
+  genvar i_35;
+  generate
+  for (i_35=0; i_35 < 32; i_35 = i_35 + 1) begin : map_13
+    wire [47:0] map_in_14;
+    assign map_in_14 = c$vec_24[i_35*48+:48];
+    wire  map_out_14;
+    assign map_out_14 = ^ (((({c$crcState_app_arg_0,((c$case_alt_21))}) & map_in_14)));
+
+
+    assign c$app_arg_16[i_35*1+:1] = map_out_14;
+  end
+  endgenerate
+  // map end
+
+  assign result_48 = ((c$app_arg_16));
+
+  assign x_projection_6 = ds11_1[15:0];
+
+  assign x_3 = x_projection_6[15:8];
+
+  assign c$vec_25 = {40'b0010000010000000000000000000000000000100,
+                     40'b1001000001000000000000000000000000001001,
+                     40'b1100100000100000000000000000000000010011,
+                     40'b0110010000010000000000000000000000100110,
+                     40'b1011001000001000000000000000000001001101,
+                     40'b0101100100000100000000000000000010011010,
+                     40'b0000110000000010000000000000000000110000,
+                     40'b1000011000000001000000000000000001100001,
+                     40'b0100001100000000100000000000000011000010,
+                     40'b0000000100000000010000000000000010000000,
+                     40'b0010000000000000001000000000000000000100,
+                     40'b0001000000000000000100000000000000001000,
+                     40'b1000100000000000000010000000000000010001,
+                     40'b1100010000000000000001000000000000100011,
+                     40'b0110001000000000000000100000000001000110,
+                     40'b0011000100000000000000010000000010001100,
+                     40'b1011100000000000000000001000000000011101,
+                     40'b1101110000000000000000000100000000111011,
+                     40'b1110111000000000000000000010000001110111,
+                     40'b0111011100000000000000000001000011101110,
+                     40'b0001101100000000000000000000100011011000,
+                     40'b0010110100000000000000000000010010110100,
+                     40'b0011011000000000000000000000001001101100,
+                     40'b0001101100000000000000000000000111011000,
+                     40'b1010110100000000000000000000000010110101,
+                     40'b1111011000000000000000000000000001101111,
+                     40'b1111101100000000000000000000000011011111,
+                     40'b0101110100000000000000000000000010111010,
+                     40'b1000111000000000000000000000000001110001,
+                     40'b1100011100000000000000000000000011100011,
+                     40'b1100001100000000000000000000000011000011,
+                     40'b0100000100000000000000000000000010000010};
+
+  // map begin
+  genvar i_36;
+  generate
+  for (i_36=0; i_36 < 32; i_36 = i_36 + 1) begin : map_14
+    wire [39:0] map_in_15;
+    assign map_in_15 = c$vec_25[i_36*40+:40];
+    wire  map_out_15;
+    assign map_out_15 = ^ (((({c$crcState_app_arg_0,((x_3[7:0]))}) & map_in_15)));
+
+
+    assign c$app_arg_17[i_36*1+:1] = map_out_15;
+  end
+  endgenerate
+  // map end
+
+  assign result_49 = ((c$app_arg_17));
+
+  assign c$crcState_app_arg_0 = c$x_app_arg_1 ? 32'b11111111111111111111111111111111 : crcState_0;
+
+  assign c$crcState_app_arg_1 = c$x_app_arg[17:17] ? 1'b1 : 1'b0;
+
+  assign ds11_1 = c$x_app_arg[17:17] ? a1_7 : ({17 {1'bx}});
+
+  assign a1_7 = c$x_app_arg[16:0];
+
+  assign c$x_app_arg = transferOccured_0 ? {1'b1,{c$x_app_arg_0,
+                                                  fwdInX_0[18:3]}} : {1'b0,17'bxxxxxxxxxxxxxxxxx};
+
+  assign c$x_app_arg_selection_2 = fwdInX_0[2:1];
+
+  assign c$x_app_arg_0 = c$x_app_arg_selection_2[1:1] ? v_0 : 1'd1;
+
+  assign v_0 = fwdInX_0[1:1];
 
   // register begin
-  always @(posedge ethRxClk ) begin : c$ds_app_arg_18_register
-    if ( ! c$app_arg) begin
-      c$ds_app_arg_18 <= ({4 {1'bx}});
-    end else begin
-      c$ds_app_arg_18 <= nibble0;
+  always @(posedge ethTxClk ) begin : c$x_app_arg_1_register
+    if ( ! c$bindCsr) begin
+      c$x_app_arg_1 <= 1'b1;
+    end else if (transferOccured_0) begin
+      c$x_app_arg_1 <= c$x_case_alt;
     end
   end
   // register end
+
+  assign c$x_case_alt_selection_1 = fwdInX_0[2:1];
+
+  assign c$x_case_alt = c$x_case_alt_selection_1[1:1] ? 1'b1 : 1'b0;
+
+  assign fwdInX_selection_2 = c$case_alt_22[19:0];
+
+  assign fwdInX_0 = fwdInX_selection_2[19:19] ? a1_8 : ({19 {1'bx}});
+
+  assign a1_8 = c$case_alt_22[18:0];
+
+  assign transferOccured_0 = ready_0 & c$transferOccured_app_arg_0;
+
+  assign ready_0 = result_43[0:0];
+
+  assign c$transferOccured_app_arg_selection_2 = c$case_alt_22[19:0];
+
+  assign c$transferOccured_app_arg_0 = c$transferOccured_app_arg_selection_2[19:19] ? 1'b1 : 1'b0;
+
+  assign rstLow_3 = ~ (c$bindCsr);
+
+  assign c$case_alt_22 = rstLow_3 ? {1'b0,
+                                     {1'b0,19'bxxxxxxxxxxxxxxxxxxx}} : {ready_0,
+                                                                        s2rAc_3};
+
+  assign s2rAc_3 = result_40[19:0];
+
+  assign c$ds8_case_alt_4 = finished ? {1'b0,ds6[53:34],35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {1'b1,ds6[54:54],ds6[53:34],ds6[33:32] - 2'd2,ds15[31:0]};
+
+  assign finished = ds6[33:32] <= 2'd1;
+
+  assign ds15 = ({ds6[31:0],({2 {8'b00000000}})});
+
+  // register begin
+  always @(posedge ethTxClk ) begin : ds6_register
+    if ( ! c$bindCsr) begin
+      ds6 <= {1'b0,{1'b0,19'bxxxxxxxxxxxxxxxxxxx},35'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+    end else begin
+      ds6 <= result_43[76:21];
+    end
+  end
+  // register end
+
+  assign result_50 = result_51[20:0];
+
+  always @(*) begin
+    case(eta2_0[84:83])
+      2'b00 : result_51 = c$ds_case_alt_17;
+      2'b01 : result_51 = c$ds_case_alt_13;
+      default : result_51 = {c$ds_app_arg_14,
+                             {1'b0,   {1'b1,eta2_0[82:64]}}};
+    endcase
+  end
+
+  assign c$ds_app_arg_14 = bwdIn_3 ? {2'b00,2'd0,{10 {8'b00000000}},1'b0} : eta2_0;
+
+  assign c$ds_case_alt_selection_31 = result_42[19:0];
+
+  assign c$ds_case_alt_13 = c$ds_case_alt_selection_31[19:19] ? {c$ds_app_arg_16,
+                                                                 {bwdIn_3,   {1'b1,{ds8_0,   c$ds_app_arg_15,
+                                                                                    nextAborted_5}}}} : {eta2_0,
+                                                                                                         {bwdIn_3,
+                                                                                                          {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
+
+  assign c$ds_app_arg_15 = newLast_2[2:2] ? c$ds_case_alt_14 : {1'b0,1'bx};
+
+  assign c$ds_case_alt_selection_34 = newLast_2[1:0];
+
+  assign c$ds_case_alt_14 = c$ds_case_alt_selection_34[1:1] ? {1'b0,1'bx} : {1'b1,x1_4};
+
+  assign x1_4 = newLast_2[0:0];
+
+  assign c$ds_app_arg_16 = bwdIn_3 ? c$ds_case_alt_15 : eta2_0;
+
+  assign c$ds_case_alt_15 = newLast_2[2:2] ? c$ds_case_alt_16 : {2'b01,nextAborted_5,82'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+
+  assign c$ds_case_alt_selection_38 = newLast_2[1:0];
+
+  assign c$ds_case_alt_16 = c$ds_case_alt_selection_38[1:1] ? {2'b10,{{2 {8'b00000000}},
+                                                                      {1'b1,idx_2},
+                                                                      nextAborted_5},64'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,2'd0,{10 {8'b00000000}},1'b0};
+
+  assign idx_2 = newLast_2[0:0];
+
+  assign newLast_selection_9 = pkt_2[2:1];
+
+  assign newLast_2 = newLast_selection_9[1:1] ? {1'b1,c$newLast_app_arg_0} : {1'b0,2'bxx};
+
+  assign c$newLast_app_arg_0 = {1'b0,a1_9 + 1'd0};
+
+  assign a1_9 = pkt_2[1:1];
+
+  assign nextAborted_5 = eta2_0[82:82] | pkt_2[0:0];
+
+  assign ds8_0 = pkt_2[18:3];
+
+  assign c$ds_case_alt_selection_41 = result_42[19:0];
+
+  assign c$ds_case_alt_17 = c$ds_case_alt_selection_41[19:19] ? {c$ds_app_arg_17,
+                                                                 {1'b0,   {1'b1,{ds9_0[95:80],   {1'b0,1'bx},
+                                                                                 nextAborted_6}}}} : {eta2_0,
+                                                                                                      {bwdIn_3,
+                                                                                                       {1'b0,19'bxxxxxxxxxxxxxxxxxxx}}};
+
+  assign c$ds_app_arg_17 = bwdIn_3 ? c$ds_case_alt_18 : eta2_0;
+
+  assign c$ds_case_alt_sel_alt_t_28 = pkt_2[18:3];
+
+  assign c$ds_case_alt_18 = (eta2_0[82:81] == 2'd3) ? {2'b01,nextAborted_6,82'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,eta2_0[82:81] + 2'd1,ds9_0[79:0],nextAborted_6};
+
+  assign nextAborted_6 = eta2_0[0:0] | pkt_2[0:0];
+
+  assign ds9_0 = c$ds9_app_arg_0;
+
+  assign c$ds9_app_arg_selection_4 = eta2_0[82:81];
+
+  assign c$vec_26 = ({({7 {8'b01010101}}),8'b11010101});
+
+  // map begin
+  genvar i_37;
+  generate
+  for (i_37=0; i_37 < 8; i_37 = i_37 + 1) begin : map_15
+    wire [7:0] map_in_16;
+    assign map_in_16 = c$vec_26[i_37*8+:8];
+    wire [7:0] map_out_16;
+    assign map_out_16 = map_in_16;
+
+
+    assign c$ds9_app_arg_sel_alt_res[i_37*8+:8] = map_out_16;
+  end
+  endgenerate
+  // map end
+
+  always @(*) begin
+    case(c$ds9_app_arg_selection_4)
+      2'd0 : c$ds9_app_arg_0 = {({((((c$ds9_app_arg_sel_alt_res)))),pkt_2[18:3]}),({2 {(8'd0)}})};
+      default : c$ds9_app_arg_0 = {eta2_0[80:1],({2 {(8'd0)}})};
+    endcase
+  end
+
+  assign pkt_2 = result_42[18:0];
+
+  // register begin
+  always @(posedge ethTxClk ) begin : eta2_0_register
+    if ( ! c$bindCsr) begin
+      eta2_0 <= {2'b00,2'd0,{8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
+               8'b00000000,   8'b00000000,   8'b00000000,   8'b00000000,
+               8'b00000000,   8'b00000000},1'b0};
+    end else begin
+      eta2_0 <= result_51[105:21];
+    end
+  end
+  // register end
+
+  assign bwdIn_3 = result_52[11:11];
+
+  assign result_52 = {c$case_alt_23[20:20],
+                      c$ds8_app_arg_11};
+
+  assign c$vec_27 = st_0[19:4];
+
+  assign c$ds8_app_arg_11 = c$ds11_app_arg ? {1'b1,{c$vec_27[16-1 -: 8],
+                                                    c$ds8_app_arg_12,
+                                                    st_0[0:0]}} : {1'b0,10'bxxxxxxxxxx};
+
+  assign c$ds8_app_arg_12 = (c$outReady_app_arg & st_0[1:1]) ? 1'd1 : 1'd0;
+
+  assign result_selection_32 = c$case_alt_23[19:0];
+
+  assign result_53 = result_selection_32[19:19] ? c$ds8_case_alt_5 : {ds11_2[15:0],
+                                                                      ds11_2[17:16],   st_0[1:1],   st_0[0:0]};
+
+  assign c$ds8_case_alt_5 = outReady ? {vs,
+                                        c$ds8_app_arg_14,   c$ds8_app_arg_13,
+                                        aborted} : {ds11_2[15:0],   ds11_2[17:16],
+                                                    st_0[1:1],   st_0[0:0]};
+
+  assign outReady = (st_0[3:2] == 2'd0) | (c$outReady_app_arg & r2sAc_5);
+
+  assign c$outReady_app_arg = st_0[3:2] == 2'd1;
+
+  assign aborted = inp[0:0];
+
+  assign vs = inp[18:3];
+
+  assign c$ds8_app_arg_13 = lastIdx[1:1] ? 1'b1 : 1'b0;
+
+  assign c$ds8_app_arg_14 = lastIdx[1:1] ? (({{(2-1) {1'b0}},x_4}) + 2'd1) : 2'd2;
+
+  assign x_4 = lastIdx[0:0];
+
+  assign lastIdx = inp[2:1];
+
+  assign inp = c$case_alt_23[18:0];
+
+  assign ds11_sel_alt_t_1 = ({st_0[19:4],8'b00000000});
+
+  assign ds11_2 = (c$ds11_app_arg & r2sAc_5) ? {st_0[3:2] - 2'd1,
+                                                ds11_sel_alt_t_1[15:0]} : {st_0[3:2],
+                                                                           st_0[19:4]};
+
+  assign r2sAc_5 = result_55[11:11];
+
+  assign c$ds11_app_arg = st_0[3:2] > 2'd0;
+
+  // register begin
+  always @(posedge ethTxClk ) begin : st_0_register
+    if ( ! c$bindCsr) begin
+      st_0 <= {{16 {1'bx}},   2'd0,   1'b0,   1'b0};
+    end else begin
+      st_0 <= result_53;
+    end
+  end
+  // register end
+
+  assign rstLow_4 = ~ (c$bindCsr);
+
+  assign c$case_alt_23 = rstLow_4 ? {1'b0,
+                                     {1'b0,19'bxxxxxxxxxxxxxxxxxxx}} : {outReady,
+                                                                        s2rAc_4};
+
+  assign s2rAc_4 = result_50[19:0];
+
+  assign c$ds_app_arg_18 = (ds1_0[3:0] == 4'd11) ? {1'b1,4'bxxxx} : {1'b0,ds1_0[3:0] + 4'd1};
+
+  assign c$ds_case_alt_19 = inp_0[1:1] ? {1'b0,4'd0} : {1'b1,4'bxxxx};
+
+  assign c$ds_case_alt_selection_47 = result_52[10:0];
+
+  assign c$ds_case_alt_20 = c$ds_case_alt_selection_47[10:10] ? {c$ds_case_alt_19,
+                                                                 {r2sAc_6,
+                                                                  result_52[10:0]}} : {{1'b1,4'bxxxx},
+                                                                                       {r2sAc_6,
+                                                                                        {1'b0,10'bxxxxxxxxxx}}};
+
+  assign result_54 = ds1_0[4:4] ? c$ds_case_alt_20 : {c$ds_app_arg_18,
+                                                      {1'b0,   {1'b0,10'bxxxxxxxxxx}}};
+
+  assign result_55 = result_54[11:0];
+
+  // register begin
+  always @(posedge ethTxClk ) begin : ds1_0_register
+    if ( ! c$bindCsr) begin
+      ds1_0 <= {1'b1,4'bxxxx};
+    end else begin
+      ds1_0 <= result_54[16:12];
+    end
+  end
+  // register end
+
+  assign inp_0 = result_52[9:0];
+
+  assign r2sAc_6 = result_58[6:6];
+
+  assign c$ds23_app_arg_selection_1 = result_36[131:0];
+
+  assign c$ds23_app_arg = c$ds23_app_arg_selection_1[131:131] ? {1'b1,{a1_10[130:115],
+                                                                       a1_10[114:113],   {a1_10[64:17],
+                                                                                          {8'b01011110,   8'b10100100,
+                                                                                           8'b01001110,   8'b11110100,
+                                                                                           8'b00100001,   8'b00000110},
+                                                                                          a1_10[16:1]},
+                                                                       a1_10[0:0]}} : {1'b0,131'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
+
+  assign a1_10 = result_36[130:0];
 
   // register begin
   always @(posedge ethRxClk ) begin : c$ds_app_arg_19_register
     if ( ! c$app_arg) begin
-      c$ds_app_arg_19 <= 1'b0;
+      c$ds_app_arg_19 <= ({4 {1'bx}});
     end else begin
-      c$ds_app_arg_19 <= dv0;
+      c$ds_app_arg_19 <= nibble0;
     end
   end
   // register end
 
-  assign result_36 = (c$ds_app_arg_19 & (~ dv0)) ? 1'd1 : 1'd0;
+  // register begin
+  always @(posedge ethRxClk ) begin : c$ds_app_arg_20_register
+    if ( ! c$app_arg) begin
+      c$ds_app_arg_20 <= 1'b0;
+    end else begin
+      c$ds_app_arg_20 <= dv0;
+    end
+  end
+  // register end
+
+  assign result_56 = (c$ds_app_arg_20 & (~ dv0)) ? 1'd1 : 1'd0;
 
   // delay begin
-  always @(posedge ethRxClk) begin : c$ds3_app_arg_delay
-    c$ds3_app_arg <= rxChannel[4:4];
+  always @(posedge ethRxClk) begin : c$ds3_app_arg_3_delay
+    c$ds3_app_arg_3 <= rxChannel[4:4];
   end
   // delay end
 
-  assign result_37 = dv0 ? {1'b1,{{nibble0,c$ds_app_arg_18},
-                                  result_36,   ds3}} : {1'b0,10'bxxxxxxxxxx};
+  assign result_57 = dv0 ? {1'b1,{{nibble0,c$ds_app_arg_19},
+                                  result_56,   ds3}} : {1'b0,10'bxxxxxxxxxx};
 
-  assign c$case_alt_7 = result_37;
+  assign c$case_alt_24 = result_57;
 
   // delay begin
   always @(posedge ethRxClk) begin : dv0_delay
@@ -1904,378 +2823,66 @@ module topEntity
     if ( ! c$app_arg) begin
       ds3 <= ({1 {1'bx}});
     end else begin
-      ds3 <= c$ds3_app_arg;
+      ds3 <= c$ds3_app_arg_3;
     end
   end
   // register end
 
-  assign c$ds_app_arg_20 = result_46[10:10] ? 1'b0 : 1'b1;
+  assign result_58 = {inputVld & nibbleSelect,
+                      {c$app_arg_22,   c$app_arg_20,
+                       c$app_arg_18}};
 
-  assign ds2_1 = {s2rAc_4,
-                  c$ds_app_arg_20 | r2sAc_4};
-
-  assign result_38 = {c$case_alt_8[11:11],
-                      result_43[18:0]};
-
-  assign result_39 = ds11_2 ? result_40 : ({81 {1'bx}});
-
-  assign result_40 = pkt_2[1:1] ? {{2'b00,1'b0,{7 {8'b00000000}},3'd7},
-                                   {1'b1,{{1 {8'b00000000}},   1'd1,   result_41,
-                                          nextAborted_6}}} : {{2'b01,nextAborted_6,result_41,51'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx},
-                                                              {1'b0,18'bxxxxxxxxxxxxxxxxxx}};
-
-  assign c$vec_18 = ((((c$mapOut_0))));
-
-  assign result_41 = c$vec_18[8-1:0];
-
-  assign c$vec_19 = ds14_1;
-
-  // map begin
-  genvar i_24;
-  generate
-  for (i_24=0; i_24 < 8; i_24 = i_24 + 1) begin : map_7
-    wire [7:0] map_in_8;
-    assign map_in_8 = c$vec_19[i_24*8+:8];
-    wire [7:0] map_out_8;
-    assign map_out_8 = map_in_8;
-
-
-    assign c$mapOut_0[i_24*8+:8] = map_out_8;
+  // delay begin
+  always @(posedge ethTxClk) begin : c$app_arg_18_delay
+    c$app_arg_18 <= c$app_arg_19;
   end
-  endgenerate
-  // map end
+  // delay end
 
-  assign ds14_1 = combined_0;
+  assign c$app_arg_19 = nibbleSelect ? ds2_0[3:0] : ds2_0[7:4];
 
-  assign result_42 = pkt_2[1:1] ? {{2'b00,1'b0,{7 {8'b00000000}},3'd7},
-                                   {1'b0,18'bxxxxxxxxxxxxxxxxxx}} : result_39;
+  assign ds2_0 = (c$ds2_app_arg_7);
 
-  assign ds11_2 = eta5_0[2:0] == 3'd0;
+  // delay begin
+  always @(posedge ethTxClk) begin : c$app_arg_20_delay
+    c$app_arg_20 <= c$app_arg_21;
+  end
+  // delay end
+
+  assign c$app_arg_selection_12 = result_0[10:0];
+
+  assign c$app_arg_21 = c$app_arg_selection_12[10:10] ? a1_11[0:0] : 1'b0;
+
+  // delay begin
+  always @(posedge ethTxClk) begin : c$app_arg_22_delay
+    c$app_arg_22 <= inputVld;
+  end
+  // delay end
 
   // register begin
-  always @(posedge ethRxClk ) begin : eta5_0_register
-    if ( ! c$app_arg) begin
-      eta5_0 <= {2'b00,1'b0,{{8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}},
-               {8 {1'bx}},   {8 {1'bx}},   {8 {1'bx}}},3'd7};
-    end else begin
-      eta5_0 <= result_43[81:20];
-    end
-  end
-  // register end
-
-  always @(*) begin
-    case(eta5_0[61:60])
-      2'b00 : result_43 = c$ds2_case_alt_8;
-      2'b01 : result_43 = c$ds2_case_alt_4;
-      default : result_43 = {c$ds2_app_arg_4,
-                             {1'b0,   {1'b1,eta5_0[59:42]}}};
-    endcase
-  end
-
-  assign c$ds2_app_arg_4 = r2sAc_3 ? {2'b00,1'b0,{7 {8'b00000000}},3'd7} : eta5_0;
-
-  assign c$ds2_case_alt_selection_14 = c$case_alt_8[10:0];
-
-  assign c$ds2_case_alt_4 = c$ds2_case_alt_selection_14[10:10] ? {c$ds2_app_arg_6,
-                                                                  {r2sAc_3,   {1'b1,{ds10_0,   c$ds2_app_arg_5,
-                                                                                     eta5_0[58:51],
-                                                                                     nextAborted_5}}}} : {eta5_0,
-                                                                                                          {r2sAc_3,
-                                                                                                           {1'b0,18'bxxxxxxxxxxxxxxxxxx}}};
-
-  assign c$ds2_app_arg_5 = newLast_2[1:1] ? c$ds2_case_alt_5 : 1'd0;
-
-  assign c$ds2_case_alt_5 = newLast_2[0:0] ? 1'd0 : 1'd1;
-
-  assign c$ds2_app_arg_6 = r2sAc_3 ? c$ds2_case_alt_6 : eta5_0;
-
-  assign c$ds2_case_alt_6 = newLast_2[1:1] ? c$ds2_case_alt_7 : {2'b01,nextAborted_5,eta5_0[58:51],51'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx};
-
-  assign c$ds2_case_alt_7 = newLast_2[0:0] ? {2'b10,{{1 {8'b00000000}},
-                                                     1'd1,   eta5_0[58:51],
-                                                     nextAborted_5},42'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} : {2'b00,1'b0,{7 {8'b00000000}},3'd7};
-
-  assign newLast_2 = pkt_2[1:1] ? {1'b1,1'd0} : {1'b0,1'bx};
-
-  assign nextAborted_5 = eta5_0[59:59] | pkt_2[0:0];
-
-  assign ds10_0 = pkt_2[9:2];
-
-  assign c$ds2_case_alt_selection_22 = c$case_alt_8[10:0];
-
-  assign c$ds2_case_alt_8 = c$ds2_case_alt_selection_22[10:10] ? {c$ds2_app_arg_7,
-                                                                  {readyOut_0,   fwdOut_0}} : {eta5_0,
-                                                                                               {r2sAc_3,
-                                                                                                {1'b0,18'bxxxxxxxxxxxxxxxxxx}}};
-
-  assign c$ds2_app_arg_7 = readyOut_0 ? result_44[80:19] : eta5_0;
-
-  assign readyOut_0 = c$readyOut_case_alt_0 | r2sAc_3;
-
-  assign r2sAc_3 = ds2_1[0:0];
-
-  assign c$readyOut_case_alt_0 = fwdOut_0[18:18] ? 1'b0 : 1'b1;
-
-  assign fwdOut_0 = result_44[18:0];
-
-  assign result_44 = ds11_2 ? result_42 : c$ds10_case_alt_0;
-
-  assign c$ds10_case_alt_sel_alt_f_4 = combined_0;
-
-  assign c$ds10_case_alt_0 = pkt_2[1:1] ? result_42 : {{2'b00,nextAborted_6,c$ds10_case_alt_sel_alt_f_4[55:0],eta5_0[2:0] - 3'd1},
-                                                       {1'b0,18'bxxxxxxxxxxxxxxxxxx}};
-
-  assign nextAborted_6 = eta5_0[59:59] | pkt_2[0:0];
-
-  assign combined_0 = {eta5_0[58:3],pkt_2[9:2]};
-
-  assign pkt_2 = c$case_alt_8[9:0];
-
-  assign rstLow_3 = ~ (c$app_arg);
-
-  assign bwd_1 = result_43[19:19];
-
-  assign c$case_alt_8 = rstLow_3 ? {1'b0,
-                                    {1'b0,10'bxxxxxxxxxx}} : {bwd_1,   s2rAc_3};
-
-  assign s2rAc_3 = ds2_1[11:1];
-
-  assign result_45 = {result_38[19:19],
-                      result_46};
-
-  assign x_4 = result_38[17:0];
-
-  assign c$case_alt_selection_14 = x_4[8:1];
-
-  always @(*) begin
-    case(c$case_alt_selection_14)
-      8'b11010101 : c$case_alt_9 = {1'b1,{x_4[17:10],
-                                          x_4[9:9],   x_4[0:0]}};
-      default : c$case_alt_9 = {1'b0,10'bxxxxxxxxxx};
-    endcase
-  end
-
-  assign result_selection_31 = result_38[18:0];
-
-  assign result_46 = result_selection_31[18:18] ? c$case_alt_9 : {1'b0,10'bxxxxxxxxxx};
-
-  assign s2rAc_4 = c$case_alt_7;
-
-  assign r2sAc_4 = result_34[20:20];
-
-  assign result_47 = result_35[5:0];
-
-  assign result_48 = empty ? {1'b0,19'bxxxxxxxxxxxxxxxxxxx} : f1;
-
-  assign result_49 = {~ result_50[0:0],
-                      result_48};
-
-  assign empty = result_50[1:1];
-
-  assign eta7 = (~ empty) & bwdIn_2;
-
-  assign result_50 = {c$case_scrut[37:19],
-                      flag_0,   flag};
-
-  Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_trueDualPortBlockRamWrapper Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_trueDualPortBlockRamWrapper_c$case_scrut
-    ( .result (c$case_scrut)
-    , .clkA (ethTxClk)
-    , .enA (c$app_arg_20)
-    , .weA (c$app_arg_19)
-    , .addrA (c$app_arg_18)
-    , .datA (c$app_arg_17)
-    , .clkB (ethRxClk)
-    , .enB (c$app_arg_16)
-    , .weB (c$app_arg_15)
-    , .addrB (c$app_arg_14)
-    , .datB (c$app_arg_13) );
-
-  always @(*) begin
-    case(result_51[24:23])
-      2'b01 : c$app_arg_13 = val;
-      default : c$app_arg_13 = {19 {1'bx}};
-    endcase
-  end
-
-  assign val = result_51[18:0];
-
-  always @(*) begin
-    case(result_51[24:23])
-      2'b00 : c$app_arg_14 = addr_0;
-      2'b01 : c$app_arg_14 = addr;
-      default : c$app_arg_14 = {4 {1'bx}};
-    endcase
-  end
-
-  assign addr = result_51[22:19];
-
-  assign addr_0 = result_51[22:19];
-
-  always @(*) begin
-    case(result_51[24:23])
-      2'b01 : c$app_arg_15 = 1'b1;
-      default : c$app_arg_15 = 1'b0;
-    endcase
-  end
-
-  always @(*) begin
-    case(result_51[24:23])
-      2'b10 : c$app_arg_16 = 1'b0;
-      default : c$app_arg_16 = 1'b1;
-    endcase
-  end
-
-  always @(*) begin
-    case(t[24:23])
-      2'b01 : c$app_arg_17 = val_0;
-      default : c$app_arg_17 = {19 {1'bx}};
-    endcase
-  end
-
-  assign val_0 = t[18:0];
-
-  always @(*) begin
-    case(t[24:23])
-      2'b00 : c$app_arg_18 = addr_2;
-      2'b01 : c$app_arg_18 = addr_1;
-      default : c$app_arg_18 = {4 {1'bx}};
-    endcase
-  end
-
-  assign addr_1 = t[22:19];
-
-  assign addr_2 = t[22:19];
-
-  always @(*) begin
-    case(t[24:23])
-      2'b01 : c$app_arg_19 = 1'b1;
-      default : c$app_arg_19 = 1'b0;
-    endcase
-  end
-
-  always @(*) begin
-    case(t[24:23])
-      2'b10 : c$app_arg_20 = 1'b0;
-      default : c$app_arg_20 = 1'b1;
-    endcase
-  end
-
-  assign t = {2'b00,(\bin'_0 [0+:4]),19'bxxxxxxxxxxxxxxxxxxx};
-
-  assign result_51 = b ? {2'b01,(bin[0+:4]),ds1_0} : {2'b10,23'bxxxxxxxxxxxxxxxxxxxxxxx};
-
-  assign b = (~ flag) & c$eta10_app_arg;
-
-  assign ds1_0 = fwdIn_3[19:19] ? a1_8 : ({19 {1'bx}});
-
-  assign a1_8 = fwdIn_3[18:0];
-
-  assign ptr = eta9[5:1];
-
-  assign \ptr'  = (\bin'  >> 64'sd1) ^ \bin' ;
-
-  assign \bin'  = bin + ({4'b0000,(\c$bin'_app_arg )});
-
-  assign bin = eta9[10:6];
-
-  assign \c$bin'_app_arg  = inc ? \c$bin'_case_alt  : 1'b0;
-
-  assign inc = eta10[0:0];
-
-  assign \c$bin'_case_alt  = flag ? 1'b0 : 1'b1;
-
-  assign flag = eta9[0:0];
-
-  // register begin
-  always @(posedge ethRxClk ) begin : eta9_register
-    if ( ! c$app_arg) begin
-      eta9 <= {5'b00000,   5'b00000,   1'b0};
-    end else begin
-      eta9 <= {\bin' ,   \ptr' ,
-   \ptr'  == ({(~ (c$ds2_app_arg_8[4 : 3])),(c$ds2_app_arg_8[2 : 0])})};
-    end
-  end
-  // register end
-
-  assign c$ds2_app_arg_8 = s_ptr;
-
-  assign s_ptr = eta10[5:1];
-
-  assign eta10 = {result_52,   c$eta10_app_arg};
-
-  assign c$eta10_app_arg = fwdIn_3[19:19] ? 1'b1 : 1'b0;
-
-  // register begin
-  always @(posedge ethRxClk ) begin : c$app_arg_21_register
-    if ( ! c$app_arg) begin
-      c$app_arg_21 <= 5'b00000;
-    end else begin
-      c$app_arg_21 <= (ptr_0);
-    end
-  end
-  // register end
-
-  // register begin
-  always @(posedge ethRxClk ) begin : result_52_register
-    if ( ! c$app_arg) begin
-      result_52 <= 5'b00000;
-    end else begin
-      result_52 <= c$app_arg_21;
-    end
-  end
-  // register end
-
-  assign ptr_0 = ds3_0[5:1];
-
-  assign \ptr'_0  = (\bin'_0  >> 64'sd1) ^ \bin'_0 ;
-
-  assign \bin'_0  = bin_0 + ({4'b0000,(\c$bin'_app_arg_0 )});
-
-  assign bin_0 = ds3_0[10:6];
-
-  assign \c$bin'_app_arg_0  = eta7 ? \c$bin'_case_alt_0  : 1'b0;
-
-  assign \c$bin'_case_alt_0  = flag_0 ? 1'b0 : 1'b1;
-
-  assign flag_0 = ds3_0[0:0];
-
-  // register begin
-  always @(posedge ethTxClk ) begin : ds3_0_register
+  always @(posedge ethTxClk ) begin : nibbleSelect_register
     if ( ! c$bindCsr) begin
-      ds3_0 <= {5'b00000,   5'b00000,   1'b1};
-    end else begin
-      ds3_0 <= {\bin'_0 ,   \ptr'_0 ,   \ptr'_0  == result_53};
+      nibbleSelect <= 1'b0;
+    end else if (inputVld) begin
+      nibbleSelect <= (~ nibbleSelect);
     end
   end
   // register end
 
-  // register begin
-  always @(posedge ethTxClk ) begin : c$app_arg_22_register
-    if ( ! c$bindCsr) begin
-      c$app_arg_22 <= 5'b00000;
-    end else begin
-      c$app_arg_22 <= (ptr);
-    end
-  end
-  // register end
+  assign inputVld_selection_1 = result_0[10:0];
 
-  // register begin
-  always @(posedge ethTxClk ) begin : result_53_register
-    if ( ! c$bindCsr) begin
-      result_53 <= 5'b00000;
-    end else begin
-      result_53 <= c$app_arg_22;
-    end
-  end
-  // register end
+  assign inputVld = inputVld_selection_1[10:10] ? 1'b1 : 1'b0;
 
-  assign fwdIn_3 = result_34[19:0];
+  assign c$ds2_app_arg_selection_9 = result_0[10:0];
 
-  assign bwdIn_2 = result_27[132:132];
+  assign c$vec_28 = a1_11[9:2];
 
-  assign f1 = {1'b1,result_50[20:2]};
+  assign c$ds2_app_arg_7 = c$ds2_app_arg_selection_9[10:10] ? (c$vec_28[8-1 -: 8]) : ({8 {1'bx}});
 
-  assign result = result_47;
+  assign a1_11 = result_0[9:0];
+
+  assign result_59 = result_58[5:0];
+
+  assign result = result_59;
 
   assign txEn = result[5:5];
 
@@ -2285,4 +2892,3 @@ module topEntity
 
 
 endmodule
-

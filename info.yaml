@@ -5,7 +5,7 @@ project:
   discord:      "rowanG077"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Ethernet MAC written in Clash"      # One line description of what your project does
   language:     "Clash" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     25000000  # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "4x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -20,6 +20,7 @@ project:
     - "Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_trueDualPortBlockRamWrapper.v"
     - "Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_resetSynchronizer.v"
     - "Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_resetSynchronizer_0.v"
+    - "Clash_TinyTapeout_EthernetMac_TopEntity_topEntity_asyncFIFOSynchronizer.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
