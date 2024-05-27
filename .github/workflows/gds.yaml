@@ -16,7 +16,7 @@ jobs:
           QUIT_ON_SYNTH_CHECKS: "0"
 
       - name: Build GDS
-        uses: rowanG077/tt-gds-action@tt07-update-yosys
+        uses: rowanG077/tt-gds-action@updated-yosys2
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
           RUN_VERILATOR: "0"
@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Tiny Tapeout Precheck
-        uses: rowanG077/tt-gds-action/precheck@tt07-update-yosys
+        uses: rowanG077/tt-gds-action/precheck@updated-yosys2
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
           RUN_VERILATOR: "0"
@@ -44,7 +44,7 @@ jobs:
           RUN_VERILATOR: "0"
 
       - name: GL test
-        uses: rowanG077/tt-gds-action/gl_test@tt07-update-yosys
+        uses: rowanG077/tt-gds-action/gl_test@updated-yosys2
         env:
           QUIT_ON_SYNTH_CHECKS: "0"
           RUN_VERILATOR: "0"
@@ -56,4 +56,4 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     steps:
-      - uses: rowanG077/tt-gds-action/viewer@tt07-update-yosys
+      - uses: rowanG077/tt-gds-action/viewer@updated-yosys2
