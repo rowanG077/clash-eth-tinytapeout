@@ -53,8 +53,8 @@ set_clock_transition 0.1500 [ get_clocks ethTxClk ]
 set_clock_uncertainty 0.2500 [ get_clocks ethTxClk ]
 
 # Ensure CDC paths are constrained
-set_max_delay 0.05 -from [ get_clocks ethTxClk ] -to [ get_clocks ethRxClk ] -ignore_clock_latency;
-set_max_delay 0.05 -from [ get_clocks ethRxClk ] -to [ get_clocks ethTxClk ] -ignore_clock_latency;
+set_max_delay 0.05 -from ethTxClk -to ethRxClk -ignore_clock_latency;
+set_max_delay 0.05 -from ethRxClk -to ethTxClk -ignore_clock_latency;
 
 # Miscellanea
 set_driving_cell -lib_cell $::env(SYNTH_DRIVING_CELL) -pin $::env(SYNTH_DRIVING_CELL_PIN) $all_inputs_wo_clk
