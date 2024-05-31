@@ -28,11 +28,11 @@ set ::env(LINTER_INCLUDE_PDK_MODELS) 1
 
 # If you need a custom clock configuration, read the following documentation first:
 # https://tinytapeout.com/faq/#how-can-i-map-an-additional-external-clock-to-one-of-the-gpios
-set ::env(CLOCK_PORT) {rp2040Clk}
+# set ::env(CLOCK_PORT) {rp2040Clk}
 
 # Additional MII clocks
-set ::env(CLOCK_PORT) "ui_in\\\[0\\\]"
-set ::env(CLOCK_PORT) "ui_in\\\[1\\\]"
+# set ::env(CLOCK_PORT) "ui_in\\\[0\\\]"
+# set ::env(CLOCK_PORT) "ui_in\\\[1\\\]"
 set ::env(BASE_SDC_FILE) "$::env(DESIGN_DIR)/project.sdc"
 
 # Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html
